@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.AccueilFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|top"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/TX_nouveaute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:text="Nouveauté"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageButton
+                android:id="@+id/IMGB_nouveaute1"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/pharmacie" />
+
+            <ImageButton
+                android:id="@+id/IMGB_nouveaute2"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/alimentation" />
+
+            <ImageButton
+                android:id="@+id/IMGB_nouveaute3"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/stade" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="0.03"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TX_nouveaute1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="20dp"
+                android:text="Pharmacie" />
+
+            <TextView
+                android:id="@+id/TX_nouveaute2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Alimentation" />
+
+            <TextView
+                android:id="@+id/TX_nouveaute3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="40dp"
+                android:text="Stade" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TX_plusConsultes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Les plus consultés"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageButton
+                android:id="@+id/IMGB_plusConsultes1"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/distributeurs" />
+
+            <ImageButton
+                android:id="@+id/IMGB_plusConsultes2"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/mairie" />
+
+            <ImageButton
+                android:id="@+id/IMGB_plusConsultes3"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/salle_de_sport" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="0.03"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TX_plusConsultes1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="20dp"
+                android:text="Distributeur" />
+
+            <TextView
+                android:id="@+id/TX_plusConsultes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Mairie" />
+
+            <TextView
+                android:id="@+id/TX_plusConsultes3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="30dp"
+                android:text="Salle de sport" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TX_plusCommentes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Les plus commentés"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageButton
+                android:id="@+id/IMGB_plusCommentes1"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/hopital" />
+
+            <ImageButton
+                android:id="@+id/IMGB_plusCommentes2"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/stations_services" />
+
+            <ImageButton
+                android:id="@+id/IMGB_plusCommentes3"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/image_accueil_fond"
+                android:src="@drawable/laveries" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.03"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TX_plusCommentes1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="20dp"
+                android:text="Hopital" />
+
+            <TextView
+                android:id="@+id/TX_plusCommentes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Station service" />
+
+            <TextView
+                android:id="@+id/TX_plusCommentes3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="40dp"
+                android:text="Laverie" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

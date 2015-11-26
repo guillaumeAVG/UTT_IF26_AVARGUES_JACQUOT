@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:id="@+id/fiche"
+        android:layout_width="match_parent"
+        android:layout_height="641dp">
+
+        <TextView
+            android:id="@+id/TX_nomCompte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/IMG_iconeUtilisateur"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="0dp"
+            android:text="Jean Dupont"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+        <ImageView
+            android:id="@+id/IMG_iconeUtilisateur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="60dp"
+            android:maxWidth="60dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icone_utilisateur" />
+
+        <TextView
+            android:id="@+id/TX_descriptionUtilisateur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/IMG_line"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="40dp"
+            android:text="Description"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/TX_texteDescriptionUtilisateur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TX_nomCompte"
+            android:layout_alignStart="@+id/TX_nomCompte"
+            android:layout_below="@+id/TX_descriptionUtilisateur"
+            android:paddingLeft="40dp"
+            android:paddingRight="20dp"
+            android:text="Nom\nPrenom\nAdresse email"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <ImageView
+
+            android:id="@+id/IMG_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/IMG_iconeUtilisateur"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="14dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="220dp"
+            android:maxWidth="0dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/line_divider" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">STUDENT\'N 3</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="categorie_array">
+        <item>Les bons plans</item>
+        <item>Les commerces</item>
+        <item>La santé</item>
+        <item>L\'administration</item>
+        <item>Le sport</item>
+    </string-array>
+
+</resources>
