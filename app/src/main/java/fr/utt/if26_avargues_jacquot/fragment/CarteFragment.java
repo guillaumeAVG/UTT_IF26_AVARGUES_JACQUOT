@@ -9,8 +9,14 @@ import android.view.ViewGroup;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
+import org.osmdroid.api.IMapController;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+
 /**
  * Created by guillaume on 26/11/2015.
+ * Last modified by Etienne on 27/11/2015
  */
 public class CarteFragment extends Fragment {
 
@@ -19,6 +25,15 @@ public class CarteFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_carte, container, false);
+
+        MapView map = (MapView) rootView.findViewById(R.id.map);
+        map.setTileSource(TileSourceFactory.MAPNIK);
+        map.setBuiltInZoomControls(true);
+        map.setMultiTouchControls(true);
+        IMapController mapController = map.getController();
+        mapController.setZoom(14);
+        GeoPoint startPoint = new GeoPoint(48.3, 4.0833);
+        mapController.setCenter(startPoint);
 
         return rootView;
     }
