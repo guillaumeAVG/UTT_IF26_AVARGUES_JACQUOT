@@ -48,19 +48,19 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/TF_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/editText2"
+            android:layout_alignEnd="@+id/TF_passwd"
             android:layout_alignLeft="@+id/TX_login"
-            android:layout_alignRight="@+id/editText2"
+            android:layout_alignRight="@+id/TF_passwd"
             android:layout_alignStart="@+id/TX_login"
             android:layout_below="@+id/TX_login"
             android:inputType="text"
             android:maxLength="10" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/TF_passwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/TX_motDePasse"
