@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:id="@+id/fiche"
+        android:layout_width="match_parent"
+        android:layout_height="641dp">
+
+
+        <TextView
+            android:id="@+id/TX_pageDeConnexion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="28dp"
+            android:text="Page de connexion"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/TX_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TX_pageDeConnexion"
+            android:layout_alignStart="@+id/TX_pageDeConnexion"
+            android:layout_below="@+id/TX_pageDeConnexion"
+            android:layout_marginLeft="55dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="49dp"
+            android:text="Login"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/TX_motDePasse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TX_login"
+            android:layout_alignStart="@+id/TX_login"
+            android:layout_below="@+id/TX_login"
+            android:layout_marginTop="82dp"
+            android:text="Mot de passe"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/editText2"
+            android:layout_alignLeft="@+id/TX_login"
+            android:layout_alignRight="@+id/editText2"
+            android:layout_alignStart="@+id/TX_login"
+            android:layout_below="@+id/TX_login"
+            android:inputType="text"
+            android:maxLength="10" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TX_motDePasse"
+            android:layout_alignStart="@+id/TX_motDePasse"
+            android:layout_below="@+id/TX_motDePasse"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:maxLength="10" />
+
+        <Button
+            android:id="@+id/BT_validation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/TX_pageDeConnexion"
+            android:layout_toRightOf="@+id/TX_pageDeConnexion"
+            android:text="Validation" />
+    </RelativeLayout>
+</LinearLayout>

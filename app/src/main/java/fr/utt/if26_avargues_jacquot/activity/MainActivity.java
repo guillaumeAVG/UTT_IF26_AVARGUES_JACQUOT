@@ -26,7 +26,7 @@ import java.util.List;
 
 import fr.utt.if26_avargues_jacquot.fragment.AccueilFragment;
 import fr.utt.if26_avargues_jacquot.fragment.CarteFragment;
-import fr.utt.if26_avargues_jacquot.fragment.CompteFragment;
+import fr.utt.if26_avargues_jacquot.fragment.CompteLoginFragment;
 
 /**
  * Created by guillaume on 26/11/2015.
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new AccueilFragment(), "Accueil");
         adapter.addFragment(new CarteFragment(), "Carte");
-        adapter.addFragment(new CompteFragment(), "Compte");
+        adapter.addFragment(new CompteLoginFragment(), "Compte");
         viewPager.setAdapter(adapter);
     }
 

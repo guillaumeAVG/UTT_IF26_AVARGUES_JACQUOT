@@ -12,13 +12,14 @@ import com.example.guillaume.if26_avargues_jacquot.R;
 /**
  * Created by guillaume on 26/11/2015.
  */
-public class CompteFragment extends Fragment {
+public class CompteLoginFragment extends Fragment {
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_compte, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_compte_login, container, false);
 
         return rootView;
     }
