@@ -34,7 +34,6 @@ public class CarteFragment extends Fragment {
         mapController.setZoom(14);
         GeoPoint startPoint = new GeoPoint(48.3, 4.0833);
         mapController.setCenter(startPoint);
-
         return rootView;
     }
 }

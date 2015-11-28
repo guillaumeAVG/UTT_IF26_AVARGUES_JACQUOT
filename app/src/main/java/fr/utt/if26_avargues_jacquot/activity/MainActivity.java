@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
         // Mise en place de drawer list
         bonPlanTitles = getResources().getStringArray(R.array.categorie_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -91,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             mDrawerToggle.setDrawerIndicatorEnabled(true);
             mDrawerLayout.setDrawerListener(mDrawerToggle);
         }
+
     }
 
     // Méthodes de tabs
