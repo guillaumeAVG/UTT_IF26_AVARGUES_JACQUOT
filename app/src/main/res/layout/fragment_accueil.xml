@@ -39,7 +39,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.33"
                 android:backgroundTint="@color/image_accueil_fond"
-                android:src="@drawable/pharmacie" />
+                android:src="@drawable/long_terme_reduction" />
 
             <ImageButton
                 android:id="@+id/IMGB_nouveaute2"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="20dp"
-                android:text="Pharmacie" />
+                android:text="Réduction" />
 
             <TextView
                 android:id="@+id/TX_nouveaute2"
