@@ -1,22 +1,24 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
-
 import org.osmdroid.api.IMapController;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
+
 /**
  * Created by guillaume on 26/11/2015.
- * Last modified by Etienne on 27/11/2015
  */
 public class CarteFragment extends Fragment {
 
@@ -35,5 +37,14 @@ public class CarteFragment extends Fragment {
         GeoPoint startPoint = new GeoPoint(48.3, 4.0833);
         mapController.setCenter(startPoint);
         return rootView;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+        if (isVisibleToUser && isResumed()) {
+            Toast.makeText(getActivity().getApplicationContext(), "Carte affichée", Toast.LENGTH_LONG).show();
+        }
     }
 }
