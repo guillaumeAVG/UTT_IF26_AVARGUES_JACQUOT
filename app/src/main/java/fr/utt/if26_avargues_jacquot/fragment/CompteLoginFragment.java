@@ -25,21 +25,19 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
                     /* TODO
                     * Récupérer les login et password tapés par l'utilisateur dans les champs de texte
                     * */
-                    String login = "test";
-                    String passwd = "test";
+                String login = "test";
+                String passwd = "test";
                 LoginService loginService = new LoginService();
-                if(loginService.validateLogin(login, passwd) == true) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur le bouton Me." , Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(getActivity().getApplicationContext(), "Erreur durant le login." , Toast.LENGTH_LONG).show();
+                if (loginService.validateLogin(login, passwd) == true) {
+                    Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur le bouton Me.", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(), "Erreur durant le login.", Toast.LENGTH_LONG).show();
                 }
 
                 break;
 
         }
     }
-
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

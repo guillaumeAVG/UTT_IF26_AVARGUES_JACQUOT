@@ -1,16 +1,15 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
+
 import org.osmdroid.api.IMapController;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
@@ -20,7 +19,7 @@ import org.osmdroid.views.MapView;
 /**
  * Created by guillaume on 26/11/2015.
  */
-public class CarteFragment extends Fragment {
+public class CarteFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +35,7 @@ public class CarteFragment extends Fragment {
         mapController.setZoom(14);
         GeoPoint startPoint = new GeoPoint(48.3, 4.0833);
         mapController.setCenter(startPoint);
+        rootView.findViewById(R.id.BT_ajouterUnBonPlan).setOnClickListener(this);
         return rootView;
     }
 
@@ -45,6 +45,16 @@ public class CarteFragment extends Fragment {
 
         if (isVisibleToUser && isResumed()) {
             Toast.makeText(getActivity().getApplicationContext(), "Carte affichée", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.BT_ajouterUnBonPlan:
+                // On met en place le passage entre les deux activités sur ce Listener
+                Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur ajouter un bon plan", Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 }

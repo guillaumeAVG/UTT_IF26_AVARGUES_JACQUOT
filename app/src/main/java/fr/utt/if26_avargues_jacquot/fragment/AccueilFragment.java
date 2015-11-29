@@ -1,6 +1,5 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,10 +12,11 @@ import com.example.guillaume.if26_avargues_jacquot.R;
 /**
  * Created by guillaume on 26/11/2015.
  */
-public class AccueilFragment extends Fragment implements View.OnClickListener{
+public class AccueilFragment extends Fragment implements View.OnClickListener {
     LayoutInflater inflater;
     ViewGroup container;
     Bundle savedInstanceState;
+
     @Override
     public void onClick(View view) {
 
@@ -30,7 +30,6 @@ public class AccueilFragment extends Fragment implements View.OnClickListener{
 
         }
     }
-
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

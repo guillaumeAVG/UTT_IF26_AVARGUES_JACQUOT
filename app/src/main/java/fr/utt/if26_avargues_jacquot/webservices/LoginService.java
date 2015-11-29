@@ -9,7 +9,7 @@ public class LoginService {
 
     }
 
-    public boolean validateLogin (String user,String passwd) {
+    public boolean validateLogin(String user, String passwd) {
         return true;
     }
 

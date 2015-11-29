@@ -8,4 +8,6 @@
     <color name="colorAccent">#ff5b60</color>
     <color name="notification_color_fond">#3F51B5</color>
     <color name="image_accueil_fond">#c4d7ff</color>
+    <color name="filtersbuttoncolors">#3F51B5</color>
+    <color name="mybackgroundcolors">#c4d7ff</color>
 </resources>
