@@ -20,7 +20,7 @@ import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 /**
  * Created by guillaume on 26/11/2015.
  */
-public class CarteFragment extends Fragment implements View.OnClickListener {
+public class CarteFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +42,6 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         map.setMultiTouchControls(true);
         map.getOverlays().add(mRotationGestureOverlay);
 
-        rootView.findViewById(R.id.BT_ajouterUnBonPlan).setOnClickListener(this);
         return rootView;
     }
 
@@ -55,13 +54,4 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.BT_ajouterUnBonPlan:
-                // On met en place le passage entre les deux activités sur ce Listener
-                Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur ajouter un bon plan", Toast.LENGTH_SHORT).show();
-                break;
-        }
-    }
 }
