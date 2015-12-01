@@ -33,7 +33,7 @@
             android:layout_marginLeft="55dp"
             android:layout_marginStart="55dp"
             android:layout_marginTop="49dp"
-            android:text="Login"
+            android:text="Adresse e-mail"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -56,8 +56,8 @@
             android:layout_alignRight="@+id/TF_passwd"
             android:layout_alignStart="@+id/TX_login"
             android:layout_below="@+id/TX_login"
-            android:inputType="text"
-            android:maxLength="10" />
+            android:inputType="textEmailAddress"
+            android:maxLength="20" />
 
         <EditText
             android:id="@+id/TF_passwd"
@@ -68,7 +68,7 @@
             android:layout_below="@+id/TX_motDePasse"
             android:ems="10"
             android:inputType="textPassword"
-            android:maxLength="10" />
+            android:maxLength="20" />
 
         <Button
             android:id="@+id/BT_validation"

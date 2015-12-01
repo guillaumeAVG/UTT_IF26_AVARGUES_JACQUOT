@@ -1,4 +1,4 @@
-package fr.utt.if26_avargues_jacquot.activity;
+package fr.utt.if26_avargues_jacquot.fragment;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;

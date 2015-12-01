@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
@@ -19,6 +20,9 @@ import fr.utt.if26_avargues_jacquot.webservices.LoginService;
  * Created by guillaume on 26/11/2015.
  */
 public class CompteLoginFragment extends Fragment implements View.OnClickListener {
+
+    EditText TF_login;
+    EditText TF_passwd;
 
     @Override
     public void onClick(View view) {
@@ -35,13 +39,11 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
     }
 
     public void onLoginButtonClick(View view) {
-        /* TODO Récupérer les login et password tapés par l'utilisateur dans les champs de texte
-        */
-        String login = "test";
-        String passwd = "test";
+        String STRING_login = TF_login.getText().toString();
+        String STRING_passwd = TF_passwd.getText().toString();
         LoginService loginService = new LoginService();
-        if (loginService.validateLogin(login, passwd) == true) {
-            Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur le bouton Me.", Toast.LENGTH_LONG).show();
+        if (loginService.validateLogin(STRING_login, STRING_passwd) == true) {
+            Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur le bouton Me. Login rentré :" + STRING_login  + ".", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getActivity().getApplicationContext(), "Erreur durant le login.", Toast.LENGTH_LONG).show();
         }
@@ -58,6 +60,9 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         //On récupere la vue souhaitée et on lui affecte le Listener
         view.findViewById(R.id.BT_validation).setOnClickListener(this);
         view.findViewById(R.id.BT_noCompte).setOnClickListener(this);
+
+        TF_login = (EditText) view.findViewById(R.id.TF_login);
+        TF_passwd = (EditText) view.findViewById(R.id.TF_passwd);
         return view;
     }
 }
