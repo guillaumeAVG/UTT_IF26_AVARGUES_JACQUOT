@@ -78,5 +78,14 @@
             android:layout_toEndOf="@+id/TX_pageDeConnexion"
             android:layout_toRightOf="@+id/TX_pageDeConnexion"
             android:text="Validation" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Je n&apos;ai pas de compte"
+            android:id="@+id/BT_noCompte"
+            android:layout_alignTop="@+id/BT_validation"
+            android:layout_alignLeft="@+id/TX_pageDeConnexion"
+            android:layout_alignStart="@+id/TX_pageDeConnexion" />
     </RelativeLayout>
 </LinearLayout>

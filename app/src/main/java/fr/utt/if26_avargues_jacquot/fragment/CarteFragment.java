@@ -14,6 +14,7 @@ import org.osmdroid.api.IMapController;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
 
 /**
@@ -28,13 +29,19 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.fragment_carte, container, false);
 
         MapView map = (MapView) rootView.findViewById(R.id.map);
-        map.setTileSource(TileSourceFactory.MAPNIK);
+        map.setTileSource(TileSourceFactory.MAPQUESTOSM);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
         mapController.setZoom(14);
         GeoPoint startPoint = new GeoPoint(48.3, 4.0833);
         mapController.setCenter(startPoint);
+
+        RotationGestureOverlay mRotationGestureOverlay = new RotationGestureOverlay(getContext(), map);
+        mRotationGestureOverlay.setEnabled(true);
+        map.setMultiTouchControls(true);
+        map.getOverlays().add(mRotationGestureOverlay);
+
         rootView.findViewById(R.id.BT_ajouterUnBonPlan).setOnClickListener(this);
         return rootView;
     }
