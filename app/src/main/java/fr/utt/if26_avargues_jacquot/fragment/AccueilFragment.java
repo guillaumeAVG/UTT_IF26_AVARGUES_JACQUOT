@@ -22,8 +22,7 @@ public class AccueilFragment extends Fragment implements View.OnClickListener {
 
         switch (view.getId()) {
             case R.id.IMGB_nouveaute1:
-                    /* TODO
-                    * Récupérer les login et password tapés par l'utilisateur dans les champs de texte
+                    /* TODO Récupérer les login et password tapés par l'utilisateur dans les champs de texte
                     * */
                 Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur un bon plan.", Toast.LENGTH_LONG).show();
                 break;
