@@ -12,5 +12,6 @@
         <item>L\'administration</item>
         <item>Le sport</item>
     </string-array>
+    <string name="title_activity_nouveau_compte">NouveauCompteActivity</string>
 
 </resources>
