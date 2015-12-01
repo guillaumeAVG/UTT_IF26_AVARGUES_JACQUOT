@@ -5,11 +5,30 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <org.osmdroid.views.MapView
-        android:id="@+id/map"
-        android:layout_width="fill_parent"
-        android:layout_height="409dp"
-        android:layout_weight="0.10" />
+    <!-- SlidingPanelUp for filters-->
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoPanelHeight="68dp"
+        sothree:umanoShadowHeight="4dp">
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/map"
+            android:layout_width="fill_parent"
+            android:layout_height="409dp"
+            android:layout_weight="0.10" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:text="The Awesome Sliding Up Panel"
+            android:textSize="16sp" />
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
 
     <Button
         android:id="@+id/BT_ajouterUnBonPlan"
@@ -18,4 +37,6 @@
         android:background="@color/colorPrimary"
         android:text="Ajouter un bon plan"
         android:textColor="@color/textColorPrimary" />
+
+
 </LinearLayout>

@@ -35,6 +35,8 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
                 }
 
                 break;
+            case R.id.BT_ajouterUnBonPlan:
+                break;
 
         }
     }
