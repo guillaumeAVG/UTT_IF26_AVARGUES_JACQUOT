@@ -1,12 +1,16 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
@@ -31,7 +35,6 @@ public class FiltresCarteFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public FiltresCarteFragment() {
-        // Required empty public constructor
     }
 
     /**
@@ -59,6 +62,10 @@ public class FiltresCarteFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        String[] items = this.getResources().getStringArray(R.array.bonsPlans);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getContext(),
+                R.layout.simple_raw, R.id.textView, items);
+        ((ListView) ((Activity)this.getContext()).findViewById(R.id.list)).setAdapter(adapter);
     }
 
     @Override

@@ -10,4 +10,9 @@
     <color name="image_accueil_fond">#c4d7ff</color>
     <color name="filtersbuttoncolors">#3F51B5</color>
     <color name="mybackgroundcolors">#c4d7ff</color>
+
+    <color name="purple_light">#78eb73</color>
+    <color name="purple_middle">#8db3ce</color>
+    <color name="purple_dark">#69c4e2ff</color>
+    <color name="checkbox_color">#FFFFFF</color>
 </resources>
