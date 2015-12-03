@@ -48,7 +48,6 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-
         if (isVisibleToUser && isResumed()) {
             Toast.makeText(getActivity().getApplicationContext(), "Carte affichée", Toast.LENGTH_LONG).show();
         }
