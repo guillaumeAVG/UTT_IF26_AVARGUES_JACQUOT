@@ -15,4 +15,5 @@
     <color name="purple_middle">#8db3ce</color>
     <color name="purple_dark">#69c4e2ff</color>
     <color name="checkbox_color">#FFFFFF</color>
+    <color name="add_fond">#00c4e2ff</color>
 </resources>
