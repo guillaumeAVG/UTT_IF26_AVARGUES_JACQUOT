@@ -1,6 +1,7 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +16,8 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
+
+import fr.utt.if26_avargues_jacquot.activity.FiltreActivity;
 
 
 /**
@@ -41,7 +44,6 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         mRotationGestureOverlay.setEnabled(true);
         map.setMultiTouchControls(true);
         map.getOverlays().add(mRotationGestureOverlay);
-        rootView.findViewById(R.id.IMGB_ajouterBonPlan).setOnClickListener(this);
         return rootView;
     }
 
@@ -63,5 +65,6 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
                 Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur ajouter un nouveau bon plan", Toast.LENGTH_SHORT).show();
                 break;
         }
+
     }
 }

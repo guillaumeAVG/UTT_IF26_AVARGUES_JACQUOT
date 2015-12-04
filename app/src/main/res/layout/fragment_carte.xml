@@ -24,7 +24,7 @@
 
 
         <include layout="@layout/fragment_filtres_carte" android:layout_height="match_parent" android:layout_width="match_parent" />
-    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
     <ImageButton
         android:layout_width="wrap_content"

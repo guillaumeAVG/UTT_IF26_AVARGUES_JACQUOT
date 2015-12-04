@@ -1,35 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center|top"
-    tools:context="fr.utt.if26_avargues_jacquot.fragment.FiltresCarteFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-
-    <RelativeLayout
+    android:padding="5dp">
+    <TextView android:id="@+id/articleListHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Liste des différents bon plans"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#0585C4"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <ExpandableListView
+        android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="wrap_content"
-            android:layout_height="463dp"
-            android:layout_gravity="center_horizontal|bottom"
-            android:background="@color/colorAccent"
-            android:dividerHeight="@dimen/abc_control_inset_material"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/textView2"
-            android:layout_marginTop="15dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Filtres des bons plans"
-            android:id="@+id/textView2"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp" />
-    </RelativeLayout>
-</FrameLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@id/articleListHeaderTextView"
+        android:layout_margin="10dp"
+        android:divider="@android:color/darker_gray"
+        android:childDivider="@android:color/white"
+        android:dividerHeight="2dp"
+        android:fadingEdge="none">
+    </ExpandableListView>
+</RelativeLayout>
