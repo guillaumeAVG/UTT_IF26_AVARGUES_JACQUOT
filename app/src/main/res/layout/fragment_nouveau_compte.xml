@@ -1,13 +1,171 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Scroller"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="fr.utt.if26_avargues_jacquot.fragment.NouveauCompteActivityFragment"
-    tools:showIn="@layout/activity_nouveau_compte">
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="fr.utt.if26_avargues_jacquot.fragment.NouveauCompteActivityFragment"
+        tools:showIn="@layout/activity_nouveau_compte">
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/TX_nom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Nom"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TX_nom"
+            android:layout_toEndOf="@+id/TX_nom"
+            android:layout_toRightOf="@+id/TX_nom"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/TX_prenom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText"
+            android:layout_marginTop="12dp"
+            android:text="Prenom"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editText"
+            android:layout_alignStart="@+id/editText"
+            android:layout_below="@+id/TX_prenom"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/TX_dateDeNaissance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText2"
+            android:layout_marginTop="11dp"
+            android:text="Date de naissance"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editText2"
+            android:layout_alignStart="@+id/editText2"
+            android:layout_below="@+id/TX_dateDeNaissance"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/TX_adresseEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText3"
+            android:layout_marginTop="20dp"
+            android:text="Adresse email"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editText3"
+            android:layout_alignStart="@+id/editText3"
+            android:layout_below="@+id/TX_adresseEmail"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/TX_ecole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText4"
+            android:layout_marginTop="15dp"
+            android:text="Ecole"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/TX_ecole">
+
+            <RadioButton
+                android:id="@+id/RF_UTT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="UTT" />
+
+            <RadioButton
+                android:id="@+id/RF_IUT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IUT" />
+
+            <RadioButton
+                android:id="@+id/RF_URCA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="URCA" />
+
+            <RadioButton
+                android:id="@+id/RF_ESC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ESC" />
+
+            <RadioButton
+                android:id="@+id/RF_EPF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EPF" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/BT_suivant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/radioGroup"
+            android:text="Suivant" />
+
+        <Button
+            android:id="@+id/BT_annuler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/TX_dateDeNaissance"
+            android:layout_toRightOf="@+id/TX_dateDeNaissance"
+            android:text="Annuler" />
+
+    </RelativeLayout>
+
+</ScrollView>

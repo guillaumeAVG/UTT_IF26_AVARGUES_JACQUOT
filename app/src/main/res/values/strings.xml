@@ -12,7 +12,7 @@
         <item>L\'administration</item>
         <item>Le sport</item>
     </string-array>
-    <string name="title_activity_nouveau_compte">NouveauCompteActivity</string>
+    <string name="title_activity_nouveau_compte">Formulaire d\'inscription</string>
     <string name="title_activity_filtre">FiltreActivity</string>
     <string-array name="bonsPlans">
         <item> Pharmacie</item>

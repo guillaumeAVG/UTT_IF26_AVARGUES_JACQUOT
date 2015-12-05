@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/TX_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="14dp"
+        android:text="Photo"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/TX_telephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TX_photo"
+        android:layout_alignStart="@+id/TX_photo"
+        android:layout_below="@+id/TX_photo"
+        android:layout_marginTop="39dp"
+        android:text="Téléphone"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/TX_confirmationDuMotDePasse"
+        android:layout_alignRight="@+id/TX_confirmationDuMotDePasse"
+        android:layout_below="@+id/TX_telephone"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TX_telephone"
+        android:layout_alignStart="@+id/TX_telephone"
+        android:layout_below="@+id/editText5"
+        android:layout_marginTop="23dp"
+        android:text="Mot de passe"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText5"
+        android:layout_alignStart="@+id/editText5"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/TX_confirmationDuMotDePasse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/editText6"
+        android:layout_marginTop="16dp"
+        android:text="Confirmation du mot de passe"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/TX_confirmationDuMotDePasse"
+        android:layout_alignRight="@+id/TX_confirmationDuMotDePasse"
+        android:layout_below="@+id/TX_confirmationDuMotDePasse"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/TX_captcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TX_confirmationDuMotDePasse"
+        android:layout_alignStart="@+id/TX_confirmationDuMotDePasse"
+        android:layout_below="@+id/editText7"
+        android:layout_marginTop="20dp"
+        android:text="Veuillez saisir  les caractères  ci-contre"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Insertion du captcha"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/TX_captcha"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Insertion de la recherche de photo"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/TX_photo"
+        android:layout_toRightOf="@+id/TX_telephone"
+        android:layout_toEndOf="@+id/TX_telephone" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valider"
+        android:id="@+id/BT_valider"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="11dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Annuler"
+        android:id="@+id/BT_annuler"
+        android:layout_alignBaseline="@+id/BT_valider"
+        android:layout_alignBottom="@+id/BT_valider"
+        android:layout_toLeftOf="@+id/BT_valider"
+        android:layout_toStartOf="@+id/BT_valider"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
+
+
+</RelativeLayout>
