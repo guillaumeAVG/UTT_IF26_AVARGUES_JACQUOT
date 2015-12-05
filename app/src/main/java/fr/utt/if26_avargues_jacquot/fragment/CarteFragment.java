@@ -18,6 +18,7 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
 import fr.utt.if26_avargues_jacquot.activity.FiltreActivity;
+import fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity;
 
 
 /**
@@ -30,7 +31,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_carte, container, false);
-
+        rootView.findViewById(R.id.IMGB_ajouterBonPlan).setOnClickListener(this);
         MapView map = (MapView) rootView.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPQUESTOSM);
         map.setBuiltInZoomControls(true);
@@ -61,8 +62,8 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
             case R.id.IMGB_ajouterBonPlan:
 
                 // On met en place le passage entre les deux activités sur ce Listener
-
-                Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur ajouter un nouveau bon plan", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), NouveauBonPlanActivity.class);
+                startActivity(intent);
                 break;
         }
 

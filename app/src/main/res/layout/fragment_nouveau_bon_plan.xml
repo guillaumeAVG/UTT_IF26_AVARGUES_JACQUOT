@@ -1,0 +1,111 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Scroller"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="fr.utt.if26_avargues_jacquot.fragment.NouveauCompteActivityFragment"
+        tools:showIn="@layout/activity_nouveau_compte">
+
+
+        <TextView
+            android:id="@+id/TX_nomDuBonPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Nom du bon plan"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/TX_adresseDuBonPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adresse"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@+id/editText8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/TX_typeDeBonPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type de bon plan"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@+id/editText9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/TX_descriptionDuBonPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Description"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@+id/TX_typeDeBonPlan" />
+
+
+        <Button
+            android:id="@+id/BT_valider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valider"
+            android:layout_marginTop="47dp"
+            android:layout_below="@+id/editText10"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText8"
+            android:layout_below="@+id/TX_nomDuBonPlan"
+            android:layout_alignLeft="@+id/editText10"
+            android:layout_alignStart="@+id/editText10"
+            android:layout_alignRight="@+id/editText9"
+            android:layout_alignEnd="@+id/editText9" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/editText9"
+            android:layout_below="@+id/TX_adresseDuBonPlan"
+            android:layout_toRightOf="@+id/TX_adresseDuBonPlan"
+            android:layout_toEndOf="@+id/TX_adresseDuBonPlan" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText10"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:layout_alignTop="@+id/TX_descriptionDuBonPlan" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Annuler"
+            android:id="@+id/BT_annuler"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/TX_nomDuBonPlan"
+            android:layout_toEndOf="@+id/TX_nomDuBonPlan" />
+
+    </RelativeLayout>
+
+</ScrollView>

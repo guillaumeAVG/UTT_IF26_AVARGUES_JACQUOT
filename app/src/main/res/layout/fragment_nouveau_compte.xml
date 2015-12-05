@@ -17,7 +17,7 @@
 
 
         <TextView
-            android:id="@+id/TX_nom"
+            android:id="@+id/TX_nomDuBonPlan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -30,14 +30,14 @@
             android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TX_nom"
-            android:layout_toEndOf="@+id/TX_nom"
-            android:layout_toRightOf="@+id/TX_nom"
+            android:layout_below="@+id/TX_nomDuBonPlan"
+            android:layout_toEndOf="@+id/TX_nomDuBonPlan"
+            android:layout_toRightOf="@+id/TX_nomDuBonPlan"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/TX_prenom"
+            android:id="@+id/TX_adresseDuBonPlan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -53,12 +53,12 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/editText"
             android:layout_alignStart="@+id/editText"
-            android:layout_below="@+id/TX_prenom"
+            android:layout_below="@+id/TX_adresseDuBonPlan"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/TX_dateDeNaissance"
+            android:id="@+id/TX_typeDeBonPlan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -74,12 +74,12 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/editText2"
             android:layout_alignStart="@+id/editText2"
-            android:layout_below="@+id/TX_dateDeNaissance"
+            android:layout_below="@+id/TX_typeDeBonPlan"
             android:ems="10"
             android:inputType="date" />
 
         <TextView
-            android:id="@+id/TX_adresseEmail"
+            android:id="@+id/TX_descriptionDuBonPlan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/editText3"
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/editText3"
             android:layout_alignStart="@+id/editText3"
-            android:layout_below="@+id/TX_adresseEmail"
+            android:layout_below="@+id/TX_descriptionDuBonPlan"
             android:ems="10"
             android:inputType="textEmailAddress" />
 
@@ -162,8 +162,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/TX_dateDeNaissance"
-            android:layout_toRightOf="@+id/TX_dateDeNaissance"
+            android:layout_toEndOf="@+id/TX_typeDeBonPlan"
+            android:layout_toRightOf="@+id/TX_typeDeBonPlan"
             android:text="Annuler" />
 
     </RelativeLayout>

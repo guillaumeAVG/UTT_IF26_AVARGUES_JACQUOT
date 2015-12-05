@@ -14,6 +14,7 @@
     </string-array>
     <string name="title_activity_nouveau_compte">Formulaire d\'inscription</string>
     <string name="title_activity_filtre">FiltreActivity</string>
+    <string name="title_activity_nouveau_bon_plan">Formulaire d\'ajout d\'un bon plan</string>
     <string-array name="bonsPlans">
         <item> Pharmacie</item>
         <item> Station essence</item>
