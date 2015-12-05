@@ -32,6 +32,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
 
         View rootView = inflater.inflate(R.layout.fragment_carte, container, false);
         rootView.findViewById(R.id.IMGB_ajouterBonPlan).setOnClickListener(this);
+       // rootView.findViewById(R.id.IMGB_filtre).setOnClickListener(this);
         MapView map = (MapView) rootView.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPQUESTOSM);
         map.setBuiltInZoomControls(true);
@@ -65,6 +66,12 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), NouveauBonPlanActivity.class);
                 startActivity(intent);
                 break;
+           /* case R.id.IMGB_filtre:
+
+                // On met en place le passage entre les deux activités sur ce Listener
+                Intent intent2 = new Intent(getActivity(), FiltreActivity.class);
+                startActivity(intent2);
+                break;*/
         }
 
     }

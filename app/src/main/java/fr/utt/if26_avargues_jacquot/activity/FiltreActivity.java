@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
@@ -32,7 +33,7 @@ public class FiltreActivity extends ExpandableListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_filtres_carte);
+        setContentView(R.layout.activity_list_bon_plan);
         setListAdapter(new ExpandableListAdapter(this));
     }
     public class ExpandableListAdapter extends BaseExpandableListAdapter {
