@@ -99,16 +99,6 @@
         android:layout_toRightOf="@+id/textView2"
         android:layout_toEndOf="@+id/textView2" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Insertion de la recherche de photo"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/TX_photo"
-        android:layout_toRightOf="@+id/TX_telephone"
-        android:layout_toEndOf="@+id/TX_telephone" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,6 +122,15 @@
         android:layout_toStartOf="@+id/BT_valider"
         android:layout_marginRight="10dp"
         android:layout_marginEnd="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter une Image"
+        android:id="@+id/BT_ajouterUneImage"
+        android:layout_alignTop="@+id/TX_photo"
+        android:layout_alignRight="@+id/TX_captcha"
+        android:layout_alignEnd="@+id/TX_captcha" />
 
 
 </RelativeLayout>
