@@ -57,7 +57,7 @@
             android:layout_alignStart="@+id/TX_login"
             android:layout_below="@+id/TX_login"
             android:inputType="textEmailAddress"
-            android:maxLength="20" />
+            android:maxLength="255" />
 
         <EditText
             android:id="@+id/TF_passwd"

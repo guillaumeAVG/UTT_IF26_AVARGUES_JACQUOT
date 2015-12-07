@@ -4,6 +4,7 @@ package fr.utt.if26_avargues_jacquot.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
+
+import org.json.JSONException;
+
+import java.io.IOException;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 import fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivity;
@@ -29,7 +34,13 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
 
         switch (view.getId()) {
             case R.id.BT_validation:
-                onLoginButtonClick(view);
+                try {
+                    onLoginButtonClick(view);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.BT_noCompte:
                 onNewAccountClick(view);
@@ -38,15 +49,15 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         }
     }
 
-    public void onLoginButtonClick(View view) {
+    public void onLoginButtonClick(View view) throws IOException, JSONException {
         String STRING_login = TF_login.getText().toString();
         String STRING_passwd = TF_passwd.getText().toString();
         LoginService loginService = new LoginService();
-        if (loginService.validateLogin(STRING_login, STRING_passwd) == true) {
-            Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur le bouton Me. Login rentré :" + STRING_login  + ".", Toast.LENGTH_LONG).show();
-        } else {
+        //if (loginService.validateLogin(STRING_login, STRING_passwd) == true) {
+            Toast.makeText(getActivity().getApplicationContext(), loginService.validateLogin(STRING_login, STRING_passwd), Toast.LENGTH_LONG).show();
+        /*} else {
             Toast.makeText(getActivity().getApplicationContext(), "Erreur durant le login.", Toast.LENGTH_LONG).show();
-        }
+        }*/
     }
 
     public void onNewAccountClick(View view) {
