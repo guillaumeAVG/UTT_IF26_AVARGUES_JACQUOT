@@ -18,7 +18,6 @@ public class FiltreFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_filtres_carte, container, false);
-
         return rootView;
     }
     @Override

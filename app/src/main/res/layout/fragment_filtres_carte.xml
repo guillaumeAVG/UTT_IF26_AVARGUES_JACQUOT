@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#7cc0c6cd">
 
     <TextView
         android:id="@+id/articleListHeaderTextView"
@@ -10,12 +11,14 @@
         android:layout_height="60dp"
         android:text="Liste des bon plans"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#0585C4"
+        android:textColor="#f9f8ff"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:background="#c4d7ff"
-        android:gravity="center"/>
+        android:background="#a9c0ff"
+        android:gravity="center"
+        android:layout_marginBottom="5dp" />
 
-    <include layout="@layout/fragment_filtres_carte_content" android:layout_height="512dp" android:layout_width="360dp"
-        android:id="@+id/include"/>
+    <include layout="@layout/fragment_filtres_carte_content" android:layout_height="512dp" android:layout_width="401dp"
+        android:id="@+id/include"
+        android:layout_marginLeft="20dp" />
 </LinearLayout>
