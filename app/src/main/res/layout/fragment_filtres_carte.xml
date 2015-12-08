@@ -14,7 +14,7 @@
         android:textSize="14dp"
         android:textStyle="bold" />
     <ExpandableListView
-        android:id="@android:id/list"
+        android:id="@+id/filtresExpandableListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/articleListHeaderTextView"
