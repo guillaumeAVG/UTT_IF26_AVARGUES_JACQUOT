@@ -1,0 +1,215 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollerFiltres"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/CB_alimentations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Alimentations"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:id="@+id/CB_laveries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_alimentations"
+            android:checked="false"
+            android:text="Laveries" />
+
+        <CheckBox
+            android:id="@+id/CB_distributionsDeBillets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_laveries"
+            android:checked="false"
+            android:text="Distributions de billets" />
+
+        <CheckBox
+            android:id="@+id/CB_stationsEssences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_distributionsDeBillets"
+            android:checked="false"
+            android:text="Stations Essences" />
+
+        <CheckBox
+            android:id="@+id/CB_garages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_stationsEssences"
+            android:checked="false"
+            android:text="Garages" />
+
+        <CheckBox
+            android:id="@+id/CB_hopitaux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_garages"
+            android:checked="false"
+            android:text="Hopitaux" />
+
+        <CheckBox
+            android:id="@+id/CB_medecins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_hopitaux"
+            android:checked="false"
+            android:text="Médecins" />
+
+        <CheckBox
+            android:id="@+id/CB_pharmacies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_medecins"
+            android:checked="false"
+            android:text="Pharmacies" />
+
+        <CheckBox
+            android:id="@+id/CB_salleDeSport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_pharmacies"
+            android:checked="false"
+            android:text="Salles de sport" />
+
+        <CheckBox
+            android:id="@+id/CB_terrains"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_salleDeSport"
+            android:checked="false"
+            android:text="Terrains" />
+
+        <CheckBox
+            android:id="@+id/CB_stades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_terrains"
+            android:checked="false"
+            android:text="Stades" />
+
+        <CheckBox
+            android:id="@+id/CB_caf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_stades"
+            android:checked="false"
+            android:text="CAF" />
+
+        <CheckBox
+            android:id="@+id/CB_mairie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_caf"
+            android:checked="false"
+            android:text="Mairie" />
+
+        <CheckBox
+            android:id="@+id/CB_agencesDeTransports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_mairie"
+            android:checked="false"
+            android:text="Agences de transports" />
+
+        <CheckBox
+            android:id="@+id/CB_assuranceMaladieEtMutuelles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_agencesDeTransports"
+            android:checked="false"
+            android:text="Assurance maladie et mutuelles" />
+
+        <CheckBox
+            android:id="@+id/CB_emploi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_assuranceMaladieEtMutuelles"
+            android:checked="false"
+            android:text="Emploi" />
+
+        <CheckBox
+            android:id="@+id/CB_maisonDesEtudiants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_emploi"
+            android:checked="false"
+            android:text="Maison des étudiants" />
+
+        <CheckBox
+            android:id="@+id/CB_evenements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_maisonDesEtudiants"
+            android:checked="false"
+            android:text="Evènements" />
+
+        <CheckBox
+            android:id="@+id/CB_reductionsACourtTerme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_evenements"
+            android:checked="false"
+            android:text="Réductions à court terme" />
+
+        <CheckBox
+            android:id="@+id/CB_reductionsALongTerme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/CB_reductionsACourtTerme"
+            android:checked="false"
+            android:text="Réductions à long terme" />
+
+    </RelativeLayout>
+</ScrollView>

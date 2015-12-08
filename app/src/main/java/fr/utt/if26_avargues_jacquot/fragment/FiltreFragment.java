@@ -1,16 +1,12 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
-
-import fr.utt.if26_avargues_jacquot.activity.FiltreActivity;
 
 /**
  * Created by guillaume on 04/12/2015.
