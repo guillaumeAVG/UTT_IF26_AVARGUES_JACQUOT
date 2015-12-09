@@ -1,6 +1,5 @@
-package fr.utt.if26_avargues_jacquot.webservices;
+package fr.utt.if26_avargues_jacquot.services;
 
-import android.app.DownloadManager;
 import android.os.StrictMode;
 import android.util.Log;
 

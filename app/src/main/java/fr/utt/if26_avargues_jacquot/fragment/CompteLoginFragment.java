@@ -4,7 +4,6 @@ package fr.utt.if26_avargues_jacquot.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,8 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
-import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 import fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivity;
-import fr.utt.if26_avargues_jacquot.webservices.LoginService;
+import fr.utt.if26_avargues_jacquot.services.LoginService;
 
 /**
  * Created by guillaume on 26/11/2015.
