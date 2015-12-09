@@ -14,6 +14,8 @@ import android.app.Application;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 
+import fr.utt.if26_avargues_jacquot.activity.MainActivity;
+
 public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 
     private ArrayList<OverlayItem> overlayItemList = new ArrayList<OverlayItem>();
@@ -46,6 +48,17 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
     public int size() {
         // TODO Auto-generated method stub
         return overlayItemList.size();
+    }
+
+
+
+    protected boolean onSingleTapUpHelper(final int index, final OverlayItem item, final MapView mapView) {
+        //Toast.makeText(mContext, "Item " + index + " has been tapped!", Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.ma.getApplicationContext());
+        dialog.setTitle(item.getTitle());
+        dialog.setMessage(item.getSnippet());
+        dialog.show();
+        return true;
     }
 
 }

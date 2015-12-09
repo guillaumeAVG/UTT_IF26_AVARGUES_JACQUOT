@@ -3,6 +3,8 @@ package fr.utt.if26_avargues_jacquot.fragment;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +21,12 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 import fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity;
 import fr.utt.if26_avargues_jacquot.services.MyItemizedOverlay;
 
@@ -60,7 +67,17 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         MyItemizedOverlay myItemizedOverlay = new MyItemizedOverlay(marker, resourceProxy);
         map.getOverlays().add(myItemizedOverlay);
 
-        GeoPoint myPoint1 = new GeoPoint(48.3, 4.0833);
+        Geocoder geoCoder = new Geocoder(getContext(), Locale.getDefault());
+        List<Address> address = null;
+        try {
+            address = geoCoder.getFromLocationName("Universite de technologies de troyes, Troyes, France", 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double latitude = address.get(0).getLatitude();
+        double longitude = address.get(0).getLongitude();
+
+        GeoPoint myPoint1 = new GeoPoint(latitude, longitude);
         myItemizedOverlay.addItem(myPoint1, "myPoint1", "myPoint1");
         return rootView;
     }
