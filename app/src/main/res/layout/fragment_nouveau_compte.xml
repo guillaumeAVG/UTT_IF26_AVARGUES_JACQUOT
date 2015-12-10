@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/Scroller"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#7cc0c6cd">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -24,7 +25,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:text="Nom"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101" />
 
         <EditText
             android:id="@+id/editText"
@@ -45,7 +47,8 @@
             android:layout_below="@+id/editText"
             android:layout_marginTop="12dp"
             android:text="Prenom"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101" />
 
         <EditText
             android:id="@+id/editText2"
@@ -66,7 +69,8 @@
             android:layout_below="@+id/editText2"
             android:layout_marginTop="11dp"
             android:text="Date de naissance"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101" />
 
         <EditText
             android:id="@+id/editText3"
@@ -85,7 +89,8 @@
             android:layout_below="@+id/editText3"
             android:layout_marginTop="20dp"
             android:text="Adresse email"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101" />
 
         <EditText
             android:id="@+id/editText4"
@@ -106,7 +111,8 @@
             android:layout_below="@+id/editText4"
             android:layout_marginTop="15dp"
             android:text="Ecole"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101" />
 
         <RadioGroup
             android:id="@+id/radioGroup"

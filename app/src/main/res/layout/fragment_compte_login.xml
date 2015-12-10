@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#7cc0c6cd">
 
     <RelativeLayout
         android:id="@+id/fiche"
@@ -21,7 +22,8 @@
             android:layout_marginStart="34dp"
             android:layout_marginTop="28dp"
             android:text="Page de connexion"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/TX_login"
@@ -34,7 +36,8 @@
             android:layout_marginStart="55dp"
             android:layout_marginTop="49dp"
             android:text="Adresse e-mail"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101" />
 
         <TextView
             android:id="@+id/TX_motDePasse"
@@ -45,7 +48,8 @@
             android:layout_below="@+id/TX_login"
             android:layout_marginTop="82dp"
             android:text="Mot de passe"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101" />
 
         <EditText
             android:id="@+id/TF_login"

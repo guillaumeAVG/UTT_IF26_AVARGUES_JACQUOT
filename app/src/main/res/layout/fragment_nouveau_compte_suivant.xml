@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#7cc0c6cd">
 
     <TextView
         android:id="@+id/TX_photo"
@@ -13,7 +14,8 @@
         android:layout_marginStart="13dp"
         android:layout_marginTop="14dp"
         android:text="Photo"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#010101" />
 
     <TextView
         android:id="@+id/TX_telephone"
@@ -24,7 +26,8 @@
         android:layout_below="@+id/TX_photo"
         android:layout_marginTop="39dp"
         android:text="Téléphone"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#010101" />
 
     <EditText
         android:id="@+id/editText5"
@@ -45,7 +48,8 @@
         android:layout_below="@+id/editText5"
         android:layout_marginTop="23dp"
         android:text="Mot de passe"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#010101" />
 
     <EditText
         android:id="@+id/editText6"
@@ -66,7 +70,8 @@
         android:layout_below="@+id/editText6"
         android:layout_marginTop="16dp"
         android:text="Confirmation du mot de passe"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#010101" />
 
     <EditText
         android:id="@+id/editText7"
@@ -87,7 +92,8 @@
         android:layout_below="@+id/editText7"
         android:layout_marginTop="20dp"
         android:text="Veuillez saisir  les caractères  ci-contre"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#010101" />
 
     <TextView
         android:layout_width="wrap_content"
