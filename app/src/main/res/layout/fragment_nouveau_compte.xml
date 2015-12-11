@@ -154,23 +154,12 @@
                 android:text="EPF" />
         </RadioGroup>
 
-        <Button
-            android:id="@+id/BT_suivant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/radioGroup"
-            android:text="Suivant" />
-
-        <Button
-            android:id="@+id/BT_annuler"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/TX_typeDeBonPlan"
-            android:layout_toRightOf="@+id/TX_typeDeBonPlan"
-            android:text="Annuler" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/radioGroup">
+            <include layout="@layout/fragment_nouveau_compte_suivant"/>
+        </FrameLayout>
 
     </RelativeLayout>
 

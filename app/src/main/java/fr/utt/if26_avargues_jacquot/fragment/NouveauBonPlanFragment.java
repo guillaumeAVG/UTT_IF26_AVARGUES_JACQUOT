@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.example.guillaume.if26_avargues_jacquot.R;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
-import fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivitySuivant;
 
 /**
  * Created by guillaume on 05/12/2015.
