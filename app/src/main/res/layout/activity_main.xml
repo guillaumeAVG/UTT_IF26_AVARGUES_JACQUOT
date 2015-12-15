@@ -22,13 +22,6 @@
                 android:backgroundTint="@color/notification_color_fond"
                 android:src="@drawable/logo_application_toolbar"
                 android:paddingRight="170dp" />
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="55dp"
-                android:layout_height="46dp"
-                android:layout_gravity="right|top"
-                android:backgroundTint="@color/notification_color_fond"
-                android:src="@drawable/notification_32px" />
         </android.support.v7.widget.Toolbar>
 
 
