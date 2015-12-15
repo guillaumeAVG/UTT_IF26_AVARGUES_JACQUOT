@@ -13,10 +13,14 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/TX_ecole">
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+
+
 
             <RadioButton
-                android:id="@+id/CB_alimentations"
+                android:id="@+id/RB_alimentations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -27,15 +31,15 @@
                 android:buttonTint="#4e47ce"
                 android:checked="false"
                 android:text="Alimentations"
-                android:textColor="#4e47ce" />
+                android:textColor="#4e47ce"/>
 
             <RadioButton
-                android:id="@+id/CB_laveries"
+                android:id="@+id/RB_laveries"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_alimentations"
+                android:layout_below="@+id/RB_alimentations"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#4e47ce"
                 android:checked="false"
@@ -43,12 +47,12 @@
                 android:textColor="#4e47ce" />
 
             <RadioButton
-                android:id="@+id/CB_distributionsDeBillets"
+                android:id="@+id/RB_distributionsDeBillets"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_laveries"
+                android:layout_below="@+id/RB_laveries"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#4e47ce"
                 android:checked="false"
@@ -56,12 +60,12 @@
                 android:textColor="#4e47ce" />
 
             <RadioButton
-                android:id="@+id/CB_stationsEssences"
+                android:id="@+id/RB_stationsEssences"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_distributionsDeBillets"
+                android:layout_below="@+id/RB_distributionsDeBillets"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#4e47ce"
                 android:checked="false"
@@ -69,12 +73,12 @@
                 android:textColor="#4e47ce" />
 
             <RadioButton
-                android:id="@+id/CB_garages"
+                android:id="@+id/RB_garages"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_stationsEssences"
+                android:layout_below="@+id/RB_stationsEssences"
                 android:layout_marginBottom="40dp"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#4e47ce"
@@ -86,23 +90,23 @@
                 android:id="@+id/TX_sante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/CB_hopitaux"
-                android:layout_alignEnd="@+id/CB_hopitaux"
-                android:layout_alignRight="@+id/CB_hopitaux"
+                android:layout_above="@+id/RB_hopitaux"
+                android:layout_alignEnd="@+id/RB_hopitaux"
+                android:layout_alignRight="@+id/RB_hopitaux"
+                android:layout_marginLeft="10dp"
                 android:text="Santé"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#4ab255"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp" />
+                android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/CB_hopitaux"
+                android:id="@+id/RB_hopitaux"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_garages"
+                android:layout_below="@+id/RB_garages"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#4ab255"
                 android:checked="false"
@@ -110,12 +114,12 @@
                 android:textColor="#4ab255" />
 
             <RadioButton
-                android:id="@+id/CB_medecins"
+                android:id="@+id/RB_medecins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_hopitaux"
+                android:layout_below="@+id/RB_hopitaux"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#4ab255"
                 android:checked="false"
@@ -123,12 +127,12 @@
                 android:textColor="#4ab255" />
 
             <RadioButton
-                android:id="@+id/CB_pharmacies"
+                android:id="@+id/RB_pharmacies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_medecins"
+                android:layout_below="@+id/RB_medecins"
                 android:layout_marginBottom="40dp"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#4ab255"
@@ -143,16 +147,16 @@
                 android:layout_alignLeft="@+id/TX_sante"
                 android:layout_alignStart="@+id/TX_sante"
                 android:layout_below="@+id/IMG_pharmacies"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="0dp"
                 android:text="Sport"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ce50a5"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp" />
+                android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/CB_salleDeSport"
+                android:id="@+id/RB_salleDeSport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -166,12 +170,12 @@
                 android:textColor="#ce50a5" />
 
             <RadioButton
-                android:id="@+id/CB_terrains"
+                android:id="@+id/RB_terrains"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_salleDeSport"
+                android:layout_below="@+id/RB_salleDeSport"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ce50a5"
                 android:checked="false"
@@ -179,12 +183,12 @@
                 android:textColor="#ce50a5" />
 
             <RadioButton
-                android:id="@+id/CB_stades"
+                android:id="@+id/RB_stades"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_terrains"
+                android:layout_below="@+id/RB_terrains"
                 android:layout_marginBottom="40dp"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ce50a5"
@@ -196,23 +200,23 @@
                 android:id="@+id/TX_administrations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/CB_caf"
+                android:layout_above="@+id/RB_caf"
                 android:layout_alignLeft="@+id/TX_sport"
                 android:layout_alignStart="@+id/TX_sport"
+                android:layout_marginLeft="10dp"
                 android:text="Administrations"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ebb515"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp" />
+                android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/CB_caf"
+                android:id="@+id/RB_caf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_stades"
+                android:layout_below="@+id/RB_stades"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="0dp"
                 android:buttonTint="#ebb515"
@@ -221,12 +225,12 @@
                 android:textColor="#ebb515" />
 
             <RadioButton
-                android:id="@+id/CB_mairies"
+                android:id="@+id/RB_mairies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_caf"
+                android:layout_below="@+id/RB_caf"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ebb515"
                 android:checked="false"
@@ -234,12 +238,12 @@
                 android:textColor="#ebb515" />
 
             <RadioButton
-                android:id="@+id/CB_agencesDeTransports"
+                android:id="@+id/RB_agencesDeTransports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_mairies"
+                android:layout_below="@+id/RB_mairies"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ebb515"
                 android:checked="false"
@@ -247,12 +251,12 @@
                 android:textColor="#ebb515" />
 
             <RadioButton
-                android:id="@+id/CB_assuranceMaladieEtMutuelles"
+                android:id="@+id/RB_assuranceMaladieEtMutuelles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_agencesDeTransports"
+                android:layout_below="@+id/RB_agencesDeTransports"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ebb515"
                 android:checked="false"
@@ -260,12 +264,12 @@
                 android:textColor="#ebb515" />
 
             <RadioButton
-                android:id="@+id/CB_emploi"
+                android:id="@+id/RB_emploi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_assuranceMaladieEtMutuelles"
+                android:layout_below="@+id/RB_assuranceMaladieEtMutuelles"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ebb515"
                 android:checked="false"
@@ -273,12 +277,12 @@
                 android:textColor="#ebb515" />
 
             <RadioButton
-                android:id="@+id/CB_maisonDesEtudiants"
+                android:id="@+id/RB_maisonDesEtudiants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_emploi"
+                android:layout_below="@+id/RB_emploi"
                 android:layout_marginBottom="30dp"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ebb515"
@@ -293,13 +297,13 @@
                 android:layout_alignLeft="@+id/TX_administrations"
                 android:layout_alignStart="@+id/TX_administrations"
                 android:layout_below="@+id/IMG_maisonDesEtudiants"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:text="Bon plan"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ff010a"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TX_bonPlanEphemere"
@@ -308,16 +312,16 @@
                 android:layout_above="@+id/IMG_evenements"
                 android:layout_alignEnd="@+id/CB_emploi"
                 android:layout_alignRight="@+id/CB_emploi"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
                 android:text="Ephémère"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#ff583f"
                 android:textSize="15dp"
-                android:textStyle="bold|italic"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp" />
+                android:textStyle="bold|italic" />
 
             <RadioButton
-                android:id="@+id/CB_evenements"
+                android:id="@+id/RB_evenements"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -331,12 +335,12 @@
                 android:textColor="#ff583f" />
 
             <RadioButton
-                android:id="@+id/CB_reductionsACourtTerme"
+                android:id="@+id/RB_reductionsACourtTerme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_evenements"
+                android:layout_below="@+id/RB_evenements"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ff583f"
                 android:checked="false"
@@ -350,21 +354,21 @@
                 android:layout_above="@+id/IMG_reductionALongTerme"
                 android:layout_alignLeft="@+id/TX_bonPlanEphemere"
                 android:layout_alignStart="@+id/TX_bonPlanEphemere"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
                 android:text="Statique"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#c72b4c"
                 android:textSize="15dp"
-                android:textStyle="bold|italic"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp" />
+                android:textStyle="bold|italic" />
 
             <RadioButton
-                android:id="@+id/CB_reductionsALongTerme"
+                android:id="@+id/RB_reductionsALongTerme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/CB_reductionsACourtTerme"
+                android:layout_below="@+id/RB_reductionsACourtTerme"
                 android:layout_marginBottom="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="0dp"
@@ -378,15 +382,193 @@
             android:id="@+id/TX_commerces"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/TX_sante"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/TX_sante"
+            android:layout_marginLeft="10dp"
             android:text="Commerces"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#382bce"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp" />
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_alimentation"
+            android:src="@drawable/alimentation"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_laveries"
+            android:src="@drawable/laveries"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_distributeursDeBillets"
+            android:src="@drawable/distributeurs"
+            android:layout_marginTop="85dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_stationsEssences"
+            android:src="@drawable/stations_services"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_garages"
+            android:src="@drawable/garage"
+            android:layout_marginTop="155dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_hopitaux"
+            android:src="@drawable/hopital"
+            android:layout_marginTop="248dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_medecins"
+            android:src="@drawable/medecin"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_pharmacies"
+            android:src="@drawable/pharmacie"
+            android:layout_marginTop="310dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_salleDeSport"
+            android:src="@drawable/salle_de_sport"
+            android:layout_marginTop="410dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_terrains"
+            android:src="@drawable/terrain"
+            android:layout_marginTop="448dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_stades"
+            android:src="@drawable/stade"
+            android:layout_marginTop="477dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_caf"
+            android:src="@drawable/caf_jaune"
+            android:layout_marginTop="572dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_mairie"
+            android:src="@drawable/mairie"
+            android:layout_marginTop="605dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_agencesDeTransports"
+            android:src="@drawable/bus"
+            android:layout_marginTop="635dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_assurancesMaladieEtMutuelles"
+            android:src="@drawable/assurance_maladie"
+            android:layout_marginTop="665dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_emploi"
+            android:src="@drawable/emploi"
+            android:layout_marginTop="700dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_maisonDesEtudiants"
+            android:src="@drawable/maison_des_etudiants"
+            android:layout_marginTop="730dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_evenements"
+            android:src="@drawable/evenement_etudiant"
+            android:layout_marginTop="860dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_reductionsACourtTerme"
+            android:src="@drawable/court_terme_reduction"
+            android:layout_marginTop="890dp"
+            android:layout_marginLeft="260dp" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:id="@+id/IMG_reductionALongTerme"
+            android:src="@drawable/long_terme_reduction"
+            android:layout_marginTop="965dp"
+            android:layout_marginLeft="260dp" />
 
     </RelativeLayout>
 </ScrollView>
