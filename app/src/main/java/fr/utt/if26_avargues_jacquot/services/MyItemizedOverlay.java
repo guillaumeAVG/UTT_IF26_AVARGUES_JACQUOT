@@ -1,6 +1,8 @@
 package fr.utt.if26_avargues_jacquot.services;
 
-import java.util.ArrayList;
+import android.app.AlertDialog;
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 
 import org.osmdroid.ResourceProxy;
 import org.osmdroid.api.IMapView;
@@ -9,10 +11,7 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedOverlay;
 import org.osmdroid.views.overlay.OverlayItem;
 
-import android.app.AlertDialog;
-import android.app.Application;
-import android.graphics.Point;
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 
@@ -26,7 +25,7 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
         // TODO Auto-generated constructor stub
     }
 
-    public void addItem(GeoPoint p, String title, String snippet){
+    public void addItem(GeoPoint p, String title, String snippet) {
         OverlayItem newItem = new OverlayItem(title, snippet, p);
         overlayItemList.add(newItem);
         populate();
@@ -49,7 +48,6 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
         // TODO Auto-generated method stub
         return overlayItemList.size();
     }
-
 
 
     protected boolean onSingleTapUpHelper(final int index, final OverlayItem item, final MapView mapView) {

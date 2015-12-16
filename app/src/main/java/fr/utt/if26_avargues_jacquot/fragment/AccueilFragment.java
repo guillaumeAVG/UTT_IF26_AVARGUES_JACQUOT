@@ -13,9 +13,6 @@ import com.example.guillaume.if26_avargues_jacquot.R;
  * Created by guillaume on 26/11/2015.
  */
 public class AccueilFragment extends Fragment implements View.OnClickListener {
-    LayoutInflater inflater;
-    ViewGroup container;
-    Bundle savedInstanceState;
 
     @Override
     public void onClick(View view) {

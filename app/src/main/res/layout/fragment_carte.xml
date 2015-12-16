@@ -6,36 +6,38 @@
     android:weightSum="1">
 
     <!-- SlidingPanelUp for filters-->
-    <com.sothree.slidinguppanel.SlidingUpPanelLayout
-        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
         sothree:umanoPanelHeight="64dp"
-        sothree:umanoShadowHeight="4dp"
         sothree:umanoParallaxOffset="100dp"
-        sothree:umanoScrollableView="@+id/ScrollerFiltres">
+        sothree:umanoScrollableView="@+id/ScrollerFiltres"
+        sothree:umanoShadowHeight="4dp">
 
         <org.osmdroid.views.MapView
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"/>
+            android:gravity="center" />
 
 
-        <include layout="@layout/fragment_filtres_carte" android:layout_height="match_parent" android:layout_width="match_parent" />
-        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+        <include
+            layout="@layout/fragment_filtres_carte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
     <ImageButton
+        android:id="@+id/IMGB_ajouterBonPlan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/IMGB_ajouterBonPlan"
-        android:src="@drawable/add32"
-        android:backgroundTint="@color/add_fond"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@color/add_fond"
+        android:src="@drawable/add32" />
 
 
 </RelativeLayout>

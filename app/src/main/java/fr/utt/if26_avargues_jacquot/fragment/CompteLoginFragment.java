@@ -52,7 +52,7 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         String STRING_passwd = TF_passwd.getText().toString();
         LoginService loginService = new LoginService();
         //if (loginService.validateLogin(STRING_login, STRING_passwd) == true) {
-            Toast.makeText(getActivity().getApplicationContext(), loginService.validateLogin(STRING_login, STRING_passwd), Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity().getApplicationContext(), loginService.validateLogin(STRING_login, STRING_passwd), Toast.LENGTH_LONG).show();
         /*} else {
             Toast.makeText(getActivity().getApplicationContext(), "Erreur durant le login.", Toast.LENGTH_LONG).show();
         }*/

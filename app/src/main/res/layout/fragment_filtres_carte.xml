@@ -2,23 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#7cc0c6cd">
+    android:background="#7cc0c6cd"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/articleListHeaderTextView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:background="#a9c0ff"
+        android:gravity="center"
         android:text="Liste des bon plans"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#f9f8ff"
         android:textSize="25dp"
-        android:textStyle="bold"
-        android:background="#a9c0ff"
-        android:gravity="center"
-        android:layout_marginBottom="5dp" />
+        android:textStyle="bold" />
 
-    <include layout="@layout/fragment_filtres_carte_content" android:layout_height="512dp" android:layout_width="401dp"
+    <include
         android:id="@+id/include"
+        layout="@layout/content_filtres_carte"
+        android:layout_width="401dp"
+        android:layout_height="512dp"
         android:layout_marginLeft="20dp" />
 </LinearLayout>

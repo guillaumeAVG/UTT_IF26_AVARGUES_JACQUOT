@@ -53,7 +53,7 @@ public class LoginService {
 
         urlConnection.setDoOutput(true);
         OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
-        wr.write( params );
+        wr.write(params);
         wr.flush();
 
         InputStream is;
@@ -82,7 +82,7 @@ public class LoginService {
                 Log.d("Webservice error", messageResponse);
                 return messageResponse;
             case "logged in":
-                return "token:"+jsonResponse.getString("token");
+                return "token:" + jsonResponse.getString("token");
             default:
                 return "Undefined error";
         }

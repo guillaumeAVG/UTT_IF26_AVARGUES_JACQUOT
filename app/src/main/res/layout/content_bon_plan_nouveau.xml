@@ -11,12 +11,10 @@
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
-
-
+            android:layout_alignParentStart="true">
 
 
             <RadioButton
@@ -31,7 +29,7 @@
                 android:buttonTint="#4e47ce"
                 android:checked="false"
                 android:text="Alimentations"
-                android:textColor="#4e47ce"/>
+                android:textColor="#4e47ce" />
 
             <RadioButton
                 android:id="@+id/RB_laveries"
@@ -389,186 +387,206 @@
             android:textColor="#382bce"
             android:textSize="18dp"
             android:textStyle="bold" />
+
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
-            android:maxHeight="42dp"
             android:id="@+id/IMG_alimentation"
-            android:src="@drawable/alimentation"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/alimentation" />
+
+        <ImageView
             android:id="@+id/IMG_laveries"
-            android:src="@drawable/laveries"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="55dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/laveries" />
+
+        <ImageView
             android:id="@+id/IMG_distributeursDeBillets"
-            android:src="@drawable/distributeurs"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="85dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/distributeurs" />
+
+        <ImageView
             android:id="@+id/IMG_stationsEssences"
-            android:src="@drawable/stations_services"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="120dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/stations_services" />
+
+        <ImageView
             android:id="@+id/IMG_garages"
-            android:src="@drawable/garage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="155dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/garage" />
+
+        <ImageView
             android:id="@+id/IMG_hopitaux"
-            android:src="@drawable/hopital"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="248dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/hopital" />
+
+        <ImageView
             android:id="@+id/IMG_medecins"
-            android:src="@drawable/medecin"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="280dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/medecin" />
+
+        <ImageView
             android:id="@+id/IMG_pharmacies"
-            android:src="@drawable/pharmacie"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="310dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/pharmacie" />
+
+        <ImageView
             android:id="@+id/IMG_salleDeSport"
-            android:src="@drawable/salle_de_sport"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="410dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/salle_de_sport" />
+
+        <ImageView
             android:id="@+id/IMG_terrains"
-            android:src="@drawable/terrain"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="448dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/terrain" />
+
+        <ImageView
             android:id="@+id/IMG_stades"
-            android:src="@drawable/stade"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="477dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/stade" />
+
+        <ImageView
             android:id="@+id/IMG_caf"
-            android:src="@drawable/caf_jaune"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="572dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/caf_jaune" />
+
+        <ImageView
             android:id="@+id/IMG_mairie"
-            android:src="@drawable/mairie"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="605dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/mairie" />
+
+        <ImageView
             android:id="@+id/IMG_agencesDeTransports"
-            android:src="@drawable/bus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="635dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/bus" />
+
+        <ImageView
             android:id="@+id/IMG_assurancesMaladieEtMutuelles"
-            android:src="@drawable/assurance_maladie"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="665dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/assurance_maladie" />
+
+        <ImageView
             android:id="@+id/IMG_emploi"
-            android:src="@drawable/emploi"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="700dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/emploi" />
+
+        <ImageView
             android:id="@+id/IMG_maisonDesEtudiants"
-            android:src="@drawable/maison_des_etudiants"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="730dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/maison_des_etudiants" />
+
+        <ImageView
             android:id="@+id/IMG_evenements"
-            android:src="@drawable/evenement_etudiant"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="860dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:maxWidth="42dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/evenement_etudiant" />
+
+        <ImageView
             android:id="@+id/IMG_reductionsACourtTerme"
-            android:src="@drawable/court_terme_reduction"
-            android:layout_marginTop="890dp"
-            android:layout_marginLeft="260dp" />
-        <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:maxWidth="42dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="890dp"
             android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/court_terme_reduction" />
+
+        <ImageView
             android:id="@+id/IMG_reductionALongTerme"
-            android:src="@drawable/long_terme_reduction"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="965dp"
-            android:layout_marginLeft="260dp" />
+            android:maxHeight="42dp"
+            android:maxWidth="42dp"
+            android:src="@drawable/long_terme_reduction" />
 
     </RelativeLayout>
 </ScrollView>

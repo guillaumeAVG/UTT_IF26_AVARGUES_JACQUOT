@@ -9,7 +9,7 @@ import com.example.guillaume.if26_avargues_jacquot.R;
 /**
  * Created by guillaume on 05/12/2015.
  */
-public class NouveauBonPlanActivity extends AppCompatActivity{
+public class NouveauBonPlanActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

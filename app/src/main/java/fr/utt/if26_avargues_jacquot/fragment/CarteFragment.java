@@ -12,18 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 import com.example.guillaume.if26_avargues_jacquot.R;
+
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -42,7 +42,6 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
 
         View rootView = inflater.inflate(R.layout.fragment_carte, container, false);
         rootView.findViewById(R.id.IMGB_ajouterBonPlan).setOnClickListener(this);
-        // rootView.findViewById(R.id.IMGB_filtre).setOnClickListener(this);
         MapView map = (MapView) rootView.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPQUESTOSM);
         map.setBuiltInZoomControls(true);
@@ -99,12 +98,6 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), NouveauBonPlanActivity.class);
                 startActivity(intent);
                 break;
-           /* case R.id.IMGB_filtre:
-
-                // On met en place le passage entre les deux activités sur ce Listener
-                Intent intent2 = new Intent(getActivity(), FiltreActivity.class);
-                startActivity(intent2);
-                break;*/
         }
 
     }

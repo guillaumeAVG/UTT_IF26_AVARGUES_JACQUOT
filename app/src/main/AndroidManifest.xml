@@ -15,8 +15,7 @@
         android:icon="@drawable/application_logo"
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme">
-        <activity
-            android:name="fr.utt.if26_avargues_jacquot.activity.MainActivity">
+        <activity android:name="fr.utt.if26_avargues_jacquot.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,10 +29,6 @@
         <activity
             android:name="fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity"
             android:label="@string/title_activity_nouveau_bon_plan"
-            android:theme="@style/MyMaterialTheme"></activity>
-        <activity
-            android:name="fr.utt.if26_avargues_jacquot.activity.FiltreActivity"
-            android:label="@string/title_activity_filtre"
             android:theme="@style/MyMaterialTheme"></activity>
     </application>
 

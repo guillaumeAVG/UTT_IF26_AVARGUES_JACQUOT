@@ -95,47 +95,47 @@
         android:textColor="#010101" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Insertion du captcha"
         android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/TX_captcha"
+        android:layout_toEndOf="@+id/textView2"
         android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:text="Insertion du captcha"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Valider"
         android:id="@+id/BT_valider"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="17dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginTop="11dp" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Annuler"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="11dp"
+        android:text="Valider" />
+
+    <Button
         android:id="@+id/BT_annuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/BT_valider"
         android:layout_alignBottom="@+id/BT_valider"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:layout_toLeftOf="@+id/BT_valider"
         android:layout_toStartOf="@+id/BT_valider"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp" />
+        android:text="Annuler" />
 
     <Button
+        android:id="@+id/BT_ajouterUneImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ajouter une Image"
-        android:id="@+id/BT_ajouterUneImage"
-        android:layout_alignTop="@+id/TX_photo"
+        android:layout_alignEnd="@+id/TX_captcha"
         android:layout_alignRight="@+id/TX_captcha"
-        android:layout_alignEnd="@+id/TX_captcha" />
+        android:layout_alignTop="@+id/TX_photo"
+        android:text="Ajouter une Image" />
 
 
 </RelativeLayout>
