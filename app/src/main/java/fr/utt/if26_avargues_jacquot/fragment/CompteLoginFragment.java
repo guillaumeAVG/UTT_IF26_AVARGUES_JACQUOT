@@ -1,9 +1,12 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +16,10 @@ import android.widget.Toast;
 import com.example.guillaume.if26_avargues_jacquot.R;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Set;
 
 import fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivity;
 import fr.utt.if26_avargues_jacquot.services.LoginService;
@@ -51,11 +56,27 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         String STRING_login = TF_login.getText().toString();
         String STRING_passwd = TF_passwd.getText().toString();
         LoginService loginService = new LoginService();
-        //if (loginService.validateLogin(STRING_login, STRING_passwd) == true) {
-        Toast.makeText(getActivity().getApplicationContext(), loginService.validateLogin(STRING_login, STRING_passwd), Toast.LENGTH_LONG).show();
-        /*} else {
-            Toast.makeText(getActivity().getApplicationContext(), "Erreur durant le login.", Toast.LENGTH_LONG).show();
-        }*/
+        String loginServiceResponse = "";
+        loginServiceResponse = loginService.validateLogin(STRING_login, STRING_passwd);
+        switch(loginServiceResponse) {
+            case "":
+            case "Internal error":
+            case "Undefined error":
+                Toast.makeText(getActivity().getApplicationContext(), "Error. Please try again", Toast.LENGTH_LONG).show();
+                break;
+            case "Bad password":
+            case "Not match":
+            case "No valid email":
+                Toast.makeText(getActivity().getApplicationContext(), "Erreur d'identifiant ou de mot de passe", Toast.LENGTH_LONG).show();
+                break;
+            case "Success":
+                SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
+                String token = settings.getString("token", "");
+                Toast.makeText(getActivity().getApplicationContext(), token, Toast.LENGTH_LONG).show();
+                break;
+            default:
+                Toast.makeText(getActivity().getApplicationContext(), "Erreur inconue", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void onNewAccountClick(View view) {

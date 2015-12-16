@@ -1,5 +1,7 @@
 package fr.utt.if26_avargues_jacquot.services;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.util.Log;
 
@@ -13,6 +15,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+
+import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 
 /**
  * Created by EtienneJ on 27/11/2015.
@@ -39,17 +43,6 @@ public class LoginService {
 
         params += "&" + URLEncoder.encode("passwd", "UTF-8") + "="
                 + URLEncoder.encode(passwd, "UTF-8");
-
-        Log.d("[DEBUG]", params);
-        /*byte[] postData = URLEncoder.encode(params, "UTF-8" ).getBytes();
-        urlConnection.setDoOutput(true);
-        urlConnection.setRequestMethod("POST");
-        urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        urlConnection.setRequestProperty("Content-Length", Integer.toString(postData.length));
-
-        urlConnection.getOutputStream().write(postData);
-        urlConnection.getOutputStream().close();
-        urlConnection.getResponseCode();*/
 
         urlConnection.setDoOutput(true);
         OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
@@ -79,10 +72,19 @@ public class LoginService {
             case "Bad password":
             case "Not match":
             case "No valid email":
-                Log.d("Webservice error", messageResponse);
                 return messageResponse;
-            case "logged in":
-                return "token:" + jsonResponse.getString("token");
+            case "Success":
+            case "Already registered":
+                MainActivity main = new MainActivity();
+                SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = settings.edit();
+
+                editor.remove("token");
+                editor.apply();
+                editor.putString("token", jsonResponse.getString("token"));
+                editor.apply();
+
+                return "Success";
             default:
                 return "Undefined error";
         }
