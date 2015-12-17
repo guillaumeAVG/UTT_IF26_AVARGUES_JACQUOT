@@ -12,16 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.guillaume.if26_avargues_jacquot.R;
-
 import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-import java.util.Set;
+import java.net.MalformedURLException;
 
 import fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivity;
+import fr.utt.if26_avargues_jacquot.services.CheckTokenService;
 import fr.utt.if26_avargues_jacquot.services.LoginService;
 
 /**
@@ -56,7 +53,7 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         String STRING_login = TF_login.getText().toString();
         String STRING_passwd = TF_passwd.getText().toString();
         LoginService loginService = new LoginService();
-        String loginServiceResponse = "";
+        String loginServiceResponse;
         loginServiceResponse = loginService.validateLogin(STRING_login, STRING_passwd);
         switch(loginServiceResponse) {
             case "":
@@ -72,7 +69,6 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
             case "Success":
                 SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
                 String token = settings.getString("token", "");
-                Toast.makeText(getActivity().getApplicationContext(), token, Toast.LENGTH_LONG).show();
                 break;
             default:
                 Toast.makeText(getActivity().getApplicationContext(), "Erreur inconue", Toast.LENGTH_LONG).show();
@@ -86,13 +82,44 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_compte_login, container, false);
-        //On récupere la vue souhaitée et on lui affecte le Listener
-        view.findViewById(R.id.BT_validation).setOnClickListener(this);
-        view.findViewById(R.id.BT_noCompte).setOnClickListener(this);
 
-        TF_login = (EditText) view.findViewById(R.id.TF_login);
-        TF_passwd = (EditText) view.findViewById(R.id.TF_passwd);
+
+        CheckTokenService cts = null;
+        try {
+            cts = new CheckTokenService();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+
+        SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
+        String token = settings.getString("token", "");
+
+        Toast.makeText(getActivity().getApplicationContext(), token, Toast.LENGTH_LONG).show();
+
+
+        assert cts != null;
+        Boolean checkToken = false;
+        try {
+            checkToken = cts.validateToken(token);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        View view;
+
+        if(checkToken) view = inflater.inflate(R.layout.fragment_compte_connecte, container, false);
+        else {
+            view = inflater.inflate(R.layout.fragment_compte_login, container, false);
+            //On récupere la vue souhaitée et on lui affecte le Listener
+            view.findViewById(R.id.BT_validation).setOnClickListener(this);
+            view.findViewById(R.id.BT_noCompte).setOnClickListener(this);
+
+            TF_login = (EditText) view.findViewById(R.id.TF_login);
+            TF_passwd = (EditText) view.findViewById(R.id.TF_passwd);
+        }
+
         return view;
     }
 }
