@@ -3,6 +3,9 @@ package fr.utt.if26_avargues_jacquot.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
@@ -17,6 +20,5 @@ public class NouveauBonPlanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nouveau_bon_plan);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 }
