@@ -15,32 +15,55 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Date;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 
 /**
- * Created by EtienneJ on 27/11/2015.
+ * Created by EtienneJ on 18/12/2015.
  */
-public class LoginService {
+public class addBonPlanService {
 
     protected final URL urlToRequest;
 
-    public LoginService() throws MalformedURLException {
+    public addBonPlanService() throws MalformedURLException {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/login.php");
+        this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/addBonPlan.php");
     }
 
 
-    public String validateLogin(String user, String passwd) throws IOException, JSONException {
+    public String addBonPlan(String token, String nom, String adresse, String description, String type, Float longitude,
+                             Float latitude, Date dateDebut, Date dateFin) throws IOException, JSONException {
 
         HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();
 
-        String params = URLEncoder.encode("email", "UTF-8")
-                + "=" + URLEncoder.encode(user, "UTF-8");
+        String params = URLEncoder.encode("token", "UTF-8")
+                + "=" + URLEncoder.encode(token, "UTF-8");
 
-        params += "&" + URLEncoder.encode("passwd", "UTF-8") + "="
-                + URLEncoder.encode(passwd, "UTF-8");
+        params += "&" + URLEncoder.encode("nom", "UTF-8") + "="
+                + URLEncoder.encode(nom, "UTF-8");
+
+        params += "&" + URLEncoder.encode("adresse", "UTF-8") + "="
+                + URLEncoder.encode(adresse, "UTF-8");
+
+        params += "&" + URLEncoder.encode("description", "UTF-8") + "="
+                + URLEncoder.encode(description, "UTF-8");
+
+        params += "&" + URLEncoder.encode("type", "UTF-8") + "="
+                + URLEncoder.encode(type, "UTF-8");
+
+        params += "&" + URLEncoder.encode("longitude", "UTF-8") + "="
+                + URLEncoder.encode(longitude.toString(), "UTF-8");
+
+        params += "&" + URLEncoder.encode("latitude", "UTF-8") + "="
+                + URLEncoder.encode(latitude.toString(), "UTF-8");
+
+        params += "&" + URLEncoder.encode("dateDebut", "UTF-8") + "="
+                + URLEncoder.encode(dateDebut.toString(), "UTF-8");
+
+        params += "&" + URLEncoder.encode("dateFin", "UTF-8") + "="
+                + URLEncoder.encode(dateFin.toString(), "UTF-8");
 
         urlConnection.setDoOutput(true);
         OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
