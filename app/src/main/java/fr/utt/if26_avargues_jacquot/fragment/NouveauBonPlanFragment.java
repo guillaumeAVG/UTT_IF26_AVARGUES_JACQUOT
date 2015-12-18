@@ -53,6 +53,7 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
                     e.printStackTrace();
                 }
 
+                if(addAction)
 
 
                 break;
@@ -77,12 +78,16 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
         if(STRING_adresse != null && STRING_description != null && STRING_nom != null) {
             setTypeBonPlan();
             if (type != "undefined") {
-                //TODO Récupérer les vrai dates à partir du formualaire
+                //TODO Récupérer les vrai dates à partir du formulaire
                 String dateDebut = "18-12-2015";
                 String dateFin = "24-01-2016";
                 AddBonPlanService addBonPlanService = new AddBonPlanService();
                 String response = addBonPlanService.addBonPlan(token, STRING_nom, STRING_adresse, STRING_description, type, dateDebut, dateFin);
                 if(response == "Internal error" ||response == "Undefined error") {
+                    return false;
+                }
+                else if(response == "Address error") {
+                    Toast.makeText(getActivity().getApplicationContext(), "Erreur. Veuillez vérifier l'adresse du bon plan.", Toast.LENGTH_LONG).show();
                     return false;
                 }
                 else return true;
