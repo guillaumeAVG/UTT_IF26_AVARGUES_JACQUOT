@@ -74,7 +74,7 @@ public class LoginService {
             case "Success":
             case "Already registered":
                 MainActivity main = new MainActivity();
-                SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
+                SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", 0);
                 SharedPreferences.Editor editor = settings.edit();
 
                 editor.remove("token");

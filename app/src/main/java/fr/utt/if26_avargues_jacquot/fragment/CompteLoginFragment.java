@@ -67,7 +67,7 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
                 Toast.makeText(getActivity().getApplicationContext(), "Erreur d'identifiant ou de mot de passe", Toast.LENGTH_LONG).show();
                 break;
             case "Success":
-                SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
+                SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
                 String token = settings.getString("token", "");
                 break;
             default:
@@ -81,10 +81,8 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
     }
 
     public String choiceView() throws IOException, JSONException {
-        SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
+        SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
         String token = settings.getString("token", "");
-
-        Toast.makeText(getActivity().getApplicationContext(), token, Toast.LENGTH_LONG).show();
 
         CheckTokenService cts = new CheckTokenService();
         Boolean checkToken = cts.validateToken(token);
@@ -123,4 +121,5 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
 
         return view;
     }
+
 }

@@ -18,11 +18,17 @@ import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
+import org.json.JSONException;
+
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
+import fr.utt.if26_avargues_jacquot.services.AddBonPlanService;
 
 /**
  * Created by guillaume on 05/12/2015.
@@ -38,10 +44,17 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.BT_valider:
+                Boolean addAction = false;
+                try {
+                   addAction  = onValiderAction();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
 
 
-                Toast.makeText(getActivity().getApplicationContext(), "Appui sur bouton valider.", Toast.LENGTH_LONG).show();
                 break;
 
             case R.id.BT_annuler:
@@ -52,18 +65,27 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
     }
 
     @TargetApi(Build.VERSION_CODES.M)
-    public boolean onValiderAction() {
+    public boolean onValiderAction() throws IOException, JSONException {
         String STRING_nom = TF_nom.getText().toString();
         String STRING_description = TF_description.getText().toString();
         String STRING_adresse = TF_adresse.getText().toString();
 
-        SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
+        MainActivity main = new MainActivity();
+        SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", 0);
         String token = settings.getString("token", "");
 
         if(STRING_adresse != null && STRING_description != null && STRING_nom != null) {
             setTypeBonPlan();
             if (type != "undefined") {
-                return true;
+                //TODO Récupérer les vrai dates à partir du formualaire
+                String dateDebut = "18-12-2015";
+                String dateFin = "24-01-2016";
+                AddBonPlanService addBonPlanService = new AddBonPlanService();
+                String response = addBonPlanService.addBonPlan(token, STRING_nom, STRING_adresse, STRING_description, type, dateDebut, dateFin);
+                if(response == "Internal error" ||response == "Undefined error") {
+                    return false;
+                }
+                else return true;
             }
             else return false;
         }
