@@ -86,25 +86,17 @@ public class addBonPlanService {
 
         switch (messageResponse) {
             case "No POST":
-            case "Missing arguments":
-            case "No valid ipaddress":
+            case "No token gived":
+            case "Invalid IP":
+            case "Couldn't connect to mongodb, is the \"mongo\" process running?":
+            case "Missing params":
                 Log.d("Webservice error", messageResponse);
                 return "Internal error";
-            case "Bad password":
-            case "Not match":
-            case "No valid email":
+            case "Invalid token":
+            case "Bad date format":
+            case "Bad format":
                 return messageResponse;
             case "Success":
-            case "Already registered":
-                MainActivity main = new MainActivity();
-                SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = settings.edit();
-
-                editor.remove("token");
-                editor.apply();
-                editor.putString("token", jsonResponse.getString("token"));
-                editor.apply();
-
                 return "Success";
             default:
                 return "Undefined error";
