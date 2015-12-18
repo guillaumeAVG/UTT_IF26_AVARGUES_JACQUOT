@@ -2,6 +2,8 @@ package fr.utt.if26_avargues_jacquot.services;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.StrictMode;
 import android.util.Log;
 
@@ -16,6 +18,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 
@@ -25,6 +29,8 @@ import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 public class addBonPlanService {
 
     protected final URL urlToRequest;
+    protected double Longitude;
+    protected double Latitude;
 
     public addBonPlanService() throws MalformedURLException {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -33,8 +39,7 @@ public class addBonPlanService {
     }
 
 
-    public String addBonPlan(String token, String nom, String adresse, String description, String type, Float longitude,
-                             Float latitude, Date dateDebut, Date dateFin) throws IOException, JSONException {
+    public String addBonPlan(String token, String nom, String adresse, String description, String type, Date dateDebut, Date dateFin) throws IOException, JSONException {
 
         HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();
 
@@ -53,11 +58,12 @@ public class addBonPlanService {
         params += "&" + URLEncoder.encode("type", "UTF-8") + "="
                 + URLEncoder.encode(type, "UTF-8");
 
+
         params += "&" + URLEncoder.encode("longitude", "UTF-8") + "="
-                + URLEncoder.encode(longitude.toString(), "UTF-8");
+                + URLEncoder.encode(String.valueOf(Longitude), "UTF-8");
 
         params += "&" + URLEncoder.encode("latitude", "UTF-8") + "="
-                + URLEncoder.encode(latitude.toString(), "UTF-8");
+                + URLEncoder.encode(String.valueOf(Latitude), "UTF-8");
 
         params += "&" + URLEncoder.encode("dateDebut", "UTF-8") + "="
                 + URLEncoder.encode(dateDebut.toString(), "UTF-8");
@@ -101,6 +107,22 @@ public class addBonPlanService {
             default:
                 return "Undefined error";
         }
+    }
+
+    public boolean setGeoPoint(String adresse) {
+        MainActivity main = new MainActivity();
+        Geocoder geoCoder = new Geocoder(main.ma.getApplicationContext(), Locale.getDefault());
+        List<Address> address = null;
+        try {
+            address = geoCoder.getFromLocationName(adresse+", France", 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        Latitude = address.get(0).getLatitude();
+        Longitude = address.get(0).getLongitude();
+
+        return true;
     }
 
 }
