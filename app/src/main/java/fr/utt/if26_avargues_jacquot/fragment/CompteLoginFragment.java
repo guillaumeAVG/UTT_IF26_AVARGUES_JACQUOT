@@ -80,36 +80,37 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         startActivity(intent);
     }
 
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
-        CheckTokenService cts = null;
-        try {
-            cts = new CheckTokenService();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-
+    public String choiceView() throws IOException, JSONException {
         SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", Context.MODE_PRIVATE);
         String token = settings.getString("token", "");
 
         Toast.makeText(getActivity().getApplicationContext(), token, Toast.LENGTH_LONG).show();
 
+        CheckTokenService cts = new CheckTokenService();
+        Boolean checkToken = cts.validateToken(token);
 
-        assert cts != null;
-        Boolean checkToken = false;
+        if(checkToken) {
+            return "connected";
+        }
+        else {
+            return "login";
+        }
+    }
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        String choice = null;
         try {
-            checkToken = cts.validateToken(token);
+            choice = choiceView();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         View view;
 
-        if(checkToken) view = inflater.inflate(R.layout.fragment_compte_connecte, container, false);
+        if(choice == "connected") view = inflater.inflate(R.layout.fragment_compte_connecte, container, false);
         else {
             view = inflater.inflate(R.layout.fragment_compte_login, container, false);
             //On récupere la vue souhaitée et on lui affecte le Listener
