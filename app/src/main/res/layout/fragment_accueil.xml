@@ -1,18 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir le fragment de l'accueil de l'application.
+   Dans ce fichier XML on définit un FrameLayout avec des LinearLayout.
+   --><!--
+   On créé donc le FrameLayout
+   -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".controller.AccueilFragment">
 
-
+    <!--
+          Ensuite le LinearLayout
+          -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal|top"
         android:orientation="vertical"
         android:weightSum="1">
-
+        <!--
+              Après on met le texte qui définit le mode de bon plan
+              -->
         <TextView
             android:id="@+id/TX_nouveaute"
             android:layout_width="match_parent"
@@ -21,7 +30,9 @@
             android:text="Nouveauté"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold" />
-
+        <!--
+                  Puis un autre LinearLayout
+                  -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +40,9 @@
             android:layout_marginRight="10dp"
             android:orientation="horizontal"
             android:weightSum="1">
-
+            <!--
+                     On met en place un ImageButton pour chaque bon plan. On pourra cliquer sur ce bon plan.
+                      -->
             <ImageButton
                 android:id="@+id/IMGB_nouveaute1"
                 android:layout_width="wrap_content"
@@ -64,7 +77,9 @@
             android:layout_marginBottom="15dp"
             android:layout_weight="0.03"
             android:orientation="horizontal">
-
+            <!--
+                      On ajoute le texte en bas de chaque icone cliquante
+                      -->
             <TextView
                 android:id="@+id/TX_nouveaute1"
                 android:layout_width="wrap_content"

@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir le fragment du filtre de la carte.
+   --><!--
+   On créé un LinearLayout
+   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7cc0c6cd"
     android:orientation="vertical">
-
+    <!--
+       On ajoute un TextView pour dire à l'utilsateur qu'il y a une liste de bon plans.
+       -->
     <TextView
         android:id="@+id/articleListHeaderTextView"
         android:layout_width="match_parent"
@@ -17,7 +23,9 @@
         android:textColor="#f9f8ff"
         android:textSize="25dp"
         android:textStyle="bold" />
-
+    <!--
+       On inclus le contenu du filtre de la carte (le XML nommé content_filtre_carte)
+       -->
     <include
         android:id="@+id/include"
         layout="@layout/content_filtres_carte"

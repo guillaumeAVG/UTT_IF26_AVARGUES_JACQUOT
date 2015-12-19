@@ -1,3 +1,6 @@
+<!--
+          Dans ce XML on définit le style
+          -->
 <resources>
 
     <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">

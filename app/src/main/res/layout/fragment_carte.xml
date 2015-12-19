@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir le fragment de l'affichage de la carte.
+   Dans ce fichier XML on définit un RelativeLayout.
+   --><!--
+   On créé donc le RelativeLayout
+   -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1">
 
-    <!-- SlidingPanelUp for filters-->
+    <!--
+      On met en place le SlidingPanelUp pour créé en bas de l'écran la partie filtre de bon plan
+      -->
     <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
@@ -15,20 +22,25 @@
         sothree:umanoParallaxOffset="100dp"
         sothree:umanoScrollableView="@+id/ScrollerFiltres"
         sothree:umanoShadowHeight="4dp">
-
+        <!--
+           On créé une MapView pour afficher OpenStreetMap
+           -->
         <org.osmdroid.views.MapView
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center" />
-
-
+        <!--
+           On inclut dans le filtre le fragment_filtres_carte qui va permettre de sélectionner les bons plans a afficher
+           -->
         <include
             layout="@layout/fragment_filtres_carte"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
-
+    <!--
+    On ajoute une ImageButton. On peut cliquer sur ce bouton. Il va servir pour l'ajout d'un nouveau bon plan.
+    -->
     <ImageButton
         android:id="@+id/IMGB_ajouterBonPlan"
         android:layout_width="wrap_content"

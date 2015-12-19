@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir lorsqu'on consulte un bon plan.
+   --><!--
+   On créé un LinearLayout
+   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +25,9 @@
             android:layout_below="@+id/nomBonPlan"
             android:paddingLeft="10dp"
             android:paddingRight="10dp" />
-
+        <!--
+           On créé des TextView pour transmettre des informations sur le bon plan
+           -->
         <TextView
             android:id="@+id/nomBonPlan"
             android:layout_width="wrap_content"
@@ -268,7 +274,9 @@
             android:paddingRight="10dp"
             android:text="C'est un très bon magasin."
             android:textAppearance="?android:attr/textAppearanceSmall" />
-
+        <!--
+          On met en place des ImageView pour que l'utilisateur like ou dislike le commentaire de quelqu'un
+          -->
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"

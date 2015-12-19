@@ -1,17 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir l'écran lorsque l'utilsiteur veut se connecter.
+   --><!--
+   On créé un LinearLayout ainsi qu'un RelativeLayout
+   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FragmentCompteLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7cc0c6cd"
-    android:weightSum="1"
-    android:id="@+id/FragmentCompteLogin">
+    android:weightSum="1">
 
     <RelativeLayout
         android:id="@+id/fiche"
         android:layout_width="match_parent"
         android:layout_height="641dp">
 
-
+        <!--
+       On ajoute un TextView pour dire à l'utilisateur quelles informations on veut avoir
+       -->
         <TextView
             android:id="@+id/TX_pageDeConnexion"
             android:layout_width="wrap_content"
@@ -51,7 +57,10 @@
             android:text="Mot de passe"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101" />
-
+        <!--
+           On créé deux EditText. Un pour le Login et l'autre pour le mot de passe.
+           Grâce à cela l'utilisateur pourra rentrer ses informations pour s'authentifier.
+           -->
         <EditText
             android:id="@+id/TF_login"
             android:layout_width="wrap_content"
@@ -74,7 +83,9 @@
             android:ems="10"
             android:inputType="textPassword"
             android:maxLength="20" />
-
+        <!--
+           On met en place deux boutons. Un pour que l'utilisateur se connecte et l'autre pour dire à l'utilisateur de créer un nouveau compte
+           -->
         <Button
             android:id="@+id/BT_validation"
             android:layout_width="wrap_content"

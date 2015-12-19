@@ -1,3 +1,8 @@
+<!--
+Ce XML permet de définir le fragment lorsqu'on ajoute un nouveau bon plan.
+  --><!--
+   On créé un ScrollView avec un RelativeLayout
+   -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/Scroller"
     android:layout_width="match_parent"
@@ -15,7 +20,9 @@
         tools:context="fr.utt.if26_avargues_jacquot.fragment.NouveauCompteActivityFragment"
         tools:showIn="@layout/activity_nouveau_compte">
 
-
+        <!--
+           On met en place du texte pour signaler à l'utilisateur de quelles informations on a besoin
+           -->
         <TextView
             android:id="@+id/TX_nomDuBonPlan"
             android:layout_width="wrap_content"
@@ -52,7 +59,9 @@
             android:textColor="#010101"
             android:textStyle="bold" />
 
-
+        <!--
+           On ajoute des EditText pour que l'utilisateur donne des informations sur le bon plan
+           -->
         <EditText
             android:id="@+id/TF_nomBP"
             android:layout_width="wrap_content"
@@ -69,11 +78,11 @@
             android:id="@+id/TF_adresseBP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPostalAddress"
-            android:layout_below="@+id/TX_adresseDuBonPlan"
+            android:layout_alignEnd="@+id/TF_descriptionBP"
             android:layout_alignRight="@+id/TF_descriptionBP"
-            android:layout_alignEnd="@+id/TF_descriptionBP" />
+            android:layout_below="@+id/TX_adresseDuBonPlan"
+            android:ems="10"
+            android:inputType="textPostalAddress" />
 
         <EditText
             android:id="@+id/TF_descriptionBP"
@@ -85,7 +94,9 @@
             android:layout_marginTop="21dp"
             android:ems="10"
             android:inputType="textMultiLine" />
-
+        <!--
+           On créé un FrameLayout pour inclure le contenu des différents bons plans.
+           -->
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
@@ -105,7 +116,9 @@
                 android:layout_below="@+id/TF_descriptionBP"
                 android:layout_gravity="left|bottom"
                 android:layout_marginTop="20dp">
-
+                <!--
+                   On ajoute des boutons pour soit valider soit annuler la création d'un bon plan
+                   -->
                 <Button
                     android:id="@+id/BT_annuler"
                     android:layout_width="wrap_content"
@@ -141,46 +154,46 @@
             android:id="@+id/TX_dateDebutValidite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/TX_descriptionDuBonPlan"
             android:layout_marginTop="60dp"
             android:text="Date de début de validité"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101"
-            android:textStyle="bold"
-            android:layout_below="@+id/TX_descriptionDuBonPlan"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/editText8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:id="@+id/editText8"
             android:layout_below="@+id/TX_dateDebutValidite"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="date" />
 
         <TextView
             android:id="@+id/TX_dateDeFinValidite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText8"
             android:layout_marginTop="19dp"
             android:text="Date de fin de validité"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101"
-            android:textStyle="bold"
-            android:layout_below="@+id/editText8"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/editText9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:id="@+id/editText9"
-            android:layout_below="@+id/TX_dateDeFinValidite"
             android:layout_alignLeft="@+id/editText8"
-            android:layout_alignStart="@+id/editText8" />
+            android:layout_alignStart="@+id/editText8"
+            android:layout_below="@+id/TX_dateDeFinValidite"
+            android:ems="10"
+            android:inputType="date" />
 
     </RelativeLayout>
 

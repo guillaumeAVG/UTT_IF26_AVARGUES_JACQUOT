@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir le fragment lorsque l'utilisateur est connecté.
+   --><!--
+   On créé le LinearLayout puis un RelativeLayout
+   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +12,9 @@
         android:id="@+id/fiche"
         android:layout_width="match_parent"
         android:layout_height="641dp">
-
+        <!--
+           On ajoute un TextView pour permettre d'afficher du texte à l'utilisateur connecté
+           -->
         <TextView
             android:id="@+id/TX_nomCompte"
             android:layout_width="wrap_content"
@@ -22,7 +28,9 @@
             android:text="Jean Dupont"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-
+        <!--
+                   On met en place l'image de profil de l'utilisateur
+                   -->
         <ImageView
             android:id="@+id/IMG_iconeUtilisateur"
             android:layout_width="wrap_content"
@@ -77,5 +85,17 @@
             android:maxHeight="220dp"
             android:scaleType="fitCenter"
             android:src="@drawable/line_divider" />
+        <!--
+                   On créé un bouton pour faire déconnecter l'utlisateur
+                   -->
+        <Button
+            android:id="@+id/BT_deconnexion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/IMG_iconeUtilisateur"
+            android:layout_alignRight="@+id/IMG_iconeUtilisateur"
+            android:layout_below="@+id/TX_texteDescriptionUtilisateur"
+            android:layout_marginTop="46dp"
+            android:text="Deconnexion" />
     </RelativeLayout>
 </LinearLayout>

@@ -1,19 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+          Dans ce XML on définit les couleurs de l'application
+          -->
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="textColorPrimary">#FFFFFF</color>
-    <color name="windowBackground">#FFFFFF</color>
-    <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#ff5b60</color>
     <color name="notification_color_fond">#3F51B5</color>
     <color name="image_accueil_fond">#7cc0c6cd</color>
-    <color name="filtersbuttoncolors">#3F51B5</color>
-    <color name="mybackgroundcolors">#c4d7ff</color>
-
-    <color name="purple_light">#78eb73</color>
-    <color name="purple_middle">#8db3ce</color>
-    <color name="purple_dark">#69c4e2ff</color>
-    <color name="checkbox_color">#FFFFFF</color>
     <color name="add_fond">#00c4e2ff</color>
 </resources>

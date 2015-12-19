@@ -1,3 +1,8 @@
+<!--
+Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
+   --><!--
+   On un ScrollView ainsi qu'un RelativeLayout
+   -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/Scroller"
     android:layout_width="match_parent"
@@ -15,7 +20,9 @@
         tools:context="fr.utt.if26_avargues_jacquot.fragment.NouveauCompteActivityFragment"
         tools:showIn="@layout/activity_nouveau_compte">
 
-
+        <!--
+           On met en place du texte pour signaler à l'utilisateur de quelles informations on a besoin
+           -->
         <TextView
             android:id="@+id/TX_nomDuBonPlan"
             android:layout_width="wrap_content"
@@ -26,7 +33,9 @@
             android:text="Nom"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101" />
-
+        <!--
+                  On ajoute des EditText pour que l'utilisateur donne des informations sur le bon plan
+                  -->
         <EditText
             android:id="@+id/editText"
             android:layout_width="wrap_content"
@@ -112,7 +121,10 @@
             android:text="Ecole"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101" />
-
+        <!--
+                  On met en place un RadioGroup avec des RadioButton. Ceci permet de faire qu'un seul choix.
+                  L'utilisateur peut choisir de quelle école il appartient.
+                  -->
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
@@ -152,7 +164,9 @@
                 android:layout_height="wrap_content"
                 android:text="EPF" />
         </RadioGroup>
-
+        <!--
+                  On créé un FrameLayout. Dedans, on inclut la suite du formulaire: c'est à dire le contenu partiel du bon plan.
+                  -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
