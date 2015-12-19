@@ -22,7 +22,7 @@
                 android:layout_height="50dp"
                 android:backgroundTint="@color/notification_color_fond"
                 android:paddingRight="170dp"
-                android:src="@drawable/logo_application_toolbar" />
+                android:src="@drawable/logoblanc" />
         </android.support.v7.widget.Toolbar>
 
 

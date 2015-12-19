@@ -69,11 +69,11 @@
             android:id="@+id/TF_adresseBP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TX_adresseDuBonPlan"
-            android:layout_toEndOf="@+id/TX_adresseDuBonPlan"
-            android:layout_toRightOf="@+id/TX_adresseDuBonPlan"
             android:ems="10"
-            android:inputType="textPostalAddress" />
+            android:inputType="textPostalAddress"
+            android:layout_below="@+id/TX_adresseDuBonPlan"
+            android:layout_alignRight="@+id/TF_descriptionBP"
+            android:layout_alignEnd="@+id/TF_descriptionBP" />
 
         <EditText
             android:id="@+id/TF_descriptionBP"
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/TX_descriptionDuBonPlan"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="230dp"
             android:layout_marginTop="21dp"
             android:ems="10"
             android:inputType="textMultiLine" />
@@ -136,6 +136,51 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TX_dateDebutValidite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Date de début de validité"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101"
+            android:textStyle="bold"
+            android:layout_below="@+id/TX_descriptionDuBonPlan"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText8"
+            android:layout_below="@+id/TX_dateDebutValidite"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/TX_dateDeFinValidite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="Date de fin de validité"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#010101"
+            android:textStyle="bold"
+            android:layout_below="@+id/editText8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText9"
+            android:layout_below="@+id/TX_dateDeFinValidite"
+            android:layout_alignLeft="@+id/editText8"
+            android:layout_alignStart="@+id/editText8" />
 
     </RelativeLayout>
 
