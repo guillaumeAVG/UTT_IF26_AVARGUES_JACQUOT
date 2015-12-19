@@ -1,7 +1,16 @@
+<!--
+Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
+   Dans ce fichier XML on définit un RelativeLayout.
+   On créé des TextView (TX), des EditText (IMG) ainsi que des Button (BT).
+   --> <!--
+           On met en place un relativeLayout pour placer les éléments où on veut.
+           -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <!--
+                                               On ajoute du texte pour dire à l'utilisateur de quel type de donner on veut obtenir de lui
+                                               -->
     <TextView
         android:id="@+id/TX_photo"
         android:layout_width="wrap_content"
@@ -27,7 +36,9 @@
         android:text="Téléphone"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#010101" />
-
+    <!--
+                                               On créé des EditText pour permettre à l'utilisateur d'ajouter du texte
+                                               -->
     <EditText
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
@@ -115,7 +126,9 @@
         android:layout_marginRight="17dp"
         android:layout_marginTop="11dp"
         android:text="Valider" />
-
+    <!--
+                                               On met en place deux boutons pour soit valider, soit annuler la création de son nouveau compte
+                                               -->
     <Button
         android:id="@+id/BT_annuler"
         android:layout_width="wrap_content"
@@ -127,7 +140,9 @@
         android:layout_toLeftOf="@+id/BT_valider"
         android:layout_toStartOf="@+id/BT_valider"
         android:text="Annuler" />
-
+    <!--
+                                                   On met en place un bouton pour permettre à l'utilisateur de prendre une photo directement
+                                                   -->
     <Button
         android:id="@+id/BT_ajouterUneImage"
         android:layout_width="wrap_content"

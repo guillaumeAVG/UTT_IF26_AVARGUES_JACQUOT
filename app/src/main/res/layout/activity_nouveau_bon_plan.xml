@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir l'activité qui permet d'ajouter un nouveau bon plan.
+   Dans ce fichier XML on définit un CoordinatorLayout, l'AppBarLayout ainsi que le Toolbar.
+   On inclut un fragment appelé create_fragment_nouveau_bon_plan.
+   --><!--
+   On créé donc le CoordinatorLayout
+   -->
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,12 +12,16 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity">
-
+    <!--
+           Ensuite le AppBarLayout
+           -->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/MyMaterialTheme.AppBarOverlay">
-
+        <!--
+                    On ajoute le ToolBar
+                      -->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -20,7 +30,9 @@
             app:popupTheme="@style/MyMaterialTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_nouveau_bon_plan" />
+    <!--
+                On inclut donc le fragment create_fragment_nouveau_bon_plan
+                  -->
+    <include layout="@layout/create_fragment_nouveau_bon_plan" />
 
 </android.support.design.widget.CoordinatorLayout>

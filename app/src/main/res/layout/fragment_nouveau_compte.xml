@@ -158,7 +158,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/radioGroup">
 
-            <include layout="@layout/content_nouveau_compte_suivant" />
+            <include layout="@layout/content_nouveau_compte_partiel" />
         </FrameLayout>
 
     </RelativeLayout>

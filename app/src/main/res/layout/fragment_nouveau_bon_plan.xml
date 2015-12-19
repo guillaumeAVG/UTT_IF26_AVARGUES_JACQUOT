@@ -94,7 +94,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/TF_descriptionBP">
 
-            <include layout="@layout/content_bon_plan_nouveau" />
+            <include layout="@layout/content_nouveau_bon_plan" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayout"

@@ -1,12 +1,24 @@
+<!--
+Ce XML permet de définir le contenu du filtre de la carte.
+   Dans ce fichier XML on définit un ScrollView avec un RelativeLayout.
+   On créé des CheckBox (CB), des ImageView (IMG) ainsi que des TextView (TX).
+   Les trois éléments sont alignés, ils permettent à l'utilisateur de comprendre très rapidement le filtre.
+   --><!--
+   On créé donc le ScrollView pour faire scroller l'écran
+   -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ScrollerFiltres"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <!--
+       On met en place un relativeLayout pour placer les éléments où on veut.
+       -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <!--
+               On créé des CheckBox pour permettre à l'utilisateur de choisir le type de bon plan qu'il veut afficher sur sa carte.
+               -->
         <CheckBox
             android:id="@+id/CB_alimentations"
             android:layout_width="wrap_content"
@@ -277,7 +289,9 @@
             android:checked="false"
             android:text="Réductions à long terme"
             android:textColor="#c72b4c" />
-
+        <!--
+                       On créé des ImageView pour mettre en place des icones pour chaque CheckBox
+                       -->
         <ImageView
             android:id="@+id/IMG_alimentation"
             android:layout_width="20dp"
@@ -537,7 +551,9 @@
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/long_terme_reduction" />
-
+        <!--
+                               On ajoute du texte pour dire à l'utilisateur de quel type de bon plan il s'agit
+                               -->
         <TextView
             android:id="@+id/TX_commerces"
             android:layout_width="wrap_content"
