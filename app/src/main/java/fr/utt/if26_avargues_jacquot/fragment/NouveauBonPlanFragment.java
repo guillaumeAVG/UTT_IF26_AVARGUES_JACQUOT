@@ -35,6 +35,8 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
     EditText TF_nom;
     EditText TF_description;
     EditText TF_adresse;
+    EditText TF_dateDebutDeValidite;
+    EditText TF_dateFinDeValidite;
     RadioGroup RG_type;
     String type;
 
@@ -69,19 +71,19 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
         String STRING_nom = TF_nom.getText().toString();
         String STRING_description = TF_description.getText().toString();
         String STRING_adresse = TF_adresse.getText().toString();
+        String STRING_dateDebutDeValidite = TF_dateDebutDeValidite.getText().toString();
+        String STRING_dateFinDeValidite = TF_dateFinDeValidite.getText().toString();
+
 
         MainActivity main = new MainActivity();
         SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", 0);
         String token = settings.getString("token", "");
 
-        if (STRING_adresse != null && STRING_description != null && STRING_nom != null) {
+        if (STRING_adresse != null && STRING_description != null && STRING_nom != null && STRING_dateDebutDeValidite != null && STRING_dateFinDeValidite != null) {
             setTypeBonPlan();
             if (type != "undefined") {
-                //TODO Récupérer les vrai dates à partir du formulaire
-                String dateDebut = "18-12-2015";
-                String dateFin = "24-01-2016";
                 AddBonPlanService addBonPlanService = new AddBonPlanService();
-                String response = addBonPlanService.addBonPlan(token, STRING_nom, STRING_adresse, STRING_description, type, dateDebut, dateFin);
+                String response = addBonPlanService.addBonPlan(token, STRING_nom, STRING_adresse, STRING_description, type, STRING_dateDebutDeValidite, STRING_dateFinDeValidite);
                 if (response == "Internal error" || response == "Undefined error") {
                     return false;
                 } else if (response == "Address error") {
@@ -178,6 +180,8 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
         TF_nom = (EditText) view.findViewById(R.id.TF_nomBP);
         TF_adresse = (EditText) view.findViewById(R.id.TF_adresseBP);
         TF_description = (EditText) view.findViewById(R.id.TF_descriptionBP);
+        TF_dateDebutDeValidite = (EditText) view.findViewById(R.id.TF_dateDebutDeValiditeBP);
+        TF_dateFinDeValidite = (EditText) view.findViewById(R.id.TF_dateFinDeValiditeBP);
         RG_type = (RadioGroup) view.findViewById(R.id.choixTypeBP);
 
         return view;
