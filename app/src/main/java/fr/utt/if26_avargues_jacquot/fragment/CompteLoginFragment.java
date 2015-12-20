@@ -1,21 +1,21 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.guillaume.if26_avargues_jacquot.R;
+
 import org.json.JSONException;
+
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 import fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivity;
 import fr.utt.if26_avargues_jacquot.services.CheckTokenService;
@@ -24,11 +24,18 @@ import fr.utt.if26_avargues_jacquot.services.LoginService;
 /**
  * Created by guillaume on 26/11/2015.
  */
+/* Cette classe définit le fragment du compte.
+C'est à dire lorsque le menu tabs est sur: Compte.
+Elle hérite de Fragment et implémente View.OnClickListener car cet écran possède des éléments qui sont cliquables.*/
+
 public class CompteLoginFragment extends Fragment implements View.OnClickListener {
 
+    // On définit les attributs login et mot de passe pour la connexion
     EditText TF_login;
     EditText TF_passwd;
 
+    /* La méthode onClick permet de définir une action lorsque l'utilisateur clique soit
+    sur valider, soit sur je n'ai pas de compte.*/
     @Override
     public void onClick(View view) {
 
@@ -49,13 +56,16 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         }
     }
 
+    /* La méthode onLoginButtonClick permet de valider les informations rentrer par l'utilisateur.
+    C'est à dire s'il y a un problème d'authentification, de mot de passe, d'adresse email invalide.
+    */
     public void onLoginButtonClick(View view) throws IOException, JSONException {
         String STRING_login = TF_login.getText().toString();
         String STRING_passwd = TF_passwd.getText().toString();
         LoginService loginService = new LoginService();
         String loginServiceResponse;
         loginServiceResponse = loginService.validateLogin(STRING_login, STRING_passwd);
-        switch(loginServiceResponse) {
+        switch (loginServiceResponse) {
             case "":
             case "Internal error":
             case "Undefined error":
@@ -75,11 +85,18 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         }
     }
 
+    /* La méthode onNewAccountClick est utilisée quand l'utilisateur clique
+    sur le bouton je n'ai pas de compte. Elle permet de créer la nouvelle
+    activité NouveauCompteActivity.
+     */
     public void onNewAccountClick(View view) {
         Intent intent = new Intent(getActivity(), NouveauCompteActivity.class);
         startActivity(intent);
     }
 
+    /* La méthode choiceView permet de si l'utilisateur est connecté.
+       De plus, on créé un Token d'authentification.
+     */
     public String choiceView() throws IOException, JSONException {
         SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
         String token = settings.getString("token", "");
@@ -87,16 +104,20 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         CheckTokenService cts = new CheckTokenService();
         Boolean checkToken = cts.validateToken(token);
 
-        if(checkToken) {
+        if (checkToken) {
             return "connected";
-        }
-        else {
+        } else {
             return "login";
         }
     }
 
+    /* La méthode onCreateView permet de créer des vues: c'est à dire
+     on dit quel fichier XML doit réprésenter l'écran du compte.
+     De plus, on ajoute les éléments qui sont cliquables pour
+     permettre d'avoir des intéractions par la suite*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        // On créé une variable choice qui permet de voir si l'utilisateur est connecté ou pas
         String choice = null;
         try {
             choice = choiceView();
@@ -108,13 +129,18 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
 
         View view;
 
-        if(choice == "connected") view = inflater.inflate(R.layout.fragment_compte_connecte, container, false);
+        //S'il est connecté, on affiche le XML fragment_compte_connecte
+        if (choice == "connected")
+            view = inflater.inflate(R.layout.fragment_compte_connecte, container, false);
+            //S'il n'est pas connecté on affiche le XML fragment_compte_login
         else {
             view = inflater.inflate(R.layout.fragment_compte_login, container, false);
             //On récupere la vue souhaitée et on lui affecte le Listener
+            // On créé des vues pour les boutons valider ou je n'ai pas de compte
             view.findViewById(R.id.BT_validation).setOnClickListener(this);
             view.findViewById(R.id.BT_noCompte).setOnClickListener(this);
 
+            // On récupère les EditText complétés par l'utilisateur
             TF_login = (EditText) view.findViewById(R.id.TF_login);
             TF_passwd = (EditText) view.findViewById(R.id.TF_passwd);
         }

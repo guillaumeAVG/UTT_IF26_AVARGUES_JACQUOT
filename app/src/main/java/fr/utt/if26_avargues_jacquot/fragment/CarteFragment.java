@@ -34,20 +34,33 @@ import fr.utt.if26_avargues_jacquot.services.MyItemizedOverlay;
 /**
  * Created by guillaume on 26/11/2015.
  */
+/* Cette classe définit le fragment de la carte
+C'est à dire lorsque le menu tabs est sur: Carte.
+Elle hérite de Fragment et implémente View.OnClickListener car cet écran possède des éléments qui sont cliquables:
+c'est pour que l'utilisateur puisse ajouter un bon plan.*/
+
 public class CarteFragment extends Fragment implements View.OnClickListener {
 
+    /* La méthode onCreateView permet de créer des vues: c'est à dire
+      on dit quel fichier XML doit réprésenter la page pour la carte.
+      De plus, on ajoute les éléments qui sont cliquables pour
+      permettre d'avoir des intéractions par la suite*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        //On définit le XML a utiliser
         View rootView = inflater.inflate(R.layout.fragment_carte, container, false);
+        //On définit une vue sur un élément cliquable
         rootView.findViewById(R.id.IMGB_ajouterBonPlan).setOnClickListener(this);
+        //On ajoute la vue pour intégrer la carte
         MapView map = (MapView) rootView.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPQUESTOSM);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
         mapController.setZoom(14);
+        // On met un place directement la vue sur la ville de Troyes
         GeoPoint startPoint = new GeoPoint(48.3, 4.0833);
         mapController.setCenter(startPoint);
 
@@ -56,6 +69,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         map.setMultiTouchControls(true);
         map.getOverlays().add(mRotationGestureOverlay);
 
+        // On ajoute une icône sur la carte
         Drawable marker = ContextCompat.getDrawable(getContext(), R.drawable.bus);
         int markerWidth = marker.getIntrinsicWidth();
         int markerHeight = marker.getIntrinsicHeight();
@@ -81,6 +95,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         return rootView;
     }
 
+    /*La méthode setUserVisible permet d'afficher un message à l'utilisateur que sa carte est affichée.*/
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -89,12 +104,14 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    /* La méthode onClick permet de définir une action dès que l'utilisateur clique sur l'icône d'ajout de bon plan.*/
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.IMGB_ajouterBonPlan:
 
                 // On met en place le passage entre les deux activités sur ce Listener
+                // On passe de l'activité principale à l'activité d'ajout de bon plan.
                 Intent intent = new Intent(getActivity(), NouveauBonPlanActivity.class);
                 startActivity(intent);
                 break;

@@ -1,20 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet de définir le lancement de l'application. C'est l'android manifest.
+   -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.guillaume.if26_avargues_jacquot">
 
-    <!-- Permissions for OpenStreetMap -->
+    <!-- Voici les permissions pour OpenStreetMap -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <!-- On définit l'icone de lancement de l'application, le nom de l'application ainsi que son style -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/application_logo"
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme">
+        <!-- On définit quel est l'activité de lancement de l'application -->
         <activity android:name="fr.utt.if26_avargues_jacquot.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- On met en place les autres activités de l'application
+         Un activité ajout d'un nouveau bon plan et l'autre création d'un nouveau compte-->
         <activity
             android:name="fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivity"
             android:label="@string/title_activity_nouveau_compte"
