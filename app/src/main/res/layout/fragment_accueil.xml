@@ -100,7 +100,7 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_nouveaute3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginRight="40dp"
                 android:text="Stade" />
         </LinearLayout>
@@ -161,7 +161,7 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_plusConsultes1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="32dp"
                 android:layout_marginRight="20dp"
                 android:text="Distributeur" />
 
@@ -169,7 +169,7 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_plusConsultes2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="37dp"
                 android:layout_marginRight="20dp"
                 android:text="Mairie" />
 
@@ -177,7 +177,7 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_plusConsultes3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="30dp"
                 android:text="Salle de sport" />
         </LinearLayout>
@@ -246,7 +246,7 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_plusCommentes2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="28dp"
                 android:layout_marginRight="20dp"
                 android:text="Station service" />
 
@@ -254,7 +254,7 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_plusCommentes3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginRight="40dp"
                 android:text="Laverie" />
         </LinearLayout>

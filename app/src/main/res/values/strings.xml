@@ -7,4 +7,6 @@
     <string name="title_activity_nouveau_compte">Formulaire d\'inscription</string>
     <string name="title_activity_filtre">FiltreActivity</string>
     <string name="title_activity_nouveau_bon_plan">Formulaire d\'ajout d\'un bon plan</string>
+    <string name="title_activity_affichage_bon_plan">Les informations sur le bon plan</string>
+
 </resources>

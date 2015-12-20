@@ -1,0 +1,15 @@
+<!--
+Ce XML permet de créer le fragment lors de l'affichage d'un bon plan.
+   --> <!--
+           On dit quel layout est en relation avec ce fragment ainsi que le nom du fichier java qui va s'occuper de ce fragment.
+           -->
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment1"
+    android:name="fr.utt.if26_avargues_jacquot.fragment.AffichageFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:layout="@layout/fragment_affichage_bon_plan" />
+

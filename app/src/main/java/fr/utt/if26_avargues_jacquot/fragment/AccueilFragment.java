@@ -1,13 +1,15 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
+
+import fr.utt.if26_avargues_jacquot.activity.AffichageBonPlanActivity;
 
 /**
  * Created by guillaume on 26/11/2015.
@@ -24,8 +26,40 @@ public class AccueilFragment extends Fragment implements View.OnClickListener {
 
         switch (view.getId()) {
             case R.id.IMGB_nouveaute1:
-                    /*On ajoute un Toast pour signaler à l'utilisateur qu'il a bien cliqué sur un bon plan*/
-                Toast.makeText(getActivity().getApplicationContext(), "Vous avez cliqué sur un bon plan.", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.IMGB_nouveaute2:
+                Intent intent2 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.IMGB_nouveaute3:
+                Intent intent3 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.IMGB_plusConsultes1:
+                Intent intent4 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.IMGB_plusConsultes2:
+                Intent intent5 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent5);
+                break;
+            case R.id.IMGB_plusConsultes3:
+                Intent intent6 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent6);
+                break;
+            case R.id.IMGB_plusCommentes1:
+                Intent intent7 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent7);
+                break;
+            case R.id.IMGB_plusCommentes2:
+                Intent intent8 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent8);
+                break;
+            case R.id.IMGB_plusCommentes3:
+                Intent intent9 = new Intent(getActivity(), AffichageBonPlanActivity.class);
+                startActivity(intent9);
                 break;
 
         }
@@ -39,6 +73,14 @@ public class AccueilFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_accueil, container, false);
         //On récupere la vue souhaitée et on lui affecte le Listener
         view.findViewById(R.id.IMGB_nouveaute1).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_nouveaute2).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_nouveaute3).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_plusConsultes1).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_plusConsultes2).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_plusConsultes3).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_plusCommentes1).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_plusCommentes2).setOnClickListener(this);
+        view.findViewById(R.id.IMGB_plusCommentes3).setOnClickListener(this);
         return view;
     }
 }

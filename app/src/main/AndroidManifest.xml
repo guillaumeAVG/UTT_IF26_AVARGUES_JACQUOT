@@ -26,7 +26,7 @@ Ce XML permet de définir le lancement de l'application. C'est l'android manifes
             </intent-filter>
         </activity>
         <!-- On met en place les autres activités de l'application
-         Un activité ajout d'un nouveau bon plan et l'autre création d'un nouveau compte-->
+         Un activité ajout d'un nouveau bon plan, l'autre création d'un nouveau compte ainsi que l'affichage de bon plan-->
         <activity
             android:name="fr.utt.if26_avargues_jacquot.activity.NouveauCompteActivity"
             android:label="@string/title_activity_nouveau_compte"
@@ -34,6 +34,10 @@ Ce XML permet de définir le lancement de l'application. C'est l'android manifes
         <activity
             android:name="fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity"
             android:label="@string/title_activity_nouveau_bon_plan"
+            android:theme="@style/MyMaterialTheme"></activity>
+        <activity
+            android:name="fr.utt.if26_avargues_jacquot.activity.AffichageBonPlanActivity"
+            android:label="@string/title_activity_affichage_bon_plan"
             android:theme="@style/MyMaterialTheme"></activity>
     </application>
 

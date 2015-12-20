@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+Ce XML permet d'afficher les informations sur un bon plan.
+   --><!--
+   On créé un LinearLayout
+   -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Scroller"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7cc0c6cd">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:id="@+id/fiche"
+            android:layout_width="match_parent"
+            android:layout_height="775dp"
+            android:layout_marginBottom="40dp">
+
+            <!--
+               On créé des TextView pour transmettre des informations sur le bon plan
+               -->
+            <TextView
+                android:id="@+id/TX_nomBonPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="20dp"
+                android:text="Bon plan"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="32dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TX_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_nomBonPlan"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="40dp"
+                android:text="Description"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/TX_texteDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_description"
+                android:paddingLeft="40dp"
+                android:paddingRight="20dp"
+                android:text="Le nom du commerce l&apos;adresse, la nature du bon plan, le détail du bon plan, la description"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TX_avis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_texteDescription"
+                android:layout_marginTop="45dp"
+                android:paddingLeft="40dp"
+                android:text="Avis"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/TX_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_avis"
+                android:paddingLeft="60dp"
+                android:text="Notes"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="16dp"
+                android:textStyle="italic" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TX_notes"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp" />
+
+            <TextView
+                android:id="@+id/TX_commentaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ratingBar"
+                android:layout_marginTop="46dp"
+                android:paddingLeft="60dp"
+                android:text="Commentaires"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="16dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/TX_commentaire1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_commentaire"
+                android:layout_marginTop="37dp"
+                android:paddingLeft="60dp"
+                android:text="Commentaire 1"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TX_detailCommentaire1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_commentaire1"
+                android:layout_marginBottom="80dp"
+                android:layout_marginLeft="61dp"
+                android:layout_marginStart="61dp"
+                android:paddingRight="10dp"
+                android:text="Ce magasin propose beaucoup de réductions. C&apos;est très intéréssant."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TX_commentaire2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_detailCommentaire1"
+                android:layout_marginTop="0dp"
+                android:paddingLeft="60dp"
+                android:text="Commentaire 2"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TX_detailCommentaire2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_commentaire2"
+                android:layout_marginBottom="80dp"
+                android:paddingLeft="60dp"
+                android:paddingRight="10dp"
+                android:text="Les vendeurs du magasin ne sont pas agréables..."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TX_commentaire3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_detailCommentaire2"
+                android:paddingLeft="60dp"
+                android:text="Commentaire 3"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/TX_detailCommentaire3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_commentaire3"
+                android:paddingLeft="60dp"
+                android:paddingRight="10dp"
+                android:text="C'est un très bon magasin."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            <!--
+              On met en place des ImageView pour que l'utilisateur like ou dislike le commentaire de quelqu'un
+              -->
+            <ImageButton
+                android:id="@+id/IMGB_likeCommentaire1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/TX_detailCommentaire1"
+                android:layout_toLeftOf="@+id/IMGB_dislikeCommentaire1"
+                android:layout_toStartOf="@+id/IMGB_dislikeCommentaire1"
+                android:src="@drawable/like" />
+
+            <ImageButton
+                android:id="@+id/IMGB_dislikeCommentaire1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/TX_detailCommentaire1"
+                android:layout_toEndOf="@+id/IMGB_likeCommentaire3"
+                android:layout_toRightOf="@+id/IMGB_likeCommentaire3"
+                android:src="@drawable/unlike" />
+
+            <ImageButton
+                android:id="@+id/IMGB_likeCommentaire2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/TX_commentaire2"
+                android:layout_alignLeft="@+id/IMGB_likeCommentaire1"
+                android:layout_alignStart="@+id/IMGB_likeCommentaire1"
+                android:src="@drawable/like" />
+
+            <ImageButton
+                android:id="@+id/IMGB_dislikeCommentaire2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/TX_detailCommentaire2"
+                android:layout_alignEnd="@+id/TX_detailCommentaire2"
+                android:layout_alignRight="@+id/TX_detailCommentaire2"
+                android:layout_alignTop="@+id/IMGB_likeCommentaire2"
+                android:src="@drawable/unlike" />
+
+            <ImageButton
+                android:id="@+id/IMGB_likeCommentaire3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/TX_detailCommentaire3"
+                android:layout_toLeftOf="@+id/IMGB_dislikeCommentaire2"
+                android:src="@drawable/like" />
+
+            <ImageButton
+                android:id="@+id/IMGB_dislikeCommentaire3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/TX_detailCommentaire3"
+                android:layout_alignLeft="@+id/IMGB_dislikeCommentaire2"
+                android:layout_alignStart="@+id/IMGB_dislikeCommentaire2"
+                android:layout_alignTop="@+id/IMGB_likeCommentaire3"
+                android:layout_toRightOf="@+id/IMGB_likeCommentaire3"
+                android:src="@drawable/unlike" />
+
+            <ImageButton
+                android:id="@+id/IMGB_attention"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignEnd="@+id/ratingBar"
+                android:layout_alignRight="@+id/ratingBar"
+                android:layout_alignTop="@+id/TX_nomBonPlan"
+                android:maxHeight="42dp"
+                android:maxWidth="42dp"
+                android:src="@drawable/attention" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
