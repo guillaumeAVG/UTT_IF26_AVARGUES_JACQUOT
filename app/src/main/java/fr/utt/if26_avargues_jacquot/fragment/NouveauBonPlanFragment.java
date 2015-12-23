@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.example.guillaume.if26_avargues_jacquot.R;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 import fr.utt.if26_avargues_jacquot.services.AddBonPlanService;
@@ -52,9 +54,7 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                if (addAction)
-                    break;
+                break;
 
             case R.id.BT_annuler:
                 Intent intent2 = new Intent(getActivity(), MainActivity.class);
@@ -72,14 +72,28 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
         String STRING_description = TF_description.getText().toString();
         String STRING_adresse = TF_adresse.getText().toString();
         String STRING_dateDebutDeValidite = TF_dateDebutDeValidite.getText().toString();
-        String STRING_dateFinDeValidite = TF_dateFinDeValidite.getText().toString();
+        String STRING_dateFinDeValidite;
+        STRING_dateFinDeValidite = TF_dateFinDeValidite.getText().toString();
+
+        if(STRING_dateDebutDeValidite == null || STRING_dateDebutDeValidite.length() != 10 || STRING_dateDebutDeValidite.contains("-") == false || STRING_dateDebutDeValidite.contains("/") == true || Pattern.compile("/^[a-zA-Z]+$/").matcher(STRING_dateDebutDeValidite).find() == true) {
+            Toast.makeText(getActivity().getApplicationContext(), "Erreur. Veuillez vérifier le format de date de début.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(STRING_dateFinDeValidite == null || STRING_dateFinDeValidite == "" || STRING_dateFinDeValidite.length() == 0) {
+            STRING_dateFinDeValidite = "";
+        }
+        else if(STRING_dateFinDeValidite.length() != 10 || STRING_dateFinDeValidite.contains("-") == false || STRING_dateFinDeValidite.contains("/") == true || Pattern.compile("/^[a-zA-Z]+$/").matcher(STRING_dateFinDeValidite).find() == true) {
+            Toast.makeText(getActivity().getApplicationContext(), "Erreur. Veuillez vérifier le format de date de fin.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
 
 
         MainActivity main = new MainActivity();
         SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", 0);
         String token = settings.getString("token", "");
 
-        if (STRING_adresse != null && STRING_description != null && STRING_nom != null && STRING_dateDebutDeValidite != null && STRING_dateFinDeValidite != null) {
+        if (STRING_adresse != null && STRING_description != null && STRING_nom != null) {
             setTypeBonPlan();
             if (type != "undefined") {
                 AddBonPlanService addBonPlanService = new AddBonPlanService();

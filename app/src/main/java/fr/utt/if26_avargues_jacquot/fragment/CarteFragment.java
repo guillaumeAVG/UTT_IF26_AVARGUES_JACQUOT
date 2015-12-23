@@ -139,9 +139,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         Drawable marker = getDrawable(type);
 
         if(marker != null) {
-            int markerWidth = 3;
-            int markerHeight = 3;
-            marker.setBounds(0, markerHeight, markerWidth, 0);
+            marker.setBounds(-marker.getIntrinsicWidth()/4, -marker.getIntrinsicHeight(), marker.getIntrinsicWidth()/4, 0);
 
             ResourceProxy resourceProxy = new DefaultResourceProxyImpl(getActivity().getApplicationContext());
 
