@@ -66,7 +66,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
-        mapController.setZoom(14);
+        mapController.setZoom(13);
         // On met un place directement la vue sur la ville de Troyes
         GeoPoint startPoint = new GeoPoint(48.3, 4.0833);
         mapController.setCenter(startPoint);

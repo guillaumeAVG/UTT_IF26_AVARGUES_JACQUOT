@@ -54,6 +54,16 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+                if(addAction) {
+                    Toast.makeText(getActivity().getApplicationContext(), "Merci. Nous avons bien ajouté votre bon plan.", Toast.LENGTH_LONG).show();
+                    Intent intent2 = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent2);
+                }
+                else {
+                    Toast.makeText(getActivity().getApplicationContext(), "Erreur. Veuillez réessayer", Toast.LENGTH_LONG).show();
+                }
+
                 break;
 
             case R.id.BT_annuler:
