@@ -11,18 +11,31 @@ import java.net.URL;
 
 /**
  * Created by EtienneJ on 18/12/2015.
+ * Class faisant appel au webservice permettant de récupérer tous les webservice en activité à la date du jour.
  */
 public class GetBonsPlansService {
 
+    /**
+     * URL du webservice
+     */
     protected final URL urlToRequest;
 
+    /**
+     * Constructeur
+     * @throws MalformedURLException
+     */
     public GetBonsPlansService() throws MalformedURLException {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/getBonsPlans.php");
     }
 
-
+    /**
+     * Méthode permettant de récupérer les bons plans actifs à la date du jour
+     * @return La liste des bons plans au format JSON
+     * @throws IOException
+     * @throws JSONException
+     */
     public String getCurrentBonsPlans() throws IOException, JSONException {
 
         HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();

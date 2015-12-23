@@ -34,8 +34,11 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
     EditText TF_login;
     EditText TF_passwd;
 
-    /* La méthode onClick permet de définir une action lorsque l'utilisateur clique soit
-    sur valider, soit sur je n'ai pas de compte.*/
+    /**
+     * La méthode onClick permet de définir une action lorsque l'utilisateur clique soit
+     sur valider, soit sur je n'ai pas de compte.
+     * @param view Vue
+     */
     @Override
     public void onClick(View view) {
 
@@ -56,9 +59,13 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         }
     }
 
-    /* La méthode onLoginButtonClick permet de valider les informations rentrées par l'utilisateur.
-    C'est à dire s'il y a un problème d'authentification, de mot de passe, d'adresse email invalide.
-    */
+    /**
+     * La méthode onLoginButtonClick permet de valider les informations rentrées par l'utilisateur.
+     * C'est à dire s'il y a un problème d'authentification, de mot de passe, d'adresse email invalide.
+     * @param view Vue
+     * @throws IOException
+     * @throws JSONException
+     */
     public void onLoginButtonClick(View view) throws IOException, JSONException {
         String STRING_login = TF_login.getText().toString();
         String STRING_passwd = TF_passwd.getText().toString();
@@ -85,17 +92,22 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         }
     }
 
-    /* La méthode onNewAccountClick est utilisée quand l'utilisateur clique
-    sur le bouton je n'ai pas de compte. Elle permet de créer la nouvelle
-    activité NouveauCompteActivity.
+    /**
+     * La méthode onNewAccountClick est utilisée quand l'utilisateur clique
+     * sur le bouton je n'ai pas de compte. Elle permet de créer la nouvelle
+     * activité NouveauCompteActivity.
+     * @param view Vue
      */
     public void onNewAccountClick(View view) {
         Intent intent = new Intent(getActivity(), NouveauCompteActivity.class);
         startActivity(intent);
     }
 
-    /* La méthode choiceView permet de si l'utilisateur est connecté.
-       De plus, on créé un Token d'authentification.
+    /**
+     * La méthode choiceView permet de savoir si l'utilisateur est connecté à partir du toke enregistré sur le téléphone.
+     * @return String "connected" ou "login"
+     * @throws IOException
+     * @throws JSONException
      */
     public String choiceView() throws IOException, JSONException {
         SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
@@ -111,10 +123,13 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         }
     }
 
-    /* La méthode onCreateView permet de créer des vues: c'est à dire
-     on dit quel fichier XML doit réprésenter l'écran du compte.
-     De plus, on ajoute les éléments qui sont cliquables pour
-     permettre d'avoir des intéractions par la suite*/
+    /**
+     * Permet d'afficher la bonne vue en fonction si l'utilisateur est connecté ou non.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return Vue
+     */
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // On créé une variable choice qui permet de voir si l'utilisateur est connecté ou pas

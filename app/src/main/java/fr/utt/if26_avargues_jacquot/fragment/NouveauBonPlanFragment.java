@@ -119,8 +119,10 @@ public class NouveauBonPlanFragment extends Fragment implements View.OnClickList
     }
 
 
-    /* La méthode setTypeBonPlan permet de savoir quel type de nouveau bon plan l'utilisateur
-    veut rajoter*/
+    /**
+     * La méthode setTypeBonPlan permet de savoir quel type de nouveau bon plan l'utilisateur
+     * veut rajouter, à partir de la liste qu'il a à sa disposition.
+     */
     public void setTypeBonPlan() {
         switch (RG_type.getCheckedRadioButtonId()) {
             case R.id.RB_agencesDeTransports:

@@ -112,16 +112,24 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
 
     }
 
+    /**
+     * Méthode permettant d'ajouter les bons plans sur la carte, à partir des données en base
+     * @param map Carte présente sur l'écran
+     * @throws JSONException
+     * @throws IOException
+     * @throws MalformedURLException
+     */
     public void putBonBlans(MapView map) throws JSONException, IOException, MalformedURLException{
 
         //On récupère les bons plans depuis le webservice
         GetBonsPlansService gbps = new GetBonsPlansService();
-
         String bonsPlans = gbps.getCurrentBonsPlans();
         JSONArray jsonArrayBonsPlans  = new JSONArray(bonsPlans);
 
+        //Si on a des bons plans à afficher
         if(jsonArrayBonsPlans != null) {
             for (int i=0; i<jsonArrayBonsPlans.length(); i++) {
+                //Pour chaque bon plan, on récupère son titre, son type et les coordonnées pour l'afficher sur la carte
                 JSONObject bonPlan = (JSONObject) jsonArrayBonsPlans.get(i);
                 String bonPlanNom = bonPlan.getString("nom");
                 String bonPlanType = bonPlan.getString("type");
@@ -134,6 +142,14 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
 
     }
 
+    /**
+     * Méthode permettant d'afficher l'icône du bon plan sur la carte
+     * @param map Carte présente sur l'écran
+     * @param bonPlanNom Titre du bon plan
+     * @param type Type du bon plan
+     * @param bonPlanLongitude Longitude du bon plan
+     * @param bonPlanLatitude Latitude du bon plan
+     */
     public void addBPtoMap(MapView map, String bonPlanNom, String type, Double bonPlanLongitude, Double bonPlanLatitude) {
         // On ajoute une icône sur la carte
         Drawable marker = getDrawable(type);
@@ -151,6 +167,11 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    /**
+     * Récupère la bonne icône en fonction du bon plan
+     * @param type Type de bon plan
+     * @return Drawable Icone du bon plan correspondant à son type
+     */
     public Drawable getDrawable(String type) {
         Drawable marker = null;
         switch (type) {

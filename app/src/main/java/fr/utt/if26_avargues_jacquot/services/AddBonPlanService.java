@@ -20,20 +20,46 @@ import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 
 /**
  * Created by EtienneJ on 18/12/2015.
+ * Class pour gérer la communication avec le webservice AddBonPlan
  */
 public class AddBonPlanService {
 
+    /**
+     * URL du webservice
+     */
     protected final URL urlToRequest;
+    /**
+     * Longitude du bon plan
+     */
     protected double Longitude;
+    /**
+     * Latitude du bon plan
+     */
     protected double Latitude;
 
+    /**
+     * Constructeur
+     * @throws MalformedURLException
+     */
     public AddBonPlanService() throws MalformedURLException {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/addBonPlan.php");
     }
 
-
+    /**
+     * Fonction permettant d'envoyer une requête au webservice permettant d'ajouter le bon plan en base de données
+     * @param token Token de l'utilisateur permettant de s'authentifier auprès du webservice
+     * @param nom Titre du bon plan
+     * @param adresse Adresse du bon plan
+     * @param description Description du bon plan
+     * @param type Type de bon plan (Evènement, alimentation, ...)
+     * @param dateDebut Date de début du bon plan, au format DD-MM-YYYY
+     * @param dateFin Date de début du bon plan, au format DD-MM-YYYY
+     * @return String Code d'erreur ou "Success"
+     * @throws IOException
+     * @throws JSONException
+     */
     public String addBonPlan(String token, String nom, String adresse, String description, String type, String dateDebut, String dateFin) throws IOException, JSONException {
 
         HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();
@@ -107,6 +133,11 @@ public class AddBonPlanService {
         }
     }
 
+    /**
+     * Permet de trouver les coordonnées du bon plan
+     * @param adresse Adresse du bon plan au format "0 rue Example, Ville"
+     * @return
+     */
     private boolean setGeoPoint(String adresse) {
         MainActivity main = new MainActivity();
         Geocoder geoCoder = new Geocoder(main.ma.getApplicationContext(), Locale.getDefault());

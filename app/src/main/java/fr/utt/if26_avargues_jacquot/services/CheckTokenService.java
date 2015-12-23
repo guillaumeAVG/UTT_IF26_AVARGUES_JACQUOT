@@ -13,18 +13,32 @@ import java.net.URLEncoder;
 
 /**
  * Created by EtienneJ on 16/12/2015.
+ * Classe faisant appel au webservice permettant de valider l'existence du token sur le serveur et donc d'authentifier l'utilisateur connecté
  */
 public class CheckTokenService {
 
+    /**
+     * URL du webservice
+     */
     protected final URL urlToRequest;
 
+    /**
+     * Constructeur
+     * @throws MalformedURLException
+     */
     public CheckTokenService() throws MalformedURLException {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/checkToken.php");
     }
 
-
+    /**
+     * Méthode permettant de valider ou non un token
+     * @param token Le token d'authentification
+     * @return Boolean
+     * @throws IOException
+     * @throws JSONException
+     */
     public Boolean validateToken(String token) throws IOException, JSONException {
 
         HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();

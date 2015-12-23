@@ -3,14 +3,13 @@ package fr.utt.if26_avargues_jacquot.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
 import com.example.guillaume.if26_avargues_jacquot.R;
 
 /**
  * Created by guillaume on 05/12/2015.
+ * Cette classe définit une autre activité de l'application.
+ * On créé donc l'activité qui permet d'ajouter des nouveaux bons plans
  */
-/* Cette classe définit une autre activité de l'application.
-On créé donc l'activité qui permet d'ajouter des nouveaux bons plans*/
 
 public class NouveauBonPlanActivity extends AppCompatActivity {
 

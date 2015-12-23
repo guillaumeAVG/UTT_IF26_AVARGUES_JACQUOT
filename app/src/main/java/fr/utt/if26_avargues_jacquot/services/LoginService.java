@@ -20,18 +20,33 @@ import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 
 /**
  * Created by EtienneJ on 27/11/2015.
+ * Permet à l'utilisateur de se connecter pour, par la suite, utiliser les webservices nécessitant une authentification
  */
 public class LoginService {
 
+    /**
+     * URL du webservice
+     */
     protected final URL urlToRequest;
 
+    /**
+     * Constructeur
+     * @throws MalformedURLException
+     */
     public LoginService() throws MalformedURLException {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/login.php");
     }
 
-
+    /**
+     * Méthode permettant de valider la connection de l'utilisateur
+     * @param user Email de l'utilisateur
+     * @param passwd Mot de passe de l'utilisateur
+     * @return String "Success" ou le message d'erreur
+     * @throws IOException
+     * @throws JSONException
+     */
     public String validateLogin(String user, String passwd) throws IOException, JSONException {
 
         HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();
