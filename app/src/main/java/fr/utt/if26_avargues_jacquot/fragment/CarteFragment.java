@@ -8,6 +8,7 @@ import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,9 @@ import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
 import org.osmdroid.api.IMapController;
@@ -24,10 +28,13 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
 import fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity;
+import fr.utt.if26_avargues_jacquot.services.GetBonsPlansService;
 import fr.utt.if26_avargues_jacquot.services.MyItemizedOverlay;
 
 
@@ -69,29 +76,15 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         map.setMultiTouchControls(true);
         map.getOverlays().add(mRotationGestureOverlay);
 
-        // On ajoute une icône sur la carte
-        Drawable marker = ContextCompat.getDrawable(getContext(), R.drawable.bus);
-        int markerWidth = marker.getIntrinsicWidth();
-        int markerHeight = marker.getIntrinsicHeight();
-        marker.setBounds(0, markerHeight, markerWidth, 0);
-
-        ResourceProxy resourceProxy = new DefaultResourceProxyImpl(getActivity().getApplicationContext());
-
-        MyItemizedOverlay myItemizedOverlay = new MyItemizedOverlay(marker, resourceProxy);
-        map.getOverlays().add(myItemizedOverlay);
-
-        Geocoder geoCoder = new Geocoder(getContext(), Locale.getDefault());
-        List<Address> address = null;
         try {
-            address = geoCoder.getFromLocationName("Universite de technologies de troyes, Troyes, France", 1);
+            putBonBlans(map);
+        } catch (JSONException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        double latitude = address.get(0).getLatitude();
-        double longitude = address.get(0).getLongitude();
 
-        GeoPoint myPoint1 = new GeoPoint(latitude, longitude);
-        myItemizedOverlay.addItem(myPoint1, "myPoint1", "myPoint1");
+
         return rootView;
     }
 
@@ -100,7 +93,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser && isResumed()) {
-            Toast.makeText(getActivity().getApplicationContext(), "Carte affichée", Toast.LENGTH_LONG).show();
+
         }
     }
 
@@ -118,4 +111,115 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         }
 
     }
+
+    public void putBonBlans(MapView map) throws JSONException, IOException, MalformedURLException{
+
+        //On récupère les bons plans depuis le webservice
+        GetBonsPlansService gbps = new GetBonsPlansService();
+
+        String bonsPlans = gbps.getCurrentBonsPlans();
+        JSONArray jsonArrayBonsPlans  = new JSONArray(bonsPlans);
+
+        if(jsonArrayBonsPlans != null) {
+            for (int i=0; i<jsonArrayBonsPlans.length(); i++) {
+                JSONObject bonPlan = (JSONObject) jsonArrayBonsPlans.get(i);
+                String bonPlanNom = bonPlan.getString("nom");
+                String bonPlanType = bonPlan.getString("type");
+                Double bonPlanLongitude = bonPlan.getDouble("longitude");
+                Double bonPlanLatitude = bonPlan.getDouble("latitude");
+                addBPtoMap(map, bonPlanNom, bonPlanType, bonPlanLongitude, bonPlanLatitude);
+            }
+
+        }
+
+    }
+
+    public void addBPtoMap(MapView map, String bonPlanNom, String type, Double bonPlanLongitude, Double bonPlanLatitude) {
+        // On ajoute une icône sur la carte
+        Drawable marker = getDrawable(type);
+
+        if(marker != null) {
+            int markerWidth = 3;
+            int markerHeight = 3;
+            marker.setBounds(0, markerHeight, markerWidth, 0);
+
+            ResourceProxy resourceProxy = new DefaultResourceProxyImpl(getActivity().getApplicationContext());
+
+            MyItemizedOverlay myItemizedOverlay = new MyItemizedOverlay(marker, resourceProxy);
+            map.getOverlays().add(myItemizedOverlay);
+
+            GeoPoint myPoint = new GeoPoint(bonPlanLatitude, bonPlanLongitude);
+            myItemizedOverlay.addItem(myPoint, bonPlanNom, bonPlanNom);
+        }
+    }
+
+    public Drawable getDrawable(String type) {
+        Drawable marker = null;
+        switch (type) {
+            case "Agence de Transport":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.bus);
+                break;
+            case "Alimentation":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.alimentation);
+                break;
+            case "Assurance Maladie et Mutuelles":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.assurance_maladie);
+                break;
+            case "CAF":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.caf_jaune);
+                break;
+            case "Distributeur de billets":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.distributeurs);
+                break;
+            case "Emploi":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.emploi);
+                break;
+            case "Evènement":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.evenement_etudiant);
+                break;
+            case "Garage":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.garage);
+                break;
+            case "Hopital":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.hopital);
+                break;
+            case "Laverie":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.laveries);
+                break;
+            case "Mairie":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.mairie);
+                break;
+            case "Maison des étudiants":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.maison_des_etudiants);
+                break;
+            case "Médecin":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.medecin);
+                break;
+            case "Pharmacie":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.pharmacie);
+                break;
+            case "Réduction à court terme":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.court_terme_reduction);
+                break;
+            case "Réduction à long terme":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.long_terme_reduction);
+                break;
+            case "Salle de sport":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.salle_de_sport);
+                break;
+            case "Stade":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.stade);
+                break;
+            case "Station essence":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.stations_services);
+                break;
+            case "Terrain":
+                marker = ContextCompat.getDrawable(getContext(), R.drawable.terrain);
+                break;
+            default:
+                marker = null;
+        }
+        return marker;
+    }
+
 }

@@ -56,7 +56,7 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
         }
     }
 
-    /* La méthode onLoginButtonClick permet de valider les informations rentrer par l'utilisateur.
+    /* La méthode onLoginButtonClick permet de valider les informations rentrées par l'utilisateur.
     C'est à dire s'il y a un problème d'authentification, de mot de passe, d'adresse email invalide.
     */
     public void onLoginButtonClick(View view) throws IOException, JSONException {
