@@ -155,20 +155,20 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
 
         View view;
 
-        //S'il est connecté, on affiche le XML fragment_compte_connecte
-        if (choice == "connected")
-            view = inflater.inflate(R.layout.fragment_compte_connecte, container, false);
-            //S'il n'est pas connecté on affiche le XML fragment_compte_login
-        else {
             view = inflater.inflate(R.layout.fragment_compte_login, container, false);
-            //On récupere la vue souhaitée et on lui affecte le Listener
-            // On créé des vues pour les boutons valider ou je n'ai pas de compte
+
             view.findViewById(R.id.BT_validation).setOnClickListener(this);
             view.findViewById(R.id.BT_noCompte).setOnClickListener(this);
 
             // On récupère les EditText complétés par l'utilisateur
             TF_login = (EditText) view.findViewById(R.id.TF_login);
             TF_passwd = (EditText) view.findViewById(R.id.TF_passwd);
+
+        if(choice == "connected") {
+            final FragmentTransaction ft = getFragmentManager().beginTransaction();
+            Fragment ecranConnecte = new CompteConnecteFragment();
+            ft.replace(R.id.ecran_connection, ecranConnecte);
+            ft.commit();
         }
 
         return view;
