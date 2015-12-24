@@ -11,9 +11,11 @@ Ce XML permet de définir l'écran lorsque l'utilsiteur veut se connecter.
     android:weightSum="1">
 
     <RelativeLayout
-        android:id="@+id/fiche"
+        android:id="@+id/ecran_connection"
         android:layout_width="match_parent"
-        android:layout_height="641dp">
+        android:layout_height="641dp"
+        android:alpha="1"
+        android:background="#ffffff">
 
         <!--
        On ajoute un TextView pour dire à l'utilisateur quelles informations on veut avoir

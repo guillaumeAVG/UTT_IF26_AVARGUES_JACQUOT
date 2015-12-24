@@ -93,8 +93,12 @@ public class LoginService {
                 SharedPreferences.Editor editor = settings.edit();
 
                 editor.remove("token");
+                editor.remove("nom");
+                editor.remove("prenom");
                 editor.apply();
                 editor.putString("token", jsonResponse.getString("token"));
+                editor.putString("nom", jsonResponse.getString("nom"));
+                editor.putString("prenom", jsonResponse.getString("prenom"));
                 editor.apply();
 
                 return "Success";

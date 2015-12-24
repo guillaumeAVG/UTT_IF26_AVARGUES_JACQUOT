@@ -1,10 +1,12 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 
+import android.app.FragmentContainer;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,13 +46,21 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
 
         switch (view.getId()) {
             case R.id.BT_validation:
+                Boolean login = false;
                 try {
-                    onLoginButtonClick(view);
+                    login = onLoginButtonClick(view);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                if(login == true) {
+                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    Fragment ecranConnecte = new CompteConnecteFragment();
+                    ft.replace(R.id.ecran_connection, ecranConnecte);
+                    ft.commit();
+                }
+
                 break;
             case R.id.BT_noCompte:
                 onNewAccountClick(view);
@@ -66,7 +76,7 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
      * @throws IOException
      * @throws JSONException
      */
-    public void onLoginButtonClick(View view) throws IOException, JSONException {
+    public boolean onLoginButtonClick(View view) throws IOException, JSONException {
         String STRING_login = TF_login.getText().toString();
         String STRING_passwd = TF_passwd.getText().toString();
         LoginService loginService = new LoginService();
@@ -77,18 +87,19 @@ public class CompteLoginFragment extends Fragment implements View.OnClickListene
             case "Internal error":
             case "Undefined error":
                 Toast.makeText(getActivity().getApplicationContext(), "Error. Please try again", Toast.LENGTH_LONG).show();
-                break;
+                return false;
             case "Bad password":
             case "Not match":
             case "No valid email":
                 Toast.makeText(getActivity().getApplicationContext(), "Erreur d'identifiant ou de mot de passe", Toast.LENGTH_LONG).show();
-                break;
+                return false;
             case "Success":
                 SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
                 String token = settings.getString("token", "");
-                break;
+                return true;
             default:
                 Toast.makeText(getActivity().getApplicationContext(), "Erreur inconue", Toast.LENGTH_LONG).show();
+                return false;
         }
     }
 

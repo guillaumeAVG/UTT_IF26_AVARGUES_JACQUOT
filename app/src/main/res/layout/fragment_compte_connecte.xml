@@ -9,9 +9,11 @@ Ce XML permet de définir le fragment lorsque l'utilisateur est connecté.
     android:weightSum="1">
 
     <RelativeLayout
-        android:id="@+id/fiche"
+        android:id="@+id/ecran_compte_connecte"
         android:layout_width="match_parent"
-        android:layout_height="641dp">
+        android:layout_height="641dp"
+        android:alpha="1"
+        android:background="#ffffff">
         <!--
            On ajoute un TextView pour permettre d'afficher du texte à l'utilisateur connecté
            -->
