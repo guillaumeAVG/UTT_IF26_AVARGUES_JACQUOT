@@ -35,7 +35,6 @@ public class CompteConnecteFragment extends Fragment implements View.OnClickList
         View rootView = inflater.inflate(R.layout.fragment_compte_connecte, container, false);
 
         rootView.findViewById(R.id.BT_deconnexion).setOnClickListener(this);
-        Toast.makeText(getActivity().getApplicationContext(), "Test", Toast.LENGTH_LONG).show();
         return rootView;
     }
 
