@@ -1,7 +1,10 @@
 package fr.utt.if26_avargues_jacquot.fragment;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
@@ -33,7 +36,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
+import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 import fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity;
+import fr.utt.if26_avargues_jacquot.services.CheckTokenService;
 import fr.utt.if26_avargues_jacquot.services.GetBonsPlansService;
 import fr.utt.if26_avargues_jacquot.services.MyItemizedOverlay;
 
@@ -102,12 +107,48 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.IMGB_ajouterBonPlan:
-
-                // On met en place le passage entre les deux activités sur ce Listener
-                // On passe de l'activité principale à l'activité d'ajout de bon plan.
-                Intent intent = new Intent(getActivity(), NouveauBonPlanActivity.class);
-                startActivity(intent);
+                Boolean connecte = false;
+                try {
+                   connecte  = this.checkToken();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if(!connecte) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                    alertDialog.setTitle("Connexion requise");
+                    alertDialog.setMessage("Vous devez être connecté pour ajouter un bon plan.");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+                }
+                else {
+                    // On met en place le passage entre les deux activités sur ce Listener
+                    // On passe de l'activité principale à l'activité d'ajout de bon plan.
+                    Intent intent = new Intent(getActivity(), NouveauBonPlanActivity.class);
+                    startActivity(intent);
+                }
                 break;
+        }
+
+    }
+
+    public boolean checkToken() throws IOException, JSONException {
+        SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
+        String token = settings.getString("token", "");
+
+        CheckTokenService cts = new CheckTokenService();
+        Boolean checkToken = cts.validateToken(token);
+
+        if (checkToken) {
+            return true;
+        } else {
+            return false;
         }
 
     }
