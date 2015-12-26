@@ -269,6 +269,18 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:maxWidth="42dp"
                 android:src="@drawable/attention" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Par : Auteur"
+                android:id="@+id/TX_auteur"
+                android:layout_above="@+id/TX_description"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="19dp"
+                android:layout_marginStart="19dp" />
+
 
         </RelativeLayout>
     </LinearLayout>

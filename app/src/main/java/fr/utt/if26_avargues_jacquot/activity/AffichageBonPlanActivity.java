@@ -3,8 +3,19 @@ package fr.utt.if26_avargues_jacquot.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import fr.utt.if26_avargues_jacquot.services.GetOneBonPlanService;
 
 /**
  * Created by guillaume on 20/12/2015.
@@ -12,6 +23,12 @@ import com.example.guillaume.if26_avargues_jacquot.R;
 /* Cette classe définit une autre activité de l'application.
 On créé donc l'activité qui permet d'afficher un bon plan*/
 public class AffichageBonPlanActivity extends AppCompatActivity {
+
+    String NomBonPlan;
+    String bonPlanAuteur;
+    String bonPlanAdresse;
+    String bonPlanDescription;
+
 
     /*La méthode onCreate permet de mettre en place l'écran d'affichage d'un bon plan grâce au XML.
     Il y a aussi la mise en place du toolBar*/
@@ -22,5 +39,49 @@ public class AffichageBonPlanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_affichage_bon_plan);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Bundle objetbunble  = this.getIntent().getExtras();
+        // récupération de la valeur
+        NomBonPlan = objetbunble .getString("nom");
+
+        try {
+            getBonPlan();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        remplissageVue();
+
     }
+
+    private void remplissageVue() {
+
+        TextView titreBonPlan = (TextView) findViewById(R.id.TX_nomBonPlan);
+        TextView texteDescription = (TextView) findViewById(R.id.TX_texteDescription);
+        TextView texteAuteur = (TextView) findViewById(R.id.TX_auteur);
+
+        titreBonPlan.setText(NomBonPlan);
+        texteDescription.setText(bonPlanAdresse + "\r\n" + bonPlanDescription);
+        texteAuteur.setText("Par : " + bonPlanAuteur);
+
+    }
+
+    private void getBonPlan() throws IOException, JSONException {
+
+        GetOneBonPlanService gobps = new GetOneBonPlanService();
+        String JSONbonPlan = gobps.getBonPlan(NomBonPlan);
+
+        JSONArray jsonArrayBonPlan  = new JSONArray(JSONbonPlan);
+
+        //Si on a un bon plan à afficher
+        if(jsonArrayBonPlan != null) {
+            JSONObject bonPlan = (JSONObject) jsonArrayBonPlan.get(0);
+            bonPlanAuteur = bonPlan.getString("auteur");
+            bonPlanAdresse = bonPlan.getString("adresse");
+            bonPlanDescription = bonPlan.getString("description");
+        }
+
+    }
+
 }
