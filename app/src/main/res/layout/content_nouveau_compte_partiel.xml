@@ -40,7 +40,7 @@ Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
                                                On créé des EditText pour permettre à l'utilisateur d'ajouter du texte
                                                -->
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/TF_nouveauCompteTelephone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/TX_confirmationDuMotDePasse"
@@ -55,18 +55,18 @@ Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TX_telephone"
         android:layout_alignStart="@+id/TX_telephone"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/TF_nouveauCompteTelephone"
         android:layout_marginTop="23dp"
         android:text="Mot de passe"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#010101" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/TF_nouveauCompteMotdePasse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText5"
-        android:layout_alignStart="@+id/editText5"
+        android:layout_alignLeft="@+id/TF_nouveauCompteTelephone"
+        android:layout_alignStart="@+id/TF_nouveauCompteTelephone"
         android:layout_below="@+id/textView2"
         android:ems="10"
         android:inputType="textPassword" />
@@ -77,14 +77,14 @@ Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/TF_nouveauCompteMotdePasse"
         android:layout_marginTop="16dp"
         android:text="Confirmation du mot de passe"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#010101" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/TF_nouveauCompteMotdePasseConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/TX_confirmationDuMotDePasse"
@@ -99,7 +99,7 @@ Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TX_confirmationDuMotDePasse"
         android:layout_alignStart="@+id/TX_confirmationDuMotDePasse"
-        android:layout_below="@+id/editText7"
+        android:layout_below="@+id/TF_nouveauCompteMotdePasseConfirm"
         android:layout_marginTop="20dp"
         android:text="Veuillez saisir  les caractères  ci-contre"
         android:textAppearance="?android:attr/textAppearanceMedium"

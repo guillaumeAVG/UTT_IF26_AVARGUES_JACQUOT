@@ -37,7 +37,7 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
                   On ajoute des EditText pour que l'utilisateur donne des informations sur le bon plan
                   -->
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/TF_nouveauCompteNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TX_nomDuBonPlan"
@@ -52,18 +52,18 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText"
+            android:layout_below="@+id/TF_nouveauCompteNom"
             android:layout_marginTop="12dp"
             android:text="Prenom"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/TF_nouveauComptePrenom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText"
+            android:layout_alignLeft="@+id/TF_nouveauCompteNom"
+            android:layout_alignStart="@+id/TF_nouveauCompteNom"
             android:layout_below="@+id/TX_adresseDuBonPlan"
             android:ems="10"
             android:inputType="textPersonName" />
@@ -74,18 +74,18 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText2"
+            android:layout_below="@+id/TF_nouveauComptePrenom"
             android:layout_marginTop="11dp"
             android:text="Date de naissance"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/TF_nouveauCompteDateNaissance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignStart="@+id/editText2"
+            android:layout_alignLeft="@+id/TF_nouveauComptePrenom"
+            android:layout_alignStart="@+id/TF_nouveauComptePrenom"
             android:layout_below="@+id/TX_typeDeBonPlan"
             android:ems="10"
             android:inputType="date" />
@@ -94,18 +94,18 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
             android:id="@+id/TX_descriptionDuBonPlan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText3"
+            android:layout_below="@+id/TF_nouveauCompteDateNaissance"
             android:layout_marginTop="20dp"
             android:text="Adresse email"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#010101" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/TF_nouveauCompteEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText3"
-            android:layout_alignStart="@+id/editText3"
+            android:layout_alignLeft="@+id/TF_nouveauCompteDateNaissance"
+            android:layout_alignStart="@+id/TF_nouveauCompteDateNaissance"
             android:layout_below="@+id/TX_descriptionDuBonPlan"
             android:ems="10"
             android:inputType="textEmailAddress" />
@@ -116,7 +116,7 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText4"
+            android:layout_below="@+id/TF_nouveauCompteEmail"
             android:layout_marginTop="15dp"
             android:text="Ecole"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -126,7 +126,7 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
                   L'utilisateur peut choisir de quelle école il appartient.
                   -->
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/RG_NouveauCompteEcole"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
@@ -170,7 +170,7 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/radioGroup">
+            android:layout_below="@+id/RG_NouveauCompteEcole">
 
             <include layout="@layout/content_nouveau_compte_partiel" />
         </FrameLayout>
