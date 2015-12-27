@@ -175,6 +175,17 @@ Ce XML permet de définir le fragment lorsqu'on créer un nouveau compte.
             <include layout="@layout/content_nouveau_compte_partiel" />
         </FrameLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="ex : 20/12/1995"
+            android:id="@+id/textView6"
+            android:layout_alignBaseline="@+id/TX_typeDeBonPlan"
+            android:layout_alignBottom="@+id/TX_typeDeBonPlan"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
     </RelativeLayout>
 
 </ScrollView>
