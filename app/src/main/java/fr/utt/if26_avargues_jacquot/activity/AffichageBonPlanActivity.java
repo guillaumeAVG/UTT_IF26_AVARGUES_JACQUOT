@@ -76,7 +76,7 @@ public class AffichageBonPlanActivity extends AppCompatActivity {
         texteDateAjout.setText("Ajouté le: " + bonPlanDateAjout);
         texteDateDebut.setText("Du: " + bonPlanDateDebut);
         texteDateFin.setText("Au: " + bonPlanDateFin);
-        texteType.setText("Type: " + bonPlanType);
+        texteType.setText(bonPlanType);
 
     }
 
@@ -93,7 +93,7 @@ public class AffichageBonPlanActivity extends AppCompatActivity {
             bonPlanAuteur = bonPlan.getString("auteur");
             bonPlanAdresse = bonPlan.getString("adresse");
             bonPlanDescription = bonPlan.getString("description");
-            bonPlanDateAjout = bonPlan.getString("dateAjout");
+            bonPlanDateAjout = bonPlan.getString("dateCreation");
             bonPlanDateDebut = bonPlan.getString("dateDebut");
             bonPlanDateFin = bonPlan.getString("dateFin");
             bonPlanType = bonPlan.getString("type");
