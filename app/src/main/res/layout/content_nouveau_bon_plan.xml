@@ -135,7 +135,6 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/TX_commerces"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
                 android:buttonTint="#4e47ce"
                 android:checked="false"
                 android:text="Alimentations"
@@ -410,7 +409,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="270dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/alimentation" />
@@ -420,7 +419,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="300dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/laveries" />
@@ -430,7 +429,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="330dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/distributeurs" />
@@ -440,7 +439,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="385dp"
+            android:layout_marginTop="365dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/stations_services" />
@@ -450,7 +449,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="400dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/garage" />
@@ -460,7 +459,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="513dp"
+            android:layout_marginTop="493dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/hopital" />
@@ -470,7 +469,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="545dp"
+            android:layout_marginTop="525dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/medecin" />
@@ -480,7 +479,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="575dp"
+            android:layout_marginTop="555dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/pharmacie" />
@@ -490,7 +489,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="675dp"
+            android:layout_marginTop="655dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/salle_de_sport" />
@@ -500,7 +499,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="713dp"
+            android:layout_marginTop="693dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/terrain" />
@@ -510,7 +509,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="742dp"
+            android:layout_marginTop="722dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/stade" />
@@ -520,7 +519,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="837dp"
+            android:layout_marginTop="817dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/caf_jaune" />
@@ -530,7 +529,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="870dp"
+            android:layout_marginTop="850dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/mairie" />
@@ -540,7 +539,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="900dp"
+            android:layout_marginTop="880dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/bus" />
@@ -550,7 +549,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="930dp"
+            android:layout_marginTop="910dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/assurance_maladie" />
@@ -560,7 +559,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="965dp"
+            android:layout_marginTop="945dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/emploi" />
@@ -570,7 +569,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="995dp"
+            android:layout_marginTop="975dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/maison_des_etudiants" />
