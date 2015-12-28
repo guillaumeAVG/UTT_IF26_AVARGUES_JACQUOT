@@ -85,22 +85,22 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_nouveaute1"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginRight="20dp"
-                android:text="Memphis coff" />
+                android:text="Memphis coffee" />
 
             <TextView
                 android:id="@+id/TX_nouveaute2"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="Magasin bio" />
 
             <TextView
                 android:id="@+id/TX_nouveaute3"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_marginLeft="35dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:text="Stade de l&apos;aube" />
         </LinearLayout>

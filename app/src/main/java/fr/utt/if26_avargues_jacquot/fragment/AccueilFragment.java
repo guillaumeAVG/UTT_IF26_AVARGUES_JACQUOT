@@ -34,7 +34,7 @@ public class AccueilFragment extends Fragment implements View.OnClickListener {
                 Intent defineIntent = new Intent(main.ma.getApplicationContext(), AffichageBonPlanActivity.class);
                 // objet qui vas nous permettre de passe des variables ici la variable passInfo
                 Bundle objetbunble = new Bundle();
-                objetbunble .putString("nom", "Memphis coff");
+                objetbunble .putString("nom", "Memphis coffee");
                 // on passe notre objet a notre activities
                 defineIntent.putExtras(objetbunble);
                 defineIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -68,28 +68,82 @@ public class AccueilFragment extends Fragment implements View.OnClickListener {
                 main3.ma.getApplicationContext().startActivity(defineIntent3);
                 break;
             case R.id.IMGB_plusConsultes1:
-                Intent intent4 = new Intent(getActivity(), AffichageBonPlanActivity.class);
-                startActivity(intent4);
+                MainActivity main4 = new MainActivity();
+                //création de notre item
+                Intent defineIntent4 = new Intent(main4.ma.getApplicationContext(), AffichageBonPlanActivity.class);
+                // objet qui vas nous permettre de passe des variables ici la variable passInfo
+                Bundle objetbunble4 = new Bundle();
+                objetbunble4 .putString("nom", "BNP Paribas distributeur");
+                // on passe notre objet a notre activities
+                defineIntent4.putExtras(objetbunble4);
+                defineIntent4.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // on appelle notre activité
+                main4.ma.getApplicationContext().startActivity(defineIntent4);
                 break;
             case R.id.IMGB_plusConsultes2:
-                Intent intent5 = new Intent(getActivity(), AffichageBonPlanActivity.class);
-                startActivity(intent5);
+                MainActivity main5 = new MainActivity();
+                //création de notre item
+                Intent defineIntent5 = new Intent(main5.ma.getApplicationContext(), AffichageBonPlanActivity.class);
+                // objet qui vas nous permettre de passe des variables ici la variable passInfo
+                Bundle objetbunble5 = new Bundle();
+                objetbunble5 .putString("nom", "Hotel de ville");
+                // on passe notre objet a notre activities
+                defineIntent5.putExtras(objetbunble5);
+                defineIntent5.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // on appelle notre activité
+                main5.ma.getApplicationContext().startActivity(defineIntent5);
                 break;
             case R.id.IMGB_plusConsultes3:
-                Intent intent6 = new Intent(getActivity(), AffichageBonPlanActivity.class);
-                startActivity(intent6);
+                MainActivity main6 = new MainActivity();
+                //création de notre item
+                Intent defineIntent6 = new Intent(main6.ma.getApplicationContext(), AffichageBonPlanActivity.class);
+                // objet qui vas nous permettre de passe des variables ici la variable passInfo
+                Bundle objetbunble6 = new Bundle();
+                objetbunble6 .putString("nom", "Halle sportive de l'utt");
+                // on passe notre objet a notre activities
+                defineIntent6.putExtras(objetbunble6);
+                defineIntent6.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // on appelle notre activité
+                main6.ma.getApplicationContext().startActivity(defineIntent6);
                 break;
             case R.id.IMGB_plusCommentes1:
-                Intent intent7 = new Intent(getActivity(), AffichageBonPlanActivity.class);
-                startActivity(intent7);
+                MainActivity main7 = new MainActivity();
+                //création de notre item
+                Intent defineIntent7 = new Intent(main7.ma.getApplicationContext(), AffichageBonPlanActivity.class);
+                // objet qui vas nous permettre de passe des variables ici la variable passInfo
+                Bundle objetbunble7 = new Bundle();
+                objetbunble7 .putString("nom", "Hopital de Troyes");
+                // on passe notre objet a notre activities
+                defineIntent7.putExtras(objetbunble7);
+                defineIntent7.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // on appelle notre activité
+                main7.ma.getApplicationContext().startActivity(defineIntent7);
                 break;
             case R.id.IMGB_plusCommentes2:
-                Intent intent8 = new Intent(getActivity(), AffichageBonPlanActivity.class);
-                startActivity(intent8);
+                MainActivity main8 = new MainActivity();
+                //création de notre item
+                Intent defineIntent8 = new Intent(main8.ma.getApplicationContext(), AffichageBonPlanActivity.class);
+                // objet qui vas nous permettre de passe des variables ici la variable passInfo
+                Bundle objetbunble8 = new Bundle();
+                objetbunble8 .putString("nom", "Total Access");
+                // on passe notre objet a notre activities
+                defineIntent8.putExtras(objetbunble8);
+                defineIntent8.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // on appelle notre activité
+                main8.ma.getApplicationContext().startActivity(defineIntent8);
                 break;
             case R.id.IMGB_plusCommentes3:
-                Intent intent9 = new Intent(getActivity(), AffichageBonPlanActivity.class);
-                startActivity(intent9);
+                MainActivity main9 = new MainActivity();
+                //création de notre item
+                Intent defineIntent9 = new Intent(main9.ma.getApplicationContext(), AffichageBonPlanActivity.class);
+                // objet qui vas nous permettre de passe des variables ici la variable passInfo
+                Bundle objetbunble9 = new Bundle();
+                objetbunble9 .putString("nom", "UTT laverie");
+                // on passe notre objet a notre activities
+                defineIntent9.putExtras(objetbunble9);
+                defineIntent9.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // on appelle notre activité
+                main9.ma.getApplicationContext().startActivity(defineIntent9);
                 break;
 
         }
