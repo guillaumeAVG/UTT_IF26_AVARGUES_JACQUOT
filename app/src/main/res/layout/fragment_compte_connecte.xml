@@ -11,7 +11,7 @@ Ce XML permet de définir le fragment lorsque l'utilisateur est connecté.
     <RelativeLayout
         android:id="@+id/ecran_compte_connecte"
         android:layout_width="match_parent"
-        android:layout_height="641dp"
+        android:layout_height="match_parent"
         android:alpha="1"
         android:background="#ffffff">
         <!--
@@ -50,27 +50,28 @@ Ce XML permet de définir le fragment lorsque l'utilisateur est connecté.
             android:src="@drawable/icone_utilisateur" />
 
         <TextView
-            android:id="@+id/TX_descriptionUtilisateur"
+            android:id="@+id/TX_dateDeNaissance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/IMG_line"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:paddingLeft="40dp"
-            android:text="Description"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text="Date de naissance"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="28dp"
+            android:layout_below="@+id/IMG_line"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
-            android:id="@+id/TX_texteDescriptionUtilisateur"
+            android:id="@+id/TX_texteDescriptionDateDeNaissance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/TX_nomCompte"
-            android:layout_alignStart="@+id/TX_nomCompte"
-            android:layout_below="@+id/TX_descriptionUtilisateur"
             android:paddingLeft="40dp"
             android:paddingRight="20dp"
-            android:text="Nom\nPrenom\nAdresse email"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text="Description date de naissance"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/TX_dateDeNaissance"
+            android:layout_alignLeft="@+id/TX_nomCompte"
+            android:layout_alignStart="@+id/TX_nomCompte" />
 
         <ImageView
 
@@ -96,8 +97,81 @@ Ce XML permet de définir le fragment lorsque l'utilisateur est connecté.
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/IMG_iconeUtilisateur"
             android:layout_alignRight="@+id/IMG_iconeUtilisateur"
-            android:layout_below="@+id/TX_texteDescriptionUtilisateur"
-            android:layout_marginTop="46dp"
+            android:layout_below="@+id/TX_texteDescriptionDateDeNaissance"
+            android:layout_marginTop="200dp"
             android:text="Deconnexion" />
+
+        <TextView
+            android:id="@+id/TX_adresseEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="Adresse email"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="21dp"
+            android:layout_below="@+id/TX_texteDescriptionDateDeNaissance"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/TX_descriptionAdresseEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="20dp"
+            android:text="Description adresse email"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/TX_adresseEmail"
+            android:layout_alignLeft="@+id/TX_texteDescriptionDateDeNaissance"
+            android:layout_alignStart="@+id/TX_texteDescriptionDateDeNaissance" />
+
+        <TextView
+            android:id="@+id/TX_ecole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="Ecole"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/TX_descriptionAdresseEmail"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/TX_descriptionEcole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="20dp"
+            android:text="Description ecole"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/TX_ecole"
+            android:layout_alignLeft="@+id/TX_descriptionAdresseEmail"
+            android:layout_alignStart="@+id/TX_descriptionAdresseEmail" />
+
+        <TextView
+            android:id="@+id/TX_telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="Telephone"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@+id/TX_descriptionEcole"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="23dp" />
+
+        <TextView
+            android:id="@+id/TX_descriptionTelephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="20dp"
+            android:text="Description telephone"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/TX_telephone"
+            android:layout_alignLeft="@+id/TX_descriptionEcole"
+            android:layout_alignStart="@+id/TX_descriptionEcole" />
+
     </RelativeLayout>
 </LinearLayout>

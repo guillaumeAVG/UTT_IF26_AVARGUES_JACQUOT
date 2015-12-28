@@ -94,8 +94,8 @@ public class AffichageBonPlanActivity extends AppCompatActivity {
             bonPlanAdresse = bonPlan.getString("adresse");
             bonPlanDescription = bonPlan.getString("description");
             bonPlanDateAjout = bonPlan.getString("dateAjout");
-            bonPlanDateDebut = bonPlan.getString("dateDebut");
-            bonPlanDateFin = bonPlan.getString("dateFin");
+            bonPlanDateDebut = bonPlan.getString("dateDebutDeValidite");
+            bonPlanDateFin = bonPlan.getString("dateFinDeValidite");
             bonPlanType = bonPlan.getString("type");
 
         }

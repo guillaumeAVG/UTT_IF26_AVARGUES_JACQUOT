@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.example.guillaume.if26_avargues_jacquot.R;
 
 import org.json.JSONException;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -44,10 +43,21 @@ public class CompteConnecteFragment extends Fragment implements View.OnClickList
         SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
         String nom = settings.getString("nom", "");
         String prenom = settings.getString("prenom", "");
+        String dateDeNaissance = settings.getString("dateNaissance", "");
+        String adresseEmail = settings.getString("email", "");
+        String ecole = settings.getString("ecole", "");
+        String telephone = settings.getString("telephone", "");
+
         identite.setText(prenom + " " + nom);
 
-        TextView description = (TextView) rootView.findViewById(R.id.TX_texteDescriptionUtilisateur);
-        description.setText(nom + "\r\n" + prenom);
+        TextView naissance = (TextView) rootView.findViewById(R.id.TX_texteDescriptionDateDeNaissance);
+        naissance.setText(dateDeNaissance);
+        TextView  emailAdresse= (TextView) rootView.findViewById(R.id.TX_descriptionAdresseEmail);
+        emailAdresse.setText(adresseEmail);
+        TextView  nomEcole= (TextView) rootView.findViewById(R.id.TX_descriptionEcole);
+        nomEcole.setText(ecole);
+        TextView  numeroTelephone= (TextView) rootView.findViewById(R.id.TX_descriptionTelephone);
+        numeroTelephone.setText(telephone);
         return rootView;
     }
 
