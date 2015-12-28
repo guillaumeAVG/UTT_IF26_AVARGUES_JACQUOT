@@ -73,36 +73,36 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="0.03"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="1">
             <!--
                       On ajoute le texte en bas de chaque icone cliquante
                       -->
             <TextView
                 android:id="@+id/TX_nouveaute1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="Réduction" />
+                android:text="Memphis coff" />
 
             <TextView
                 android:id="@+id/TX_nouveaute2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Alimentation" />
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:text="Magasin bio" />
 
             <TextView
                 android:id="@+id/TX_nouveaute3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
                 android:layout_marginLeft="35dp"
-                android:layout_marginRight="40dp"
-                android:text="Stade" />
+                android:layout_marginRight="10dp"
+                android:text="Stade de l&apos;aube" />
         </LinearLayout>
 
         <TextView
@@ -152,34 +152,34 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="0.03"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/TX_plusConsultes1"
-                android:layout_width="wrap_content"
+                android:layout_width="79dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
+                android:layout_marginLeft="28dp"
                 android:layout_marginRight="20dp"
-                android:text="Distributeur" />
+                android:text="BNP Paribas distributeur" />
 
             <TextView
                 android:id="@+id/TX_plusConsultes2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="37dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="20dp"
-                android:text="Mairie" />
+                android:text="Hotel de ville" />
 
             <TextView
                 android:id="@+id/TX_plusConsultes3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
-                android:text="Salle de sport" />
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="10dp"
+                android:text="Halle sportive de l&apos;utt" />
         </LinearLayout>
 
         <TextView
@@ -238,25 +238,23 @@ Ce XML permet de définir le fragment de l'accueil de l'application.
                 android:id="@+id/TX_plusCommentes1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="20dp"
-                android:text="Hopital" />
+                android:layout_marginLeft="10dp"
+                android:text="Hopital de Troyes" />
 
             <TextView
                 android:id="@+id/TX_plusCommentes2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="28dp"
-                android:layout_marginRight="20dp"
-                android:text="Station service" />
+                android:text="Total Access"
+                android:layout_marginLeft="18dp" />
 
             <TextView
                 android:id="@+id/TX_plusCommentes3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="40dp"
-                android:text="Laverie" />
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="10dp"
+                android:text="UTT laverie" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

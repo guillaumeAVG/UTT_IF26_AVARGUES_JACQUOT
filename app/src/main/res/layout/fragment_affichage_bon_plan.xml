@@ -259,17 +259,6 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_toRightOf="@+id/IMGB_likeCommentaire3"
                 android:src="@drawable/unlike" />
 
-            <ImageButton
-                android:id="@+id/IMGB_attention"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_alignEnd="@+id/ratingBar"
-                android:layout_alignRight="@+id/ratingBar"
-                android:layout_alignTop="@+id/TX_nomBonPlan"
-                android:maxHeight="42dp"
-                android:maxWidth="42dp"
-                android:src="@drawable/attention" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

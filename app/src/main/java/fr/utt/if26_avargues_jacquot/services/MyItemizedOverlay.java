@@ -70,9 +70,6 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
         defineIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         // on appelle notre activité
         main.ma.getApplicationContext().startActivity(defineIntent);
-
-
-
         return(true);
     }
 }
