@@ -48,7 +48,8 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_below="@+id/TX_descriptionDeAdresse"
                 android:layout_alignLeft="@+id/TX_texteDescription"
                 android:layout_alignStart="@+id/TX_texteDescription"
-                android:paddingLeft="40dp" />
+                android:paddingLeft="40dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TX_texteDescription"
@@ -77,7 +78,8 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:paddingLeft="40dp"
                 android:text="Avis"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TX_notes"
@@ -143,7 +145,7 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_marginLeft="61dp"
                 android:layout_marginStart="61dp"
                 android:paddingRight="10dp"
-                android:text="Ce magasin propose beaucoup de réductions. C&apos;est très intéréssant."
+                android:text="Texte de description du commentaire 1."
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -170,7 +172,7 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_marginBottom="80dp"
                 android:paddingLeft="60dp"
                 android:paddingRight="10dp"
-                android:text="Les vendeurs du magasin ne sont pas agréables..."
+                android:text="Texte de description du commentaire 2."
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -197,9 +199,8 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_below="@+id/TX_commentaire3"
                 android:paddingLeft="60dp"
                 android:paddingRight="10dp"
-                android:text="C'est un très bon magasin."
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_marginBottom="50dp" />
+                android:text="Texte de description du commentaire 3."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
             <!--
               On met en place des ImageView pour que l'utilisateur like ou dislike le commentaire de quelqu'un
               -->
@@ -207,38 +208,37 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:id="@+id/IMGB_likeCommentaire1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/TX_detailCommentaire1"
-                android:layout_toLeftOf="@+id/IMGB_dislikeCommentaire1"
-                android:layout_toStartOf="@+id/IMGB_dislikeCommentaire1"
-                android:src="@drawable/like" />
+                android:src="@drawable/like"
+                android:layout_alignBottom="@+id/TX_commentaire1"
+                android:layout_toLeftOf="@+id/IMGB_dislikeCommentaire3"
+                android:layout_toStartOf="@+id/IMGB_dislikeCommentaire3" />
 
             <ImageButton
                 android:id="@+id/IMGB_dislikeCommentaire1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/TX_detailCommentaire1"
-                android:layout_toEndOf="@+id/IMGB_likeCommentaire3"
+                android:src="@drawable/unlike"
+                android:layout_above="@+id/TX_detailCommentaire3"
                 android:layout_toRightOf="@+id/IMGB_likeCommentaire3"
-                android:src="@drawable/unlike" />
+                android:layout_toEndOf="@+id/IMGB_likeCommentaire3" />
 
             <ImageButton
                 android:id="@+id/IMGB_likeCommentaire2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/TX_commentaire2"
-                android:layout_alignLeft="@+id/IMGB_likeCommentaire1"
-                android:layout_alignStart="@+id/IMGB_likeCommentaire1"
-                android:src="@drawable/like" />
+                android:src="@drawable/like"
+                android:layout_alignTop="@+id/IMGB_dislikeCommentaire2"
+                android:layout_toLeftOf="@+id/IMGB_dislikeCommentaire2"
+                android:layout_toStartOf="@+id/IMGB_dislikeCommentaire2" />
 
             <ImageButton
                 android:id="@+id/IMGB_dislikeCommentaire2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/unlike"
                 android:layout_above="@+id/TX_detailCommentaire2"
-                android:layout_alignEnd="@+id/TX_detailCommentaire2"
-                android:layout_alignRight="@+id/TX_detailCommentaire2"
-                android:layout_alignTop="@+id/IMGB_likeCommentaire2"
-                android:src="@drawable/unlike" />
+                android:layout_alignLeft="@+id/IMGB_dislikeCommentaire3"
+                android:layout_alignStart="@+id/IMGB_dislikeCommentaire3" />
 
             <ImageButton
                 android:id="@+id/IMGB_likeCommentaire3"
@@ -252,12 +252,12 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:id="@+id/IMGB_dislikeCommentaire3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/TX_detailCommentaire3"
-                android:layout_alignLeft="@+id/IMGB_dislikeCommentaire2"
-                android:layout_alignStart="@+id/IMGB_dislikeCommentaire2"
-                android:layout_alignTop="@+id/IMGB_likeCommentaire3"
-                android:layout_toRightOf="@+id/IMGB_likeCommentaire3"
-                android:src="@drawable/unlike" />
+                android:src="@drawable/unlike"
+                android:layout_alignTop="@+id/IMGB_likeCommentaire1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -283,7 +283,8 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_alignStart="@+id/TX_auteur"
                 android:layout_below="@+id/TX_nomBonPlan"
                 android:textSize="20dp"
-                android:paddingLeft="40dp" />
+                android:paddingLeft="40dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -318,7 +319,8 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_below="@+id/TX_descriptionDateFinBonPlan"
                 android:layout_alignLeft="@+id/TX_descriptionDateFinBonPlan"
                 android:layout_alignStart="@+id/TX_descriptionDateFinBonPlan"
-                android:paddingLeft="40dp" />
+                android:paddingLeft="40dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
