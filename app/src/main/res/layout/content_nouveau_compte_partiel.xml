@@ -91,29 +91,8 @@ Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
         android:layout_alignRight="@+id/TX_confirmationDuMotDePasse"
         android:layout_below="@+id/TX_confirmationDuMotDePasse"
         android:ems="10"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/TX_captcha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TX_confirmationDuMotDePasse"
-        android:layout_alignStart="@+id/TX_confirmationDuMotDePasse"
-        android:layout_below="@+id/TF_nouveauCompteMotdePasseConfirm"
-        android:layout_marginTop="20dp"
-        android:text="Veuillez saisir  les caractères  ci-contre"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#010101" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TX_captcha"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="Insertion du captcha"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:inputType="textPassword"
+        android:layout_marginBottom="10dp" />
 
     <Button
         android:id="@+id/BT_valider"
@@ -121,11 +100,11 @@ Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView3"
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginTop="11dp"
-        android:text="Valider" />
+        android:text="Valider"
+        android:layout_below="@+id/TF_nouveauCompteMotdePasseConfirm" />
     <!--
                                                On met en place deux boutons pour soit valider, soit annuler la création de son nouveau compte
                                                -->
@@ -147,10 +126,10 @@ Ce XML permet de définir un contenu partiel lorsqu'on ajoute un nouveau compte.
         android:id="@+id/BT_ajouterUneImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/TX_captcha"
-        android:layout_alignRight="@+id/TX_captcha"
+        android:text="Ajouter une Image"
         android:layout_alignTop="@+id/TX_photo"
-        android:text="Ajouter une Image" />
+        android:layout_alignRight="@+id/BT_valider"
+        android:layout_alignEnd="@+id/BT_valider" />
 
 
 </RelativeLayout>
