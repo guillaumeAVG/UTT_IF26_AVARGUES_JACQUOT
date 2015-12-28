@@ -17,7 +17,7 @@ Ce XML permet d'afficher les informations sur un bon plan.
         <RelativeLayout
             android:id="@+id/fiche"
             android:layout_width="match_parent"
-            android:layout_height="775dp"
+            android:layout_height="match_parent"
             android:layout_marginBottom="40dp">
 
             <!--
@@ -34,35 +34,35 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:paddingLeft="20dp"
                 android:text="Bon plan"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="32dp"
+                android:textSize="38dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TX_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/TX_nomBonPlan"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="40dp"
+                android:layout_marginTop="36dp"
                 android:text="Description"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:layout_below="@+id/TX_descriptionDeAdresse"
+                android:layout_alignLeft="@+id/TX_texteDescription"
+                android:layout_alignStart="@+id/TX_texteDescription"
+                android:paddingLeft="40dp" />
 
             <TextView
                 android:id="@+id/TX_texteDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/TX_description"
-                android:paddingLeft="40dp"
                 android:paddingRight="20dp"
                 android:text="Le nom du commerce l&apos;adresse, la nature du bon plan, le détail du bon plan, la description"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_below="@+id/TX_description"
+                android:layout_alignLeft="@+id/TX_descriptionDeAdresse"
+                android:layout_alignStart="@+id/TX_descriptionDeAdresse"
+                android:paddingLeft="60dp"
+                android:layout_alignRight="@+id/IMGB_dislikeCommentaire1"
+                android:layout_alignEnd="@+id/IMGB_dislikeCommentaire1" />
 
             <TextView
                 android:id="@+id/TX_avis"
@@ -198,7 +198,8 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:paddingLeft="60dp"
                 android:paddingRight="10dp"
                 android:text="C'est un très bon magasin."
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginBottom="50dp" />
             <!--
               On met en place des ImageView pour que l'utilisateur like ou dislike le commentaire de quelqu'un
               -->
@@ -273,13 +274,95 @@ Ce XML permet d'afficher les informations sur un bon plan.
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Par : Auteur"
+                android:text="Par : Nom de l&apos;auteur"
                 android:id="@+id/TX_auteur"
-                android:layout_above="@+id/TX_description"
+                android:layout_above="@+id/TX_dateDeValidité"
+                android:paddingLeft="30dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="19dp"
-                android:layout_marginStart="19dp" />
+                android:layout_toLeftOf="@+id/IMGB_likeCommentaire1"
+                android:layout_toStartOf="@+id/IMGB_likeCommentaire1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Date de validité"
+                android:id="@+id/TX_dateDeValidité"
+                android:layout_marginTop="60dp"
+                android:layout_alignLeft="@+id/TX_auteur"
+                android:layout_alignStart="@+id/TX_auteur"
+                android:layout_below="@+id/TX_nomBonPlan"
+                android:textSize="20dp"
+                android:paddingLeft="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Texte description date de début du bon plan"
+                android:id="@+id/TX_descriptionDateDebutBonPlan"
+                android:layout_below="@+id/TX_dateDeValidité"
+                android:layout_alignLeft="@+id/TX_dateDeValidité"
+                android:layout_alignStart="@+id/TX_dateDeValidité"
+                android:paddingLeft="60dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Texte description date de début du bon plan"
+                android:id="@+id/TX_descriptionDateFinBonPlan"
+                android:layout_below="@+id/TX_descriptionDateDebutBonPlan"
+                android:layout_alignRight="@+id/TX_descriptionDateDebutBonPlan"
+                android:layout_alignEnd="@+id/TX_descriptionDateDebutBonPlan"
+                android:paddingLeft="60dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Adresse"
+                android:id="@+id/TX_adresse"
+                android:layout_marginTop="28dp"
+                android:textSize="20dp"
+                android:layout_below="@+id/TX_descriptionDateFinBonPlan"
+                android:layout_alignLeft="@+id/TX_descriptionDateFinBonPlan"
+                android:layout_alignStart="@+id/TX_descriptionDateFinBonPlan"
+                android:paddingLeft="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Description de l&apos;adresse"
+                android:id="@+id/TX_descriptionDeAdresse"
+                android:layout_below="@+id/TX_adresse"
+                android:layout_alignLeft="@+id/TX_adresse"
+                android:layout_alignStart="@+id/TX_adresse"
+                android:paddingLeft="60dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Description date d&apos;ajout du bon plan"
+                android:id="@+id/TX_descriptionDateAjoutBonPlan"
+                android:layout_below="@+id/TX_nomBonPlan"
+                android:layout_alignLeft="@+id/TX_auteur"
+                android:layout_alignStart="@+id/TX_auteur"
+                android:paddingLeft="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Description du type de bon plan"
+                android:id="@+id/TX_descriptionTypeBonPlan"
+                android:paddingLeft="30dp"
+                android:layout_below="@+id/TX_descriptionDateAjoutBonPlan"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
 
         </RelativeLayout>

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
@@ -13,7 +12,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 import fr.utt.if26_avargues_jacquot.services.GetOneBonPlanService;
 
@@ -26,8 +24,12 @@ public class AffichageBonPlanActivity extends AppCompatActivity {
 
     String NomBonPlan;
     String bonPlanAuteur;
+    String bonPlanDateAjout;
+    String bonPlanDateDebut;
+    String bonPlanDateFin;
     String bonPlanAdresse;
     String bonPlanDescription;
+    String bonPlanType;
 
 
     /*La méthode onCreate permet de mettre en place l'écran d'affichage d'un bon plan grâce au XML.
@@ -58,12 +60,23 @@ public class AffichageBonPlanActivity extends AppCompatActivity {
     private void remplissageVue() {
 
         TextView titreBonPlan = (TextView) findViewById(R.id.TX_nomBonPlan);
-        TextView texteDescription = (TextView) findViewById(R.id.TX_texteDescription);
         TextView texteAuteur = (TextView) findViewById(R.id.TX_auteur);
+        TextView texteDateAjout = (TextView) findViewById(R.id.TX_descriptionDateAjoutBonPlan);
+        TextView texteDateDebut = (TextView) findViewById(R.id.TX_descriptionDateDebutBonPlan);
+        TextView texteDateFin = (TextView) findViewById(R.id.TX_descriptionDateFinBonPlan);
+        TextView texteDescription = (TextView) findViewById(R.id.TX_texteDescription);
+        TextView texteAdresse = (TextView) findViewById(R.id.TX_descriptionDeAdresse);
+        TextView texteType= (TextView) findViewById(R.id.TX_descriptionTypeBonPlan);
+
 
         titreBonPlan.setText(NomBonPlan);
-        texteDescription.setText(bonPlanAdresse + "\r\n" + bonPlanDescription);
-        texteAuteur.setText("Par : " + bonPlanAuteur);
+        texteAuteur.setText("Par: " + bonPlanAuteur);
+        texteDescription.setText(bonPlanDescription);
+        texteAdresse.setText(bonPlanAdresse);
+        texteDateAjout.setText("Ajouté le: " + bonPlanDateAjout);
+        texteDateDebut.setText("Du: " + bonPlanDateDebut);
+        texteDateFin.setText("Au: " + bonPlanDateFin);
+        texteType.setText("Type: " + bonPlanType);
 
     }
 
@@ -80,6 +93,11 @@ public class AffichageBonPlanActivity extends AppCompatActivity {
             bonPlanAuteur = bonPlan.getString("auteur");
             bonPlanAdresse = bonPlan.getString("adresse");
             bonPlanDescription = bonPlan.getString("description");
+            bonPlanDateAjout = bonPlan.getString("dateAjout");
+            bonPlanDateDebut = bonPlan.getString("dateDebut");
+            bonPlanDateFin = bonPlan.getString("dateFin");
+            bonPlanType = bonPlan.getString("type");
+
         }
 
     }
