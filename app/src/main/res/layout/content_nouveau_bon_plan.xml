@@ -23,11 +23,109 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:id="@+id/choixTypeBP"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
+
+            <TextView
+                android:id="@+id/TX_bonPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/TX_administrations"
+                android:layout_alignStart="@+id/TX_administrations"
+                android:layout_below="@+id/IMG_maisonDesEtudiants"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Bon plan"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff010a"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TX_bonPlanEphemere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/IMG_evenements"
+                android:layout_alignEnd="@+id/CB_emploi"
+                android:layout_alignRight="@+id/CB_emploi"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Ephémère"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ff583f"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+            <RadioButton
+                android:id="@+id/RB_evenements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/TX_bonPlan"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:buttonTint="#ff583f"
+                android:checked="false"
+                android:text="Evènements"
+                android:textColor="#ff583f" />
+
+            <RadioButton
+                android:id="@+id/RB_reductionsACourtTerme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/RB_evenements"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="#ff583f"
+                android:checked="false"
+                android:text="Réductions à court terme"
+                android:textColor="#ff583f" />
+
+            <TextView
+                android:id="@+id/TX_bonPlanStatique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/IMG_reductionALongTerme"
+                android:layout_alignLeft="@+id/TX_bonPlanEphemere"
+                android:layout_alignStart="@+id/TX_bonPlanEphemere"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Statique"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#c72b4c"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+            <RadioButton
+                android:id="@+id/RB_reductionsALongTerme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/RB_reductionsACourtTerme"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:buttonTint="#c72b4c"
+                android:checked="false"
+                android:text="Réductions à long terme"
+                android:textColor="#c72b4c" />
+
+            <TextView
+                android:id="@+id/TX_commerces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:text="Commerces"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#382bce"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/RB_alimentations"
@@ -295,112 +393,15 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/RB_emploi"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="60dp"
                 android:layout_marginLeft="20dp"
                 android:buttonTint="#ebb515"
                 android:checked="false"
                 android:text="Maison des étudiants"
                 android:textColor="#ebb515" />
 
-            <TextView
-                android:id="@+id/TX_bonPlan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/TX_administrations"
-                android:layout_alignStart="@+id/TX_administrations"
-                android:layout_below="@+id/IMG_maisonDesEtudiants"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Bon plan"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ff010a"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/TX_bonPlanEphemere"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/IMG_evenements"
-                android:layout_alignEnd="@+id/CB_emploi"
-                android:layout_alignRight="@+id/CB_emploi"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:text="Ephémère"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#ff583f"
-                android:textSize="15dp"
-                android:textStyle="bold|italic" />
-
-            <RadioButton
-                android:id="@+id/RB_evenements"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/TX_bonPlan"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="0dp"
-                android:buttonTint="#ff583f"
-                android:checked="false"
-                android:text="Evènements"
-                android:textColor="#ff583f" />
-
-            <RadioButton
-                android:id="@+id/RB_reductionsACourtTerme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/RB_evenements"
-                android:layout_marginLeft="20dp"
-                android:buttonTint="#ff583f"
-                android:checked="false"
-                android:text="Réductions à court terme"
-                android:textColor="#ff583f" />
-
-            <TextView
-                android:id="@+id/TX_bonPlanStatique"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/IMG_reductionALongTerme"
-                android:layout_alignLeft="@+id/TX_bonPlanEphemere"
-                android:layout_alignStart="@+id/TX_bonPlanEphemere"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
-                android:text="Statique"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#c72b4c"
-                android:textSize="15dp"
-                android:textStyle="bold|italic" />
-
-            <RadioButton
-                android:id="@+id/RB_reductionsALongTerme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/RB_reductionsACourtTerme"
-                android:layout_marginBottom="60dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="0dp"
-                android:buttonTint="#c72b4c"
-                android:checked="false"
-                android:text="Réductions à long terme"
-                android:textColor="#c72b4c" />
         </RadioGroup>
 
-        <TextView
-            android:id="@+id/TX_commerces"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
-            android:text="Commerces"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#382bce"
-            android:textSize="18dp"
-            android:textStyle="bold" />
         <!--
                               On créé des ImageView pour mettre en place des icones pour chaque RadioButton
                               -->
@@ -409,7 +410,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="290dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/alimentation" />
@@ -419,7 +420,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="320dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/laveries" />
@@ -429,7 +430,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="350dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/distributeurs" />
@@ -439,7 +440,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="385dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/stations_services" />
@@ -449,7 +450,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="420dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/garage" />
@@ -459,7 +460,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="248dp"
+            android:layout_marginTop="513dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/hopital" />
@@ -469,7 +470,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="545dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/medecin" />
@@ -479,7 +480,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="310dp"
+            android:layout_marginTop="575dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/pharmacie" />
@@ -489,7 +490,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="410dp"
+            android:layout_marginTop="675dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/salle_de_sport" />
@@ -499,7 +500,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="448dp"
+            android:layout_marginTop="713dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/terrain" />
@@ -509,7 +510,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="477dp"
+            android:layout_marginTop="742dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/stade" />
@@ -519,7 +520,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="572dp"
+            android:layout_marginTop="837dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/caf_jaune" />
@@ -529,7 +530,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="605dp"
+            android:layout_marginTop="870dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/mairie" />
@@ -539,7 +540,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="635dp"
+            android:layout_marginTop="900dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/bus" />
@@ -549,7 +550,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="665dp"
+            android:layout_marginTop="930dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/assurance_maladie" />
@@ -559,7 +560,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="700dp"
+            android:layout_marginTop="965dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/emploi" />
@@ -569,7 +570,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="730dp"
+            android:layout_marginTop="995dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/maison_des_etudiants" />
@@ -579,7 +580,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="860dp"
+            android:layout_marginTop="70dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/evenement_etudiant" />
@@ -589,7 +590,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="890dp"
+            android:layout_marginTop="100dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/court_terme_reduction" />
@@ -599,7 +600,7 @@ Ce XML permet de définir le contenu du type de bon plan lors d'un nouvel ajout.
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="965dp"
+            android:layout_marginTop="175dp"
             android:maxHeight="42dp"
             android:maxWidth="42dp"
             android:src="@drawable/long_terme_reduction" />
