@@ -54,7 +54,7 @@ C'est à dire lorsque le menu tabs est sur: Carte.
 Elle hérite de Fragment et implémente View.OnClickListener car cet écran possède des éléments qui sont cliquables:
 c'est pour que l'utilisateur puisse ajouter un bon plan.*/
 
-public class CarteFragment extends Fragment implements View.OnClickListener {
+public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /* La méthode onCreateView permet de créer des vues: c'est à dire
       on dit quel fichier XML doit réprésenter la page pour la carte.
@@ -207,7 +207,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
             map.getOverlays().add(myItemizedOverlay);
 
             GeoPoint myPoint = new GeoPoint(bonPlanLatitude, bonPlanLongitude);
-            myItemizedOverlay.addItem(myPoint, bonPlanNom, bonPlanNom);
+            myItemizedOverlay.addItem(myPoint, bonPlanNom, type);
         }
     }
 
@@ -286,5 +286,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener {
         Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 50, 50, true));
         return d;
     }
+
+
 
 }

@@ -95,10 +95,24 @@ public class LoginService {
                 editor.remove("token");
                 editor.remove("nom");
                 editor.remove("prenom");
+                editor.remove("dateNaissance");
+                editor.remove("telephone");
+                editor.remove("email");
+                editor.remove("ecole");
                 editor.apply();
                 editor.putString("token", jsonResponse.getString("token"));
                 editor.putString("nom", jsonResponse.getString("nom"));
                 editor.putString("prenom", jsonResponse.getString("prenom"));
+                editor.putString("dateNaissance", jsonResponse.getString("date_naissance"));
+                editor.putString("ecole", jsonResponse.getString("ecole"));
+                String telephone = jsonResponse.getString("telephone");
+                if(!telephone.equals("0")) {
+                    editor.putString("telephone", telephone);
+                }
+                else {
+                    editor.putString("telephone", "");
+                }
+                editor.putString("email", user);
                 editor.apply();
 
                 return "Success";
