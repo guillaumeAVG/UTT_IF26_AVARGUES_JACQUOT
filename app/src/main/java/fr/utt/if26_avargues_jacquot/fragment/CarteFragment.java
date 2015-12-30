@@ -28,9 +28,11 @@ import org.json.JSONObject;
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
 import org.osmdroid.api.IMapController;
+import org.osmdroid.api.Marker;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.ItemizedOverlay;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
 import java.io.IOException;
@@ -56,6 +58,8 @@ c'est pour que l'utilisateur puisse ajouter un bon plan.*/
 
 public class CarteFragment extends Fragment implements View.OnClickListener{
 
+
+
     /* La méthode onCreateView permet de créer des vues: c'est à dire
       on dit quel fichier XML doit réprésenter la page pour la carte.
       De plus, on ajoute les éléments qui sont cliquables pour
@@ -66,8 +70,28 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
         //On définit le XML a utiliser
         View rootView = inflater.inflate(R.layout.fragment_carte, container, false);
-        //On définit une vue sur un élément cliquable
+        //On met en place le listener sur les éléments souhaités
         rootView.findViewById(R.id.IMGB_ajouterBonPlan).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_agencesDeTransports).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_alimentations).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_assuranceMaladieEtMutuelles).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_caf).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_distributionsDeBillets).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_emploi).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_evenements).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_garages).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_hopitaux).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_laveries).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_mairies).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_maisonDesEtudiants).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_medecins).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_pharmacies).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_reductionsACourtTerme).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_reductionsALongTerme).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_salleDeSport).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_stades).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_stationsEssences).setOnClickListener(this);
+        rootView.findViewById(R.id.CB_terrains).setOnClickListener(this);
         //On ajoute la vue pour intégrer la carte
         MapView map = (MapView) rootView.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPQUESTOSM);
@@ -85,7 +109,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
         map.getOverlays().add(mRotationGestureOverlay);
 
         try {
-            putBonBlans(map);
+            putBonsPlans(map);
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -137,6 +161,28 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
                     startActivity(intent);
                 }
                 break;
+            case R.id.CB_agencesDeTransports :
+
+            case R.id.CB_alimentations :
+            case R.id.CB_assuranceMaladieEtMutuelles :
+            case R.id.CB_caf :
+            case R.id.CB_distributionsDeBillets :
+            case R.id.CB_emploi :
+            case R.id.CB_evenements :
+            case R.id.CB_garages :
+            case R.id.CB_hopitaux :
+            case R.id.CB_laveries :
+            case R.id.CB_mairies :
+            case R.id.CB_maisonDesEtudiants :
+            case R.id.CB_medecins :
+            case R.id.CB_pharmacies :
+            case R.id.CB_reductionsACourtTerme :
+            case R.id.CB_reductionsALongTerme :
+            case R.id.CB_terrains :
+            case R.id.CB_salleDeSport :
+            case R.id.CB_stades :
+            case R.id.CB_stationsEssences :
+
         }
 
     }
@@ -163,7 +209,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
      * @throws IOException
      * @throws MalformedURLException
      */
-    public void putBonBlans(MapView map) throws JSONException, IOException, MalformedURLException{
+    public void putBonsPlans(MapView map) throws JSONException, IOException, MalformedURLException{
 
         //On récupère les bons plans depuis le webservice
         GetBonsPlansService gbps = new GetBonsPlansService();
@@ -286,6 +332,8 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
         Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 50, 50, true));
         return d;
     }
+
+
 
 
 

@@ -29,7 +29,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:buttonTint="#4e47ce"
-            android:checked="false"
+            android:checked="true"
             android:text="Alimentations"
             android:textColor="#4e47ce" />
 
@@ -42,7 +42,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_alimentations"
             android:layout_marginLeft="20dp"
             android:buttonTint="#4e47ce"
-            android:checked="false"
+            android:checked="true"
             android:text="Laveries"
             android:textColor="#4e47ce" />
 
@@ -55,7 +55,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_laveries"
             android:layout_marginLeft="20dp"
             android:buttonTint="#4e47ce"
-            android:checked="false"
+            android:checked="true"
             android:text="Distributions de billets"
             android:textColor="#4e47ce" />
 
@@ -68,7 +68,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_distributionsDeBillets"
             android:layout_marginLeft="20dp"
             android:buttonTint="#4e47ce"
-            android:checked="false"
+            android:checked="true"
             android:text="Stations Essences"
             android:textColor="#4e47ce" />
 
@@ -82,7 +82,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginBottom="50dp"
             android:layout_marginLeft="20dp"
             android:buttonTint="#4e47ce"
-            android:checked="false"
+            android:checked="true"
             android:text="Garages"
             android:textColor="#4e47ce" />
 
@@ -96,7 +96,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:buttonTint="#4ab255"
-            android:checked="false"
+            android:checked="true"
             android:text="Hopitaux"
             android:textColor="#4ab255" />
 
@@ -109,7 +109,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_hopitaux"
             android:layout_marginLeft="20dp"
             android:buttonTint="#4ab255"
-            android:checked="false"
+            android:checked="true"
             android:text="Médecins"
             android:textColor="#4ab255" />
 
@@ -123,7 +123,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginBottom="40dp"
             android:layout_marginLeft="20dp"
             android:buttonTint="#4ab255"
-            android:checked="false"
+            android:checked="true"
             android:text="Pharmacies"
             android:textColor="#4ab255" />
 
@@ -137,7 +137,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:buttonTint="#ce50a5"
-            android:checked="false"
+            android:checked="true"
             android:text="Salles de sport"
             android:textColor="#ce50a5" />
 
@@ -150,7 +150,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_salleDeSport"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ce50a5"
-            android:checked="false"
+            android:checked="true"
             android:text="Terrains"
             android:textColor="#ce50a5" />
 
@@ -164,7 +164,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginBottom="50dp"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ce50a5"
-            android:checked="false"
+            android:checked="true"
             android:text="Stades"
             android:textColor="#ce50a5" />
 
@@ -178,7 +178,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:buttonTint="#ebb515"
-            android:checked="false"
+            android:checked="true"
             android:text="CAF"
             android:textColor="#ebb515" />
 
@@ -191,7 +191,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_caf"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ebb515"
-            android:checked="false"
+            android:checked="true"
             android:text="Mairies"
             android:textColor="#ebb515" />
 
@@ -204,7 +204,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_mairies"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ebb515"
-            android:checked="false"
+            android:checked="true"
             android:text="Agences de transports"
             android:textColor="#ebb515" />
 
@@ -217,7 +217,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_agencesDeTransports"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ebb515"
-            android:checked="false"
+            android:checked="true"
             android:text="Assurance maladie et mutuelles"
             android:textColor="#ebb515" />
 
@@ -230,7 +230,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_assuranceMaladieEtMutuelles"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ebb515"
-            android:checked="false"
+            android:checked="true"
             android:text="Emploi"
             android:textColor="#ebb515" />
 
@@ -244,7 +244,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginBottom="130dp"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ebb515"
-            android:checked="false"
+            android:checked="true"
             android:text="Maison des étudiants"
             android:textColor="#ebb515" />
 
@@ -258,7 +258,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:buttonTint="#ff583f"
-            android:checked="false"
+            android:checked="true"
             android:text="Evènements"
             android:textColor="#ff583f" />
 
@@ -271,7 +271,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_below="@+id/CB_evenements"
             android:layout_marginLeft="20dp"
             android:buttonTint="#ff583f"
-            android:checked="false"
+            android:checked="true"
             android:text="Réductions à court terme"
             android:textColor="#ff583f" />
 
@@ -286,7 +286,7 @@ Ce XML permet de définir le contenu du filtre de la carte.
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:buttonTint="#c72b4c"
-            android:checked="false"
+            android:checked="true"
             android:text="Réductions à long terme"
             android:textColor="#c72b4c" />
         <!--
