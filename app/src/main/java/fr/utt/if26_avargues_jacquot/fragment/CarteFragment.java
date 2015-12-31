@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
@@ -33,13 +34,17 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedOverlay;
+import org.osmdroid.views.overlay.Overlay;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 import fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity;
@@ -58,7 +63,7 @@ c'est pour que l'utilisateur puisse ajouter un bon plan.*/
 
 public class CarteFragment extends Fragment implements View.OnClickListener{
 
-
+    MapView map;
 
     /* La méthode onCreateView permet de créer des vues: c'est à dire
       on dit quel fichier XML doit réprésenter la page pour la carte.
@@ -92,8 +97,8 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
         rootView.findViewById(R.id.CB_stades).setOnClickListener(this);
         rootView.findViewById(R.id.CB_stationsEssences).setOnClickListener(this);
         rootView.findViewById(R.id.CB_terrains).setOnClickListener(this);
-        //On ajoute la vue pour intégrer la carte
-        MapView map = (MapView) rootView.findViewById(R.id.map);
+        //On défini quel élément représente la carte sur l'interface
+        map = (MapView) rootView.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPQUESTOSM);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
@@ -162,26 +167,104 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
                 }
                 break;
             case R.id.CB_agencesDeTransports :
-
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_agencesDeTransports), "Agence de Transport");
+                break;
             case R.id.CB_alimentations :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_alimentations), "Alimentation");
+                break;
             case R.id.CB_assuranceMaladieEtMutuelles :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_assuranceMaladieEtMutuelles), "Assurance Maladie et Mutuelles");
+                break;
             case R.id.CB_caf :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_caf), "CAF");
+                break;
             case R.id.CB_distributionsDeBillets :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_distributionsDeBillets), "Distributeur de billets");
+                break;
             case R.id.CB_emploi :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_emploi), "Emploi");
+                break;
             case R.id.CB_evenements :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_evenements), "Evènement");
+                break;
             case R.id.CB_garages :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_garages), "Garage");
+                break;
             case R.id.CB_hopitaux :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_hopitaux), "Hopital");
+                break;
             case R.id.CB_laveries :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_laveries), "Laverie");
+                break;
             case R.id.CB_mairies :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_mairies), "Mairie");
+                break;
             case R.id.CB_maisonDesEtudiants :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_maisonDesEtudiants), "Maison des étudiants");
+                break;
             case R.id.CB_medecins :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_medecins), "Médecin");
+                break;
             case R.id.CB_pharmacies :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_pharmacies), "Laverie");
+                break;
             case R.id.CB_reductionsACourtTerme :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_reductionsACourtTerme), "Réduction à court terme");
+                break;
             case R.id.CB_reductionsALongTerme :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_reductionsALongTerme), "Réduction à long terme");
+                break;
             case R.id.CB_terrains :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_terrains), "Terrain");
+                break;
             case R.id.CB_salleDeSport :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_salleDeSport), "Salle de sport");
+                break;
             case R.id.CB_stades :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_stades), "Stade");
+                break;
             case R.id.CB_stationsEssences :
+                ShowOrHideType((CheckBox) v.findViewById(R.id.CB_stationsEssences), "Station essence");
+                break;
+
+        }
+
+    }
+
+    private void hideFromMap(String type) {
+
+        for(int i = 1 ; i < map.getOverlays().size(); i++) {
+            MyItemizedOverlay overlay = (MyItemizedOverlay) map.getOverlays().get(i);
+            String categorie = overlay.getItem(0).getSnippet();
+
+            if(categorie.equals(type)) {
+                Drawable marker = ContextCompat.getDrawable(getContext(), R.drawable.transparent);
+                Bitmap bitmap = ((BitmapDrawable) marker).getBitmap();
+                Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 1, 1, true));
+                overlay.getItem(0).setMarker(d);
+            }
+
+        }
+
+    }
+
+    private void ShowOrHideType(CheckBox CB, String type) {
+        if(!CB.isChecked())
+            hideFromMap(type);
+        else
+            showOnMap(type);
+    }
+
+    private void showOnMap(String type) {
+
+        for(int i = 1 ; i < map.getOverlays().size(); i++) {
+            MyItemizedOverlay overlay = (MyItemizedOverlay) map.getOverlays().get(i);
+            String categorie = overlay.getItem(0).getSnippet();
+
+            if(categorie.equals(type)) {
+                Drawable d = getDrawable(type);
+                overlay.getItem(0).setMarker(d);
+            }
 
         }
 
@@ -244,8 +327,8 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
         // On ajoute une icône sur la carte
         Drawable marker = getDrawable(type);
 
-        if(marker != null) {
-            marker.setBounds(-marker.getIntrinsicWidth()/4, -marker.getIntrinsicHeight(), marker.getIntrinsicWidth()/4, 0);
+        if (marker != null) {
+            marker.setBounds(-marker.getIntrinsicWidth() / 4, -marker.getIntrinsicHeight(), marker.getIntrinsicWidth() / 4, 0);
 
             ResourceProxy resourceProxy = new DefaultResourceProxyImpl(getActivity().getApplicationContext());
 
