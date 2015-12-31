@@ -32,6 +32,12 @@ public class LogoutService {
         this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/logout.php");
     }
 
+    /**
+     * Permet de se déconnecter et supprimer les valeurs stockées sur l'appareil
+     * @return True si bien déconnecté, sinon false en cas d'erreur
+     * @throws IOException
+     * @throws JSONException
+     */
     public boolean logOut() throws IOException, JSONException {
         MainActivity main = new MainActivity();
         SharedPreferences settings = main.ma.getSharedPreferences("StudenN3_storage", 0);

@@ -34,7 +34,8 @@ public class GetOneBonPlanService {
     }
 
     /**
-     * Méthode permettant de récupérer les bons plans actifs à la date du jour
+     * Méthode permettant de récupérer le bon plan voulu en fonction de son nom
+     * @param nom Titre du bon plan
      * @return La liste des bons plans au format JSON
      * @throws IOException
      * @throws JSONException

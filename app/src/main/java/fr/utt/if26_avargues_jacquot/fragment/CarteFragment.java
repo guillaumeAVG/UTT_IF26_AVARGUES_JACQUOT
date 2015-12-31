@@ -125,16 +125,10 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
         return rootView;
     }
 
-    /*La méthode setUserVisible permet d'afficher un message à l'utilisateur que sa carte est affichée.*/
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser && isResumed()) {
-
-        }
-    }
-
-    /* La méthode onClick permet de définir une action dès que l'utilisateur clique sur l'icône d'ajout de bon plan.*/
+    /**
+     * La méthode onClick permet de définir une action dès que l'utilisateur clique sur un des éléments défini dans la méhode
+     * @param v Vue
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -231,6 +225,10 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     }
 
+    /**
+     * Permet de cacher tous les éléments, sur la carte, en fonction de leur type
+     * @param type Type du bon plan (ex : CAF, Réduction à court terme, ...)
+     */
     private void hideFromMap(String type) {
 
         for(int i = 1 ; i < map.getOverlays().size(); i++) {
@@ -248,6 +246,12 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     }
 
+    /**
+     * Permet de cacher ou montrer des éléments de la carte en fonction de la catégorie du bon plan.
+     * Ce choix est effectué par l'utilisateur à l'aide des checkbox des filtres
+     * @param CB Checkbox dont l'état est à observer
+     * @param type Type du bon plan (ex : CAF, Réduction à court terme, ...)
+     */
     private void ShowOrHideType(CheckBox CB, String type) {
         if(!CB.isChecked())
             hideFromMap(type);
@@ -255,6 +259,10 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
             showOnMap(type);
     }
 
+    /**
+     * Permet de montrer tous les éléments, sur la carte, en fonction de leur type
+     * @param type Type du bon plan (ex : CAF, Réduction à court terme, ...)
+     */
     private void showOnMap(String type) {
 
         for(int i = 1 ; i < map.getOverlays().size(); i++) {
@@ -270,6 +278,12 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     }
 
+    /**
+     * Permet de savoir si l'utilisateur est connecté en vérifiant le token en mémoire.
+     * @return True si l'utilisateur est correctement authentifié, sinon false.
+     * @throws IOException
+     * @throws JSONException
+     */
     public boolean checkToken() throws IOException, JSONException {
         SharedPreferences settings = getContext().getSharedPreferences("StudenN3_storage", 0);
         String token = settings.getString("token", "");
@@ -415,9 +429,4 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
         Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 50, 50, true));
         return d;
     }
-
-
-
-
-
 }

@@ -42,7 +42,19 @@ public class SignInService {
         this.urlToRequest = new URL("http://51.254.37.59/StudentN3_WS/register.php");
     }
 
-
+    /**
+     * Permet d'ajouter un nouveau compte dans le système.
+     * @param nom Nom de l'utilisateur
+     * @param prenom Prénom de l'utilisateur
+     * @param dateNaissance Date de naissance de l'utilisateur
+     * @param email Email de l'utilisateur
+     * @param ecole Ecole (UTT, EPF, ...) de l'utilisateur
+     * @param telephone Téléphone (optionnel) de l'utilisateur
+     * @param motdepasse Mot de passe de l'utilisateur
+     * @return Success si tout va bien, sinon un message d'erreur.
+     * @throws IOException
+     * @throws JSONException
+     */
     public String addAccount(String nom, String prenom, String dateNaissance, String email, String ecole, Integer telephone, String motdepasse) throws IOException, JSONException {
 
         HttpURLConnection urlConnection = (HttpURLConnection) urlToRequest.openConnection();
