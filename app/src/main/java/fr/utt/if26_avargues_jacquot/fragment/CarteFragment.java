@@ -8,18 +8,13 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ScaleDrawable;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 import com.example.guillaume.if26_avargues_jacquot.R;
 
@@ -29,24 +24,14 @@ import org.json.JSONObject;
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
 import org.osmdroid.api.IMapController;
-import org.osmdroid.api.Marker;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.ItemizedOverlay;
-import org.osmdroid.views.overlay.Overlay;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
 
-import fr.utt.if26_avargues_jacquot.activity.MainActivity;
 import fr.utt.if26_avargues_jacquot.activity.NouveauBonPlanActivity;
 import fr.utt.if26_avargues_jacquot.services.CheckTokenService;
 import fr.utt.if26_avargues_jacquot.services.GetBonsPlansService;
@@ -61,7 +46,7 @@ C'est à dire lorsque le menu tabs est sur: Carte.
 Elle hérite de Fragment et implémente View.OnClickListener car cet écran possède des éléments qui sont cliquables:
 c'est pour que l'utilisateur puisse ajouter un bon plan.*/
 
-public class CarteFragment extends Fragment implements View.OnClickListener{
+public class CarteFragment extends Fragment implements View.OnClickListener {
 
     MapView map;
 
@@ -127,6 +112,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /**
      * La méthode onClick permet de définir une action dès que l'utilisateur clique sur un des éléments défini dans la méhode
+     *
      * @param v Vue
      */
     @Override
@@ -135,13 +121,13 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
             case R.id.IMGB_ajouterBonPlan:
                 Boolean connecte = false;
                 try {
-                   connecte  = this.checkToken();
+                    connecte = this.checkToken();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                if(!connecte) {
+                if (!connecte) {
                     AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
                     alertDialog.setTitle("Connexion requise");
                     alertDialog.setMessage("Vous devez être connecté pour ajouter un bon plan.");
@@ -152,72 +138,71 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
                                 }
                             });
                     alertDialog.show();
-                }
-                else {
+                } else {
                     // On met en place le passage entre les deux activités sur ce Listener
                     // On passe de l'activité principale à l'activité d'ajout de bon plan.
                     Intent intent = new Intent(getActivity(), NouveauBonPlanActivity.class);
                     startActivity(intent);
                 }
                 break;
-            case R.id.CB_agencesDeTransports :
+            case R.id.CB_agencesDeTransports:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_agencesDeTransports), "Agence de Transport");
                 break;
-            case R.id.CB_alimentations :
+            case R.id.CB_alimentations:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_alimentations), "Alimentation");
                 break;
-            case R.id.CB_assuranceMaladieEtMutuelles :
+            case R.id.CB_assuranceMaladieEtMutuelles:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_assuranceMaladieEtMutuelles), "Assurance Maladie et Mutuelles");
                 break;
-            case R.id.CB_caf :
+            case R.id.CB_caf:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_caf), "CAF");
                 break;
-            case R.id.CB_distributionsDeBillets :
+            case R.id.CB_distributionsDeBillets:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_distributionsDeBillets), "Distributeur de billets");
                 break;
-            case R.id.CB_emploi :
+            case R.id.CB_emploi:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_emploi), "Emploi");
                 break;
-            case R.id.CB_evenements :
+            case R.id.CB_evenements:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_evenements), "Evènement");
                 break;
-            case R.id.CB_garages :
+            case R.id.CB_garages:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_garages), "Garage");
                 break;
-            case R.id.CB_hopitaux :
+            case R.id.CB_hopitaux:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_hopitaux), "Hopital");
                 break;
-            case R.id.CB_laveries :
+            case R.id.CB_laveries:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_laveries), "Laverie");
                 break;
-            case R.id.CB_mairies :
+            case R.id.CB_mairies:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_mairies), "Mairie");
                 break;
-            case R.id.CB_maisonDesEtudiants :
+            case R.id.CB_maisonDesEtudiants:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_maisonDesEtudiants), "Maison des étudiants");
                 break;
-            case R.id.CB_medecins :
+            case R.id.CB_medecins:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_medecins), "Médecin");
                 break;
-            case R.id.CB_pharmacies :
+            case R.id.CB_pharmacies:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_pharmacies), "Laverie");
                 break;
-            case R.id.CB_reductionsACourtTerme :
+            case R.id.CB_reductionsACourtTerme:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_reductionsACourtTerme), "Réduction à court terme");
                 break;
-            case R.id.CB_reductionsALongTerme :
+            case R.id.CB_reductionsALongTerme:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_reductionsALongTerme), "Réduction à long terme");
                 break;
-            case R.id.CB_terrains :
+            case R.id.CB_terrains:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_terrains), "Terrain");
                 break;
-            case R.id.CB_salleDeSport :
+            case R.id.CB_salleDeSport:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_salleDeSport), "Salle de sport");
                 break;
-            case R.id.CB_stades :
+            case R.id.CB_stades:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_stades), "Stade");
                 break;
-            case R.id.CB_stationsEssences :
+            case R.id.CB_stationsEssences:
                 ShowOrHideType((CheckBox) v.findViewById(R.id.CB_stationsEssences), "Station essence");
                 break;
 
@@ -227,15 +212,16 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /**
      * Permet de cacher tous les éléments, sur la carte, en fonction de leur type
+     *
      * @param type Type du bon plan (ex : CAF, Réduction à court terme, ...)
      */
     private void hideFromMap(String type) {
 
-        for(int i = 1 ; i < map.getOverlays().size(); i++) {
+        for (int i = 1; i < map.getOverlays().size(); i++) {
             MyItemizedOverlay overlay = (MyItemizedOverlay) map.getOverlays().get(i);
             String categorie = overlay.getItem(0).getSnippet();
 
-            if(categorie.equals(type)) {
+            if (categorie.equals(type)) {
                 Drawable marker = ContextCompat.getDrawable(getContext(), R.drawable.transparent);
                 Bitmap bitmap = ((BitmapDrawable) marker).getBitmap();
                 Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 1, 1, true));
@@ -249,11 +235,12 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
     /**
      * Permet de cacher ou montrer des éléments de la carte en fonction de la catégorie du bon plan.
      * Ce choix est effectué par l'utilisateur à l'aide des checkbox des filtres
-     * @param CB Checkbox dont l'état est à observer
+     *
+     * @param CB   Checkbox dont l'état est à observer
      * @param type Type du bon plan (ex : CAF, Réduction à court terme, ...)
      */
     private void ShowOrHideType(CheckBox CB, String type) {
-        if(!CB.isChecked())
+        if (!CB.isChecked())
             hideFromMap(type);
         else
             showOnMap(type);
@@ -261,15 +248,16 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /**
      * Permet de montrer tous les éléments, sur la carte, en fonction de leur type
+     *
      * @param type Type du bon plan (ex : CAF, Réduction à court terme, ...)
      */
     private void showOnMap(String type) {
 
-        for(int i = 1 ; i < map.getOverlays().size(); i++) {
+        for (int i = 1; i < map.getOverlays().size(); i++) {
             MyItemizedOverlay overlay = (MyItemizedOverlay) map.getOverlays().get(i);
             String categorie = overlay.getItem(0).getSnippet();
 
-            if(categorie.equals(type)) {
+            if (categorie.equals(type)) {
                 Drawable d = getDrawable(type);
                 overlay.getItem(0).setMarker(d);
             }
@@ -280,6 +268,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /**
      * Permet de savoir si l'utilisateur est connecté en vérifiant le token en mémoire.
+     *
      * @return True si l'utilisateur est correctement authentifié, sinon false.
      * @throws IOException
      * @throws JSONException
@@ -301,21 +290,22 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /**
      * Méthode permettant d'ajouter les bons plans sur la carte, à partir des données en base
+     *
      * @param map Carte présente sur l'écran
      * @throws JSONException
      * @throws IOException
      * @throws MalformedURLException
      */
-    public void putBonsPlans(MapView map) throws JSONException, IOException, MalformedURLException{
+    public void putBonsPlans(MapView map) throws JSONException, IOException, MalformedURLException {
 
         //On récupère les bons plans depuis le webservice
         GetBonsPlansService gbps = new GetBonsPlansService();
         String bonsPlans = gbps.getCurrentBonsPlans();
-        JSONArray jsonArrayBonsPlans  = new JSONArray(bonsPlans);
+        JSONArray jsonArrayBonsPlans = new JSONArray(bonsPlans);
 
         //Si on a des bons plans à afficher
-        if(jsonArrayBonsPlans != null) {
-            for (int i=0; i<jsonArrayBonsPlans.length(); i++) {
+        if (jsonArrayBonsPlans != null) {
+            for (int i = 0; i < jsonArrayBonsPlans.length(); i++) {
                 //Pour chaque bon plan, on récupère son titre, son type et les coordonnées pour l'afficher sur la carte
                 JSONObject bonPlan = (JSONObject) jsonArrayBonsPlans.get(i);
                 String bonPlanNom = bonPlan.getString("nom");
@@ -331,11 +321,12 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /**
      * Méthode permettant d'afficher l'icône du bon plan sur la carte
-     * @param map Carte présente sur l'écran
-     * @param bonPlanNom Titre du bon plan
-     * @param type Type du bon plan
+     *
+     * @param map              Carte présente sur l'écran
+     * @param bonPlanNom       Titre du bon plan
+     * @param type             Type du bon plan
      * @param bonPlanLongitude Longitude du bon plan
-     * @param bonPlanLatitude Latitude du bon plan
+     * @param bonPlanLatitude  Latitude du bon plan
      */
     public void addBPtoMap(MapView map, String bonPlanNom, String type, Double bonPlanLongitude, Double bonPlanLatitude) {
         // On ajoute une icône sur la carte
@@ -356,6 +347,7 @@ public class CarteFragment extends Fragment implements View.OnClickListener{
 
     /**
      * Récupère la bonne icône en fonction du bon plan
+     *
      * @param type Type de bon plan
      * @return Drawable Icone du bon plan correspondant à son type
      */
