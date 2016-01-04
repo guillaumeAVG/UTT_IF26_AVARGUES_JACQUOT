@@ -1,4 +1,4 @@
-# UTT_IF26_AVARGUES_JACQUOT
+# Student'N 3 - Application Android
 
 Ce dépôt vous présente le code de l'application Android Student'N 3. Il s'agit d'une application permettant de partager des bons plans, des informations entre étudiants. L'application est pour l'instant limitée au étudiants troyens et utilise des webservices provisoires.
 
