@@ -32,9 +32,9 @@ Ce XML permet de définir l'activité principale de l'application.
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:backgroundTint="@color/notification_color_fond"
-                android:src="@drawable/logoblanc"
                 android:foregroundGravity="left"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:src="@drawable/logoblanc" />
         </android.support.v7.widget.Toolbar>
 
         <!--

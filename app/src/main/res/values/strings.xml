@@ -2,7 +2,7 @@
           Dans ce XML on définit les Strings de l'application. Par exemple son nom, les titres des différentes activités
           -->
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Student\'N 3</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_nouveau_compte">Formulaire d\'inscription</string>
     <string name="title_activity_filtre">FiltreActivity</string>

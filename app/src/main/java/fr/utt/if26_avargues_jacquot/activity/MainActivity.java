@@ -39,14 +39,16 @@ public class MainActivity extends AppCompatActivity {
     Il y a aussi la mise en place du toolBar.*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         /*On dit que le XML activity_main doit être pris en compte pour l'activité principale*/
+
         setContentView(R.layout.activity_main);
 
         // On met en place les tabs.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
